@@ -18,9 +18,9 @@ public:
 
     void show();
 
-    double getDecimal();
+    double getDecimal() const;
     void reduction();
-    bool compare(Fraction fraction);
+    bool compare(Fraction fraction) const;
 
     void add(Fraction fraction);
     void deduct(Fraction fraction);
@@ -28,6 +28,8 @@ public:
     void divide(Fraction fraction);
 
 private:
+
+    int findCommonDenominator(int a, int b) const;
 
     int _numerator;
     int _denominator;

@@ -8,15 +8,14 @@ int main()
     cout << "Hello ITStep!" << endl;
 
 
-    Fraction *fraction = new Fraction(50, 100);
+    Fraction fraction(29, 30);
 
-    fraction->show();
+    Fraction fraction2(44, 45);
 
-    cout << fraction->getDecimal() << endl;
+    fraction.add(fraction2);
 
-    fraction->reduction();
+    fraction.show();
 
-    fraction->show();
 
     return 0;
 }

@@ -7,7 +7,10 @@ Fraction::Fraction() : _numerator(1), _denominator(1)
 
 Fraction::Fraction(double decimal)
 {
-    //TODO:передаётся десятичная дробь
+    //TODO: Data lost!!!
+    _denominator = 100000;
+    _numerator = decimal * _denominator;
+    reduction();
 }
 
 Fraction::Fraction(int numerator, int denominator): _numerator(numerator)
@@ -48,7 +51,7 @@ void Fraction::show()
 
 }
 
-double Fraction::getDecimal()
+double Fraction::getDecimal() const
 {
     //TODO: возврат значения типа double на основании значений числителя и знаменателя дроби
     return ((double)_numerator) / ((double)_denominator);
@@ -74,7 +77,7 @@ void Fraction::reduction()
     }
 }
 
-bool Fraction::compare(Fraction fraction)
+bool Fraction::compare(Fraction fraction) const
 {
     bool result = false;
     //TODO: сравнение дробей
@@ -84,7 +87,15 @@ bool Fraction::compare(Fraction fraction)
 
 void Fraction::add(Fraction fraction)
 {
-    //TODO: сложение
+    int commonDenomirator = findCommonDenominator(_denominator
+                                                  , fraction.getDenominator()
+                                                  );
+    int secondNumerator = fraction.getNumerator()
+                        * (commonDenomirator / fraction.getDenominator());
+    _numerator *= (commonDenomirator / _denominator);
+    _numerator += secondNumerator;
+    _denominator = commonDenomirator;
+    reduction();
 }
 
 void Fraction::deduct(Fraction fraction)
@@ -100,4 +111,24 @@ void Fraction::multiply(Fraction fraction)
 void Fraction::divide(Fraction fraction)
 {
     //TODO: деление
+}
+
+int Fraction::findCommonDenominator(int a, int b) const
+{
+    int result = 0;
+
+    if(a % b == 0)
+    {
+        result = a;
+    }
+    else if(b % a == 0)
+    {
+        result = b;
+    }
+    else
+    {
+        result = a * b;
+    }
+
+    return result;
 }
