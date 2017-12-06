@@ -56,12 +56,30 @@ double Fraction::getDecimal()
 
 void Fraction::reduction()
 {
-    //TODO: сокращение дроби
+    if(_denominator % _numerator == 0)
+    {
+        _denominator /= _numerator;
+        _numerator = 1;
+    }
+    else
+    {
+        for(int i = _numerator; i > 1; i--)
+        {
+            if((_denominator % i == 0) && (_numerator % i == 0))
+            {
+                _denominator /= i;
+                _numerator /= i;
+            }
+        }
+    }
 }
 
 bool Fraction::compare(Fraction fraction)
 {
+    bool result = false;
     //TODO: сравнение дробей
+
+    return result;
 }
 
 void Fraction::add(Fraction fraction)
