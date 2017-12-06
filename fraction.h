@@ -1,6 +1,7 @@
 #ifndef FRACTION_H
 #define FRACTION_H
 
+#include <iostream>
 
 class Fraction
 {
@@ -14,6 +15,17 @@ public:
 
     int getDenominator() const;
     void setDenominator(int denominator);
+
+    void show();
+
+    double getDecimal();
+    void reduction();
+    bool compare(Fraction fraction);
+
+    void add(Fraction fraction);
+    void deduct(Fraction fraction);
+    void multiply(Fraction fraction);
+    void divide(Fraction fraction);
 
 private:
 
