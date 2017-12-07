@@ -114,7 +114,14 @@ void Fraction::add(Fraction fraction)
 
 void Fraction::deduct(Fraction fraction)
 {
-    //TODO: вычитание
+    int commonDenomirator = findCommonDenominator(_denominator
+                                                  , fraction.getDenominator());
+    int secondNumerator = fraction.getNumerator()
+                        * (commonDenomirator / fraction.getDenominator());
+    _numerator *= (commonDenomirator / _denominator);
+    _numerator -= secondNumerator;
+    _denominator = commonDenomirator;
+    reduction();
 }
 
 void Fraction::multiply(Fraction fraction)
