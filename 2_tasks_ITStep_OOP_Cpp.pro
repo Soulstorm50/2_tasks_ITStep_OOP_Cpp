@@ -6,9 +6,11 @@ CONFIG -= qt
 SOURCES += main.cpp \
     counter.cpp \
     point.cpp \
-    fraction.cpp
+    fraction.cpp \
+    student.cpp
 
 HEADERS += \
     counter.h \
     point.h \
-    fraction.h
+    fraction.h \
+    student.h

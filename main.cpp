@@ -1,5 +1,5 @@
 #include <iostream>
-#include "fraction.h"
+#include "student.h"
 
 using namespace std;
 
@@ -7,12 +7,9 @@ int main()
 {
     cout << "Hello ITStep!" << endl;
 
+    Student student("Ivanov", "Ivan");
 
-    Fraction fraction(10, 90);
-
-    Fraction fraction2(1, 9);
-
-    cout << fraction.compare(fraction2) << endl;
+    student.show();
 
 
     return 0;
