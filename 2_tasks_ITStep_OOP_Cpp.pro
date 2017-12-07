@@ -7,10 +7,12 @@ SOURCES += main.cpp \
     counter.cpp \
     point.cpp \
     fraction.cpp \
-    student.cpp
+    student.cpp \
+    group.cpp
 
 HEADERS += \
     counter.h \
     point.h \
     fraction.h \
-    student.h
+    student.h \
+    group.h
