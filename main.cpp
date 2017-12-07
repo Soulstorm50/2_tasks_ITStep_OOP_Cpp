@@ -8,13 +8,11 @@ int main()
     cout << "Hello ITStep!" << endl;
 
 
-    Fraction fraction(5, 9);
+    Fraction fraction(10, 90);
 
-    Fraction fraction2(2, 1);
+    Fraction fraction2(1, 9);
 
-    fraction.divide(fraction2);
-
-    fraction.show();
+    cout << fraction.compare(fraction2) << endl;
 
 
     return 0;

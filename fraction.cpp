@@ -94,7 +94,16 @@ void Fraction::reduction()
 bool Fraction::compare(Fraction fraction) const
 {
     bool result = false;
-    //TODO: сравнение дробей
+
+    int commonDenomirator = findCommonDenominator(_denominator
+                                                  , fraction.getDenominator());
+    int firstFractionNumerator = _numerator * (commonDenomirator / _denominator);
+    int secondFractionNumerator = fraction.getNumerator()
+                        * (commonDenomirator / fraction.getDenominator());
+    if(firstFractionNumerator == secondFractionNumerator)
+    {
+        result = true;
+    }
 
     return result;
 }
