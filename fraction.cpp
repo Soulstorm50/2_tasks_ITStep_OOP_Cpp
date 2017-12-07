@@ -126,7 +126,6 @@ void Fraction::deduct(Fraction fraction)
 
 void Fraction::multiply(Fraction fraction)
 {
-    //TODO: умножение
     _numerator *= fraction.getNumerator();
     _denominator *= fraction.getDenominator();
     reduction();
@@ -134,7 +133,9 @@ void Fraction::multiply(Fraction fraction)
 
 void Fraction::divide(Fraction fraction)
 {
-    //TODO: деление
+    _numerator *= fraction.getDenominator();
+    _denominator *= fraction.getNumerator();
+    reduction();
 }
 
 int Fraction::findCommonDenominator(int a, int b) const

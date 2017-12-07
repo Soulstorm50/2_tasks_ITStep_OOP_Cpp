@@ -31,6 +31,7 @@ private:
 
     int findCommonDenominator(int a, int b) const;
 
+
     int _numerator;
     int _denominator;
 };
