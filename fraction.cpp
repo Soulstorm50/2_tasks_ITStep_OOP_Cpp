@@ -127,6 +127,9 @@ void Fraction::deduct(Fraction fraction)
 void Fraction::multiply(Fraction fraction)
 {
     //TODO: умножение
+    _numerator *= fraction.getNumerator();
+    _denominator *= fraction.getDenominator();
+    reduction();
 }
 
 void Fraction::divide(Fraction fraction)
