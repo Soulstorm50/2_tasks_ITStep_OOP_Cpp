@@ -47,7 +47,21 @@ void Fraction::setDenominator(int denominator)
 
 void Fraction::show()
 {
-    std::cout << _numerator << '/' << _denominator << std::endl;
+    if(_numerator / _denominator == 0)
+    {
+        std::cout << _numerator << '/' << _denominator << std::endl;
+    }
+    else
+    {
+        std::cout << _numerator / _denominator << ' ';
+
+        if(_numerator - (_denominator * (_numerator / _denominator)) != 0)
+        {
+            std::cout << _numerator - (_denominator * (_numerator / _denominator))
+            << '/' << _denominator;
+        }
+        std::cout << std::endl;
+    }
 
 }
 
