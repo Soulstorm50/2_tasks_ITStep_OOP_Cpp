@@ -54,6 +54,96 @@ void Student::show()
               << "Phone number:\t" << _phoneNumber << std::endl << std::endl;
 }
 
+char* Student::getFirstName() const
+{
+    return _firstName;
+}
+
+void Student::setFirstName(char *firstName)
+{
+    _firstName = firstName;
+}
+
+char* Student::getLastName() const
+{
+    return _lastName;
+}
+
+void Student::setLastName(char *lastName)
+{
+    _lastName = lastName;
+}
+
+char* Student::getMiddleName() const
+{
+    return _middleName;
+}
+
+void Student::setMiddleName(char *middleName)
+{
+    _middleName = middleName;
+}
+
+char* Student::getDateOfBirth() const
+{
+    return _dateOfBirth;
+}
+
+void Student::setDateOfBirth(char *dateOfBirth)
+{
+    _dateOfBirth = dateOfBirth;
+}
+
+char* Student::getAddress() const
+{
+    return _address;
+}
+
+void Student::setAddress(char *address)
+{
+    _address = address;
+}
+
+char* Student::getPhoneNumber() const
+{
+    return _phoneNumber;
+}
+
+void Student::setPhoneNumber(char *phoneNumber)
+{
+    _phoneNumber = phoneNumber;
+}
+
+int *Student::getCredits() const
+{
+    return _credits;
+}
+
+void Student::setCredits(int *credits)
+{
+    _credits = credits;
+}
+
+int *Student::getCourseWorks() const
+{
+    return _courseWorks;
+}
+
+void Student::setCourseWorks(int *courseWorks)
+{
+    _courseWorks = courseWorks;
+}
+
+int *Student::getExams() const
+{
+    return _exams;
+}
+
+void Student::setExams(int *exams)
+{
+    _exams = exams;
+}
+
 
 
 

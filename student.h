@@ -13,6 +13,33 @@ public:
 
     void show();
 
+    char* getFirstName() const;
+    void setFirstName(char* firstName);
+
+    char* getLastName() const;
+    void setLastName(char* lastName);
+
+    char* getMiddleName() const;
+    void setMiddleName(char* middleName);
+
+    char* getDateOfBirth() const;
+    void setDateOfBirth(char* dateOfBirth);
+
+    char* getAddress() const;
+    void setAddress(char* address);
+
+    char* getPhoneNumber() const;
+    void setPhoneNumber(char* phoneNumber);
+
+    int *getCredits() const;
+    void setCredits(int* credits);
+
+    int *getCourseWorks() const;
+    void setCourseWorks(int* courseWorks);
+
+    int *getExams() const;
+    void setExams(int* exams);
+
 private:
     char* _firstName;
     char* _lastName;
