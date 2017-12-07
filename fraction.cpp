@@ -7,7 +7,7 @@ Fraction::Fraction() : _numerator(1), _denominator(1)
 
 Fraction::Fraction(double decimal)
 {
-    //TODO: Data lost!!!
+    //TODO: possible data lost!!! Need test
     _denominator = 100000;
     _numerator = decimal * _denominator;
     reduction();
@@ -67,7 +67,7 @@ void Fraction::show()
 
 double Fraction::getDecimal() const
 {
-    //TODO: возврат значения типа double на основании значений числителя и знаменателя дроби
+    //TODO: need to try static_cast etc
     return ((double)_numerator) / ((double)_denominator);
 }
 
