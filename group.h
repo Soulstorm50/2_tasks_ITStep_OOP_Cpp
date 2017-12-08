@@ -2,7 +2,8 @@
 #define GROUP_H
 
 #include "student.h"
-
+#include <iostream>
+#include <string.h>
 
 class Group
 {
@@ -21,9 +22,25 @@ public:
     void dismissAllNotPassedStudents();
     void dismissMostUnsuccesfulStudent();
 
-    //TODO: Add getters and setters
+    Student** getStudentArray() const;
+    void setStudentArray(Student** studentArray);
+
+    int getTotalStudents() const;
+    void setTotalStudents(int totalStudents);
+
+    char* getGroupName() const;
+    void setGroupName(char* groupName);
+
+    char* getGroupType() const;
+    void setGroupType(char* groupType);
+
+    int getCourseNumber() const;
+    void setCourseNumber(int courseNumber);
 
 private:
+
+    void sort();
+
     Student** _studentArray;
     int _totalStudents;
     char* _groupName;

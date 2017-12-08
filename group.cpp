@@ -6,9 +6,9 @@ Group::Group() : _totalStudents(0)
                , _courseNumber(0)
 
 {
-    //_studentArray = new Student*[_totalStudents];
+    _studentArray = new Student*[_totalStudents];
 
-    for(int i = 0; i <= _totalStudents; i++)
+    for(int i = 0; i < _totalStudents; i++)
     {
         _studentArray[i] = new Student();
     }
@@ -19,15 +19,26 @@ Group::Group(unsigned int total) : _totalStudents(total)
                                  , _groupType((char*)"Noname type")
                                  , _courseNumber(0)
 {
-    for(int i = 0; i <= _totalStudents; i++)
+    _studentArray = new Student*[_totalStudents];
+
+    for(int i = 0; i < _totalStudents; i++)
     {
-        _studentArray[i] = new Student("Ivanov", "Ivan", "01.01.2000");
+
+        _studentArray[i] = new Student("Ivanov"
+                                       , "Ivan"
+                                       , "01.01.2000"
+                                       );
     }
 }
 
 Group::Group(const Group& group)
 {
     //TODO: Copy c-tor. Implement after getters and setters
+    _studentArray = group.getStudentArray();
+    _totalStudents = group.getTotalStudents();
+    _groupName = group.getGroupName();
+    _groupType = group.getGroupType();
+    _courseNumber = group.getCourseNumber();
 }
 
 void Group::show()
@@ -35,6 +46,16 @@ void Group::show()
     //показ всех студентов группы
     //(сначала - название и специализация группы, затем - порядковые номера,
     //фамилии в алфавитном порядке и имена студентов)
+
+    std::cout << "Group:\t\t" << _groupName << std::endl
+              << "Specialization:\t" << _groupType << std::endl << std::endl;
+
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        std::cout << "Student number:\t" << i << "\t"
+                  << _studentArray[i]->getLastName() << " "
+                  << _studentArray[i]->getFirstName() << std::endl;
+    }
 }
 
 void Group::add(const Student& student)
@@ -63,4 +84,72 @@ void Group::dismissAllNotPassedStudents()
 void Group::dismissMostUnsuccesfulStudent()
 {
     //отчисления одного самого неуспевающего студента
+}
+
+Student** Group::getStudentArray() const
+{
+    return _studentArray;
+}
+
+void Group::setStudentArray(Student** studentArray)
+{
+    _studentArray = studentArray;
+}
+
+int Group::getTotalStudents() const
+{
+    return _totalStudents;
+}
+
+void Group::setTotalStudents(int totalStudents)
+{
+    _totalStudents = totalStudents;
+}
+
+char* Group::getGroupName() const
+{
+    return _groupName;
+}
+
+void Group::setGroupName(char* groupName)
+{
+    _groupName = groupName;
+}
+
+char* Group::getGroupType() const
+{
+    return _groupType;
+}
+
+void Group::setGroupType(char* groupType)
+{
+    _groupType = groupType;
+}
+
+int Group::getCourseNumber() const
+{
+    return _courseNumber;
+}
+
+void Group::setCourseNumber(int courseNumber)
+{
+    _courseNumber = courseNumber;
+}
+
+void Group::sort()
+{
+    for(int i = 0 ; i < _totalStudents; i++)
+    {
+        for(int j = i + 1; j < _totalStudents; j++)
+        {
+            if(strcmp(  _studentArray[i]->getLastName()
+                      , _studentArray[j]->getLastName()) > 0)
+            {
+                //Replace char* to Student. Need to implement copy c-tor Student
+                char* tmp = _studentArray[i]->getLastName();
+                _studentArray[i]->setLastName(_studentArray[j]->getLastName());
+                _studentArray[j]->setLastName(tmp);
+            }
+        }
+    }
 }
