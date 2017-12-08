@@ -146,9 +146,11 @@ void Group::sort()
                       , _studentArray[j]->getLastName()) > 0)
             {
                 //Replace char* to Student. Need to implement copy c-tor Student
-                char* tmp = _studentArray[i]->getLastName();
-                _studentArray[i]->setLastName(_studentArray[j]->getLastName());
-                _studentArray[j]->setLastName(tmp);
+                Student *tmpStudent = _studentArray[i];
+
+//                char* tmp = _studentArray[i]->getLastName();
+//                _studentArray[i]->setLastName(_studentArray[j]->getLastName());
+//                _studentArray[j]->setLastName(tmp);
             }
         }
     }

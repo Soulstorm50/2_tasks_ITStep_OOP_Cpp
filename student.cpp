@@ -42,6 +42,20 @@ Student::Student(char* lastName
 
 }
 
+Student::Student(const Student& student)
+                   : _firstName(student.getFirstName())
+                   , _lastName(student.getLastName())
+                   , _middleName(student.getMiddleName())
+                   , _dateOfBirth(student.getDateOfBirth())
+                   , _address(student.getAddress())
+                   , _phoneNumber(student.getPhoneNumber())
+                   , _credits(student.getCredits())
+                   , _courseWorks(student.getCourseWorks())
+                   , _exams(student.getExams())
+{
+
+}
+
 void Student::show()
 {
     std::cout << "---------------Student info--------------"

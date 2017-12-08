@@ -10,6 +10,7 @@ public:
     Student();
     Student(char* lastName, char* firstName);
     Student(char* lastName, char* firstName, char* dateOfBirth);
+    Student(const Student& student);
 
     void show();
 
