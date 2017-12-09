@@ -14,26 +14,23 @@ public:
 
     void show();
     void add(const Student& student);
+    void add(Student *student);
     void merge(Group& group);
     void moveStudent(  const char* lastName
                      , const char* firstName
-                     , const Group& group
+                     , Group& group
                       );
     void dismissAllNotPassedStudents();
     void dismissMostUnsuccesfulStudent();
 
     Student** getStudentArray() const;
     void setStudentArray(Student** studentArray);
-
     int getTotalStudents() const;
     void setTotalStudents(int totalStudents);
-
     char* getGroupName() const;
     void setGroupName(char* groupName);
-
     char* getGroupType() const;
     void setGroupType(char* groupType);
-
     int getCourseNumber() const;
     void setCourseNumber(int courseNumber);
 

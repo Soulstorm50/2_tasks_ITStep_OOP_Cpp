@@ -22,6 +22,15 @@ int main()
 
     group.show();
 
+    Student *ptrStudent = new Student("Potter", "Garry");
+    group.add(ptrStudent);
+    group.show();
+
+
+    Group group2(10);
+    group.moveStudent("Potter", "Garry", group2);
+    group2.show();
+
 
 
 

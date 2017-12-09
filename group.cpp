@@ -24,9 +24,9 @@ Group::Group(unsigned int total) : _totalStudents(total)
     for(int i = 0; i < _totalStudents; i++)
     {
 
-        _studentArray[i] = new Student("Ivanov"
-                                       , "Ivan"
-                                       , "01.01.2000"
+        _studentArray[i] = new Student((char*)"Ivanov"
+                                       , (char*)"Ivan"
+                                       , (char*)"01.01.2000"
                                        );
     }
 }
@@ -69,6 +69,20 @@ void Group::add(const Student& student)
     _totalStudents++;
 }
 
+void Group::add(Student *student)
+{
+    Student **tempStudentsArr = new Student*[_totalStudents + 1];
+
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        tempStudentsArr[i] = _studentArray[i];
+    }
+
+    tempStudentsArr[_totalStudents] = student;
+    _studentArray = tempStudentsArr;
+    _totalStudents++;
+}
+
 void Group::merge(Group& group)
 {
     //слияния двух групп
@@ -76,10 +90,17 @@ void Group::merge(Group& group)
 
 void Group::moveStudent(const char* lastName
                         , const char* firstName
-                        , const Group& group
+                        , Group& group
                         )
 {
-    //перевода студента из одной группы в другую
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        if((lastName == _studentArray[i]->getLastName())
+            && firstName == _studentArray[i]->getFirstName())
+        {
+            group.add(_studentArray[i]);
+        }
+    }
 }
 
 void Group::dismissAllNotPassedStudents()
@@ -151,13 +172,9 @@ void Group::sort()
             if(strcmp(  _studentArray[i]->getLastName()
                       , _studentArray[j]->getLastName()) > 0)
             {
-                //Replace char* to Student. Need to implement copy c-tor Student
                 Student *tmpStudent = _studentArray[i];
                 _studentArray[i] = _studentArray[j];
                 _studentArray[j] = tmpStudent;
-//                char* tmp = _studentArray[i]->getLastName();
-//                _studentArray[i]->setLastName(_studentArray[j]->getLastName());
-//                _studentArray[j]->setLastName(tmp);
             }
         }
     }
