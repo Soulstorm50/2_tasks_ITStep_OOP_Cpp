@@ -4,9 +4,9 @@
 #include "student.h"
 #include <iostream>
 #include <string.h>
+#include <string>
 
 //TODO: replace all char* to string!
-//TODO: implement destructor!
 
 class Group
 {
@@ -14,6 +14,8 @@ public:
     Group();
     Group(unsigned int total);
     Group(const Group& group);
+
+    ~Group();
 
     void show();
     void add(const Student& student);
@@ -27,24 +29,26 @@ public:
     void dismissMostUnsuccesfulStudent();
 
     Student** getStudentArray() const;
-    void setStudentArray(Student** studentArray);
     int getTotalStudents() const;
-    void setTotalStudents(int totalStudents);
-    char* getGroupName() const;
-    void setGroupName(char* groupName);
-    char* getGroupType() const;
-    void setGroupType(char* groupType);
+    const std::string getGroupName() const;
+    const std::string getGroupType() const;
     int getCourseNumber() const;
+
+    void setStudentArray(Student** studentArray); 
+    void setTotalStudents(int totalStudents);
+    void setGroupName(const std::string& groupName);
+    void setGroupType(const std::string& groupType);
     void setCourseNumber(int courseNumber);
 
 private:
 
     void sort();
+    void init();
 
     Student** _studentArray;
     int _totalStudents;
-    char* _groupName;
-    char* _groupType;
+    std::string _groupName;
+    std::string _groupType;
     int _courseNumber;
 };
 

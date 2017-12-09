@@ -12,11 +12,16 @@ int main()
     Student *student2 = new Student("Sidorov", "Sidr");
     student2->getCredits()[0] = 99;
 
-    student1 = student2;
+    Group group1;
+    Group group2(10);
 
-    //delete student2;
-    student1->show();
+    group1.add(student1);
+    group1.add(student2);
 
-    cout << endl << student1->getCredits()[0] << endl;
+    group1.merge(group2);
+
+
+
+    group1.show();
     return 0;
 }

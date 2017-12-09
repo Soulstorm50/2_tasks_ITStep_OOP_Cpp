@@ -51,6 +51,9 @@ Student::Student(const Student& student)
                    , _dateOfBirth(student.getDateOfBirth())
                    , _address(student.getAddress())
                    , _phoneNumber(student.getPhoneNumber())
+                   , _credits(new int[20])
+                   , _courseWorks(new int[10])
+                   , _exams(new int[10])
 {
     int sizeCredits = 20;
     int sizeCourseExams = 10;
@@ -73,6 +76,9 @@ Student::Student(const Student* student)
                    , _dateOfBirth(student->getDateOfBirth())
                    , _address(student->getAddress())
                    , _phoneNumber(student->getPhoneNumber())
+                   , _credits(new int[20])
+                   , _courseWorks(new int[10])
+                   , _exams(new int[10])
 {
     int sizeCredits = 20;
     int sizeCourseExams = 10;

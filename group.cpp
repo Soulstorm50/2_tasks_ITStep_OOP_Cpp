@@ -1,43 +1,43 @@
 #include "group.h"
 
 Group::Group() : _totalStudents(0)
-               , _groupName((char*)"Noname group")
-               , _groupType((char*)"Noname type")
+               , _groupName("Noname group")
+               , _groupType("Noname type")
                , _courseNumber(0)
 
 {
-    _studentArray = new Student*[_totalStudents];
-
-    for(int i = 0; i < _totalStudents; i++)
-    {
-        _studentArray[i] = new Student();
-    }
+    init();
 }
 
 Group::Group(unsigned int total) : _totalStudents(total)
-                                 , _groupName((char*)"Noname group")
-                                 , _groupType((char*)"Noname type")
+                                 , _groupName("Noname group")
+                                 , _groupType("Noname type")
                                  , _courseNumber(0)
+{
+    init();
+}
+
+Group::Group(const Group& group) : _totalStudents(group.getTotalStudents())
+                                 , _groupName(group.getGroupName())
+                                 , _groupType(group.getGroupType())
+                                 , _courseNumber(group.getCourseNumber())
 {
     _studentArray = new Student*[_totalStudents];
 
     for(int i = 0; i < _totalStudents; i++)
     {
-
-        _studentArray[i] = new Student((char*)"Ivanov"
-                                       , (char*)"Ivan"
-                                       , (char*)"01.01.2000"
-                                       );
+        _studentArray[i] = group.getStudentArray()[i];
     }
+
 }
 
-Group::Group(const Group& group)
+Group::~Group()
 {
-    _studentArray = group.getStudentArray();
-    _totalStudents = group.getTotalStudents();
-    _groupName = group.getGroupName();
-    _groupType = group.getGroupType();
-    _courseNumber = group.getCourseNumber();
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        delete _studentArray[i];
+    }
+    delete[] _studentArray;
 }
 
 void Group::show()
@@ -76,10 +76,7 @@ void Group::add(Student *student)
     {
         tempStudentsArr[i] = _studentArray[i];
     }
-
-    //Student tempStudent = new Student
-
-    tempStudentsArr[_totalStudents] = student;
+    tempStudentsArr[_totalStudents] = new Student(student);
     _studentArray = tempStudentsArr;
     _totalStudents++;
 }
@@ -87,9 +84,10 @@ void Group::add(Student *student)
 void Group::merge(const Group& group)
 {
     //слияния двух групп
-
-
-    _totalStudents += group.getTotalStudents();
+    for(int i = 0; i < group.getTotalStudents(); i++)
+    {
+        add(group.getStudentArray()[i]);
+    }
 }
 
 void Group::moveStudent(const char* lastName
@@ -137,22 +135,22 @@ void Group::setTotalStudents(int totalStudents)
     _totalStudents = totalStudents;
 }
 
-char* Group::getGroupName() const
+const std::string Group::getGroupName() const
 {
     return _groupName;
 }
 
-void Group::setGroupName(char* groupName)
+void Group::setGroupName(const std::string& groupName)
 {
     _groupName = groupName;
 }
 
-char* Group::getGroupType() const
+const std::string Group::getGroupType() const
 {
     return _groupType;
 }
 
-void Group::setGroupType(char* groupType)
+void Group::setGroupType(const std::string& groupType)
 {
     _groupType = groupType;
 }
@@ -173,13 +171,23 @@ void Group::sort()
     {
         for(int j = i + 1; j < _totalStudents; j++)
         {
-            if(strcmp(  _studentArray[i]->getLastName()
-                      , _studentArray[j]->getLastName()) > 0)
-            {
-                Student *tmpStudent = _studentArray[i];
-                _studentArray[i] = _studentArray[j];
-                _studentArray[j] = tmpStudent;
-            }
+//            if(strcmp(  _studentArray[i]->getLastName()
+//                      , _studentArray[j]->getLastName()) > 0)
+//            {
+//                Student *tmpStudent = _studentArray[i];
+//                _studentArray[i] = _studentArray[j];
+//                _studentArray[j] = tmpStudent;
+//            }
         }
+    }
+}
+
+void Group::init()
+{
+    _studentArray = new Student*[_totalStudents];
+
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        _studentArray[i] = new Student();
     }
 }
