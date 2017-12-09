@@ -43,16 +43,13 @@ Group::Group(const Group& group)
 
 void Group::show()
 {
-    //показ всех студентов группы
-    //(сначала - название и специализация группы, затем - порядковые номера,
-    //фамилии в алфавитном порядке и имена студентов)
-
+    sort();
     std::cout << "Group:\t\t" << _groupName << std::endl
               << "Specialization:\t" << _groupType << std::endl << std::endl;
 
     for(int i = 0; i < _totalStudents; i++)
     {
-        std::cout << "Student number:\t" << i << "\t"
+        std::cout << "Number:\t" << i << "\t"
                   << _studentArray[i]->getLastName() << " "
                   << _studentArray[i]->getFirstName() << std::endl;
     }
@@ -60,7 +57,16 @@ void Group::show()
 
 void Group::add(const Student& student)
 {
-    //Сделать методы добавления студента в группу
+    Student **tempStudentsArr = new Student*[_totalStudents + 1];
+
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        tempStudentsArr[i] = _studentArray[i];
+    }
+
+    tempStudentsArr[_totalStudents] = new Student(student);
+    _studentArray = tempStudentsArr;
+    _totalStudents++;
 }
 
 void Group::merge(Group& group)
@@ -147,7 +153,8 @@ void Group::sort()
             {
                 //Replace char* to Student. Need to implement copy c-tor Student
                 Student *tmpStudent = _studentArray[i];
-
+                _studentArray[i] = _studentArray[j];
+                _studentArray[j] = tmpStudent;
 //                char* tmp = _studentArray[i]->getLastName();
 //                _studentArray[i]->setLastName(_studentArray[j]->getLastName());
 //                _studentArray[j]->setLastName(tmp);
