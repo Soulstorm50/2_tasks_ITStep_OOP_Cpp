@@ -26,12 +26,24 @@ public:
         _dateOfBirth = tempStd.getDateOfBirth();
         _address = tempStd.getAddress();
         _phoneNumber = tempStd.getPhoneNumber();
-        _credits = tempStd.getCredits();
-        _courseWorks = tempStd.getCourseWorks();
-        _exams = tempStd.getExams();
+
+        int sizeCredits = 20;
+        int sizeCourseExams = 10;
+        for(int i = 0; i < sizeCredits; i++)
+        {
+            _credits[i] = tempStd.getCredits()[i];
+        }
+
+        for(int i = 0; i < sizeCourseExams; i++)
+        {
+            _courseWorks[i] = tempStd.getCourseWorks()[i];
+            _exams[i] = tempStd.getExams()[i];
+        }
 
         return *this;
     }
+
+    ~Student();
 
     void show();
 
@@ -57,6 +69,9 @@ public:
 
 
 private:
+
+    void init();
+
     std::string _firstName;
     std::string _lastName;
     std::string _middleName;

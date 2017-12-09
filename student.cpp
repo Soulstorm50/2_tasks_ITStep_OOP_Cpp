@@ -10,7 +10,7 @@ Student::Student() : _firstName("NoFirstName")
                    , _courseWorks(new int[10])
                    , _exams(new int[10])
 {
-
+    init();
 }
 
 Student::Student(  const std::string& lastName
@@ -25,7 +25,7 @@ Student::Student(  const std::string& lastName
                                     , _courseWorks(new int[10])
                                     , _exams(new int[10])
 {
-
+    init();
 }
 
 Student::Student(  const std::string& lastName
@@ -41,7 +41,7 @@ Student::Student(  const std::string& lastName
                                      , _courseWorks(new int[10])
                                      , _exams(new int[10])
 {
-
+    init();
 }
 
 Student::Student(const Student& student)
@@ -51,11 +51,19 @@ Student::Student(const Student& student)
                    , _dateOfBirth(student.getDateOfBirth())
                    , _address(student.getAddress())
                    , _phoneNumber(student.getPhoneNumber())
-                   , _credits(student.getCredits())
-                   , _courseWorks(student.getCourseWorks())
-                   , _exams(student.getExams())
 {
+    int sizeCredits = 20;
+    int sizeCourseExams = 10;
+    for(int i = 0; i < sizeCredits; i++)
+    {
+        _credits[i] = student.getCredits()[i];
+    }
 
+    for(int i = 0; i < sizeCourseExams; i++)
+    {
+        _courseWorks[i] = student.getCourseWorks()[i];
+        _exams[i] = student.getExams()[i];
+    }
 }
 
 Student::Student(const Student* student)
@@ -65,11 +73,26 @@ Student::Student(const Student* student)
                    , _dateOfBirth(student->getDateOfBirth())
                    , _address(student->getAddress())
                    , _phoneNumber(student->getPhoneNumber())
-                   , _credits(student.getCredits())
-                   , _courseWorks(student.getCourseWorks())
-                   , _exams(student.getExams())
 {
+    int sizeCredits = 20;
+    int sizeCourseExams = 10;
+    for(int i = 0; i < sizeCredits; i++)
+    {
+        _credits[i] = student->getCredits()[i];
+    }
 
+    for(int i = 0; i < sizeCourseExams; i++)
+    {
+        _courseWorks[i] = student->getCourseWorks()[i];
+        _exams[i] = student->getExams()[i];
+    }
+}
+
+Student::~Student()
+{
+    delete[] _credits;
+    delete[] _courseWorks;
+    delete[] _exams;
 }
 
 void Student::show()
@@ -172,6 +195,22 @@ int *Student::getExams() const
 void Student::setExams(int *exams)
 {
     _exams = exams;
+}
+
+void Student::init()
+{
+    int sizeCredits = 20;
+    int sizeCourseExams = 10;
+    for(int i = 0; i < sizeCredits; i++)
+    {
+        _credits[i] = 0;
+    }
+
+    for(int i = 0; i < sizeCourseExams; i++)
+    {
+        _courseWorks[i] = 0;
+        _exams[i] = 0;
+    }
 }
 
 
