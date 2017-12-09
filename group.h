@@ -5,6 +5,9 @@
 #include <iostream>
 #include <string.h>
 
+//TODO: replace all char* to string!
+//TODO: implement destructor!
+
 class Group
 {
 public:
@@ -15,7 +18,7 @@ public:
     void show();
     void add(const Student& student);
     void add(Student *student);
-    void merge(Group& group);
+    void merge(const Group& group);
     void moveStudent(  const char* lastName
                      , const char* firstName
                      , Group& group

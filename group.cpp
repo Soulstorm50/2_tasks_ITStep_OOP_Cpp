@@ -77,14 +77,19 @@ void Group::add(Student *student)
         tempStudentsArr[i] = _studentArray[i];
     }
 
+    //Student tempStudent = new Student
+
     tempStudentsArr[_totalStudents] = student;
     _studentArray = tempStudentsArr;
     _totalStudents++;
 }
 
-void Group::merge(Group& group)
+void Group::merge(const Group& group)
 {
     //слияния двух групп
+
+
+    _totalStudents += group.getTotalStudents();
 }
 
 void Group::moveStudent(const char* lastName

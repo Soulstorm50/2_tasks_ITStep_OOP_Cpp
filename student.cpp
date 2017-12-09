@@ -1,11 +1,11 @@
 #include "student.h"
 
-Student::Student() : _firstName((char*)"NoFirstName")
-                   , _lastName((char*)"NoLastName")
-                   , _middleName((char*)"NoMiddleName")
-                   , _dateOfBirth((char*)"01.01.1900")
-                   , _address((char*)"NoAddress")
-                   , _phoneNumber((char*)"NoPhoneNumber")
+Student::Student() : _firstName("NoFirstName")
+                   , _lastName("NoLastName")
+                   , _middleName("NoMiddleName")
+                   , _dateOfBirth("01.01.1900")
+                   , _address("NoAddress")
+                   , _phoneNumber("NoPhoneNumber")
                    , _credits(new int[20])
                    , _courseWorks(new int[10])
                    , _exams(new int[10])
@@ -13,13 +13,14 @@ Student::Student() : _firstName((char*)"NoFirstName")
 
 }
 
-Student::Student(char* lastName
-                 , char* firstName) : _firstName((char*)firstName)
-                                    , _lastName((char*)lastName)
-                                    , _middleName((char*)"NoMiddleName")
-                                    , _dateOfBirth((char*)"01.01.1900")
-                                    , _address((char*)"NoAddress")
-                                    , _phoneNumber((char*)"NoPhoneNumber")
+Student::Student(  const std::string& lastName
+                 , const std::string& firstName)
+                                    : _firstName(firstName)
+                                    , _lastName(lastName)
+                                    , _middleName("NoMiddleName")
+                                    , _dateOfBirth("01.01.1900")
+                                    , _address("NoAddress")
+                                    , _phoneNumber("NoPhoneNumber")
                                     , _credits(new int[20])
                                     , _courseWorks(new int[10])
                                     , _exams(new int[10])
@@ -27,14 +28,15 @@ Student::Student(char* lastName
 
 }
 
-Student::Student(char* lastName
-                , char* firstName
-                , char* dateOfBirth) : _firstName((char*)firstName)
-                                     , _lastName((char*)lastName)
-                                     , _middleName((char*)"NoMiddleName")
-                                     , _dateOfBirth((char*)dateOfBirth)
-                                     , _address((char*)"NoAddress")
-                                     , _phoneNumber((char*)"NoPhoneNumber")
+Student::Student(  const std::string& lastName
+                 , const std::string& firstName
+                 , const std::string& dateOfBirth)
+                                     : _firstName(firstName)
+                                     , _lastName(lastName)
+                                     , _middleName("NoMiddleName")
+                                     , _dateOfBirth(dateOfBirth)
+                                     , _address("NoAddress")
+                                     , _phoneNumber("NoPhoneNumber")
                                      , _credits(new int[20])
                                      , _courseWorks(new int[10])
                                      , _exams(new int[10])
@@ -56,6 +58,20 @@ Student::Student(const Student& student)
 
 }
 
+Student::Student(const Student* student)
+                   : _firstName(student->getFirstName())
+                   , _lastName(student->getLastName())
+                   , _middleName(student->getMiddleName())
+                   , _dateOfBirth(student->getDateOfBirth())
+                   , _address(student->getAddress())
+                   , _phoneNumber(student->getPhoneNumber())
+                   , _credits(student.getCredits())
+                   , _courseWorks(student.getCourseWorks())
+                   , _exams(student.getExams())
+{
+
+}
+
 void Student::show()
 {
     std::cout << "---------------Student info--------------"
@@ -68,62 +84,62 @@ void Student::show()
               << "Phone number:\t" << _phoneNumber << std::endl << std::endl;
 }
 
-char* Student::getFirstName() const
+const std::string Student::getFirstName() const
 {
     return _firstName;
 }
 
-void Student::setFirstName(char *firstName)
+void Student::setFirstName(const std::string& firstName)
 {
     _firstName = firstName;
 }
 
-char* Student::getLastName() const
+const std::string Student::getLastName() const
 {
     return _lastName;
 }
 
-void Student::setLastName(char *lastName)
+void Student::setLastName(const std::string& lastName)
 {
     _lastName = lastName;
 }
 
-char* Student::getMiddleName() const
+const std::string Student::getMiddleName() const
 {
     return _middleName;
 }
 
-void Student::setMiddleName(char *middleName)
+void Student::setMiddleName(const std::string& middleName)
 {
     _middleName = middleName;
 }
 
-char* Student::getDateOfBirth() const
+const std::string Student::getDateOfBirth() const
 {
     return _dateOfBirth;
 }
 
-void Student::setDateOfBirth(char *dateOfBirth)
+void Student::setDateOfBirth(const std::string& dateOfBirth)
 {
     _dateOfBirth = dateOfBirth;
 }
 
-char* Student::getAddress() const
+const std::string Student::getAddress() const
 {
     return _address;
 }
 
-void Student::setAddress(char *address)
+void Student::setAddress(const std::string& address)
 {
     _address = address;
 }
 
-char* Student::getPhoneNumber() const
+const std::string Student::getPhoneNumber() const
 {
     return _phoneNumber;
 }
 
-void Student::setPhoneNumber(char *phoneNumber)
+void Student::setPhoneNumber(const std::string& phoneNumber)
 {
     _phoneNumber = phoneNumber;
 }

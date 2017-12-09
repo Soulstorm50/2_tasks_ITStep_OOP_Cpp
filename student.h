@@ -2,15 +2,20 @@
 #define STUDENT_H
 
 #include <iostream>
+#include <string>
 
 
 class Student
 {
 public:
     Student();
-    Student(char* lastName, char* firstName);
-    Student(char* lastName, char* firstName, char* dateOfBirth);
+    Student(const std::string& lastName, const std::string& firstName);
+    Student(  const std::string& lastName
+            , const std::string& firstName
+            , const std::string& dateOfBirth
+            );
     Student(const Student& student);
+    Student(const Student* student);
     Student& operator=(const Student& student)
     {
 
@@ -30,40 +35,34 @@ public:
 
     void show();
 
-    char* getFirstName() const;
-    void setFirstName(char* firstName);
-
-    char* getLastName() const;
-    void setLastName(char* lastName);
-
-    char* getMiddleName() const;
-    void setMiddleName(char* middleName);
-
-    char* getDateOfBirth() const;
-    void setDateOfBirth(char* dateOfBirth);
-
-    char* getAddress() const;
-    void setAddress(char* address);
-
-    char* getPhoneNumber() const;
-    void setPhoneNumber(char* phoneNumber);
-
+    const std::string getFirstName() const;
+    const std::string getLastName() const;
+    const std::string getMiddleName() const;
+    const std::string getDateOfBirth() const;
+    const std::string getAddress() const;
+    const std::string getPhoneNumber() const;
     int *getCredits() const;
-    void setCredits(int* credits);
-
     int *getCourseWorks() const;
-    void setCourseWorks(int* courseWorks);
-
     int *getExams() const;
+
+    void setFirstName(const std::string& firstName);
+    void setLastName(const std::string& lastName);
+    void setMiddleName(const std::string& middleName);
+    void setDateOfBirth(const std::string& dateOfBirth);
+    void setAddress(const std::string& address);
+    void setPhoneNumber(const std::string& phoneNumber);
+    void setCredits(int* credits);
+    void setCourseWorks(int* courseWorks);
     void setExams(int* exams);
 
+
 private:
-    char* _firstName;
-    char* _lastName;
-    char* _middleName;
-    char* _dateOfBirth;
-    char* _address;
-    char* _phoneNumber;
+    std::string _firstName;
+    std::string _lastName;
+    std::string _middleName;
+    std::string _dateOfBirth;
+    std::string _address;
+    std::string _phoneNumber;
 
     int *_credits;
     int *_courseWorks;
