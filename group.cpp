@@ -33,7 +33,6 @@ Group::Group(unsigned int total) : _totalStudents(total)
 
 Group::Group(const Group& group)
 {
-    //TODO: Copy c-tor. Implement after getters and setters
     _studentArray = group.getStudentArray();
     _totalStudents = group.getTotalStudents();
     _groupName = group.getGroupName();

@@ -11,6 +11,22 @@ public:
     Student(char* lastName, char* firstName);
     Student(char* lastName, char* firstName, char* dateOfBirth);
     Student(const Student& student);
+    Student& operator=(const Student& student)
+    {
+
+        Student tempStd(student);
+        _firstName = tempStd.getFirstName();
+        _lastName = tempStd.getLastName();
+        _middleName = tempStd.getMiddleName();
+        _dateOfBirth = tempStd.getDateOfBirth();
+        _address = tempStd.getAddress();
+        _phoneNumber = tempStd.getPhoneNumber();
+        _credits = tempStd.getCredits();
+        _courseWorks = tempStd.getCourseWorks();
+        _exams = tempStd.getExams();
+
+        return *this;
+    }
 
     void show();
 
