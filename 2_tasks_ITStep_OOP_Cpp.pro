@@ -8,11 +8,13 @@ SOURCES += main.cpp \
     point.cpp \
     fraction.cpp \
     student.cpp \
-    group.cpp
+    group.cpp \
+    mystring.cpp
 
 HEADERS += \
     counter.h \
     point.h \
     fraction.h \
     student.h \
-    group.h
+    group.h \
+    mystring.h
