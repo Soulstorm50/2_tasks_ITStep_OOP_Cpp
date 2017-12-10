@@ -143,6 +143,39 @@ void Group::dismissAllNotPassedStudents()
 void Group::dismissMostUnsuccesfulStudent()
 {
     //отчисления одного самого неуспевающего студента
+    int minScore = 240;
+    int mark = 0;
+    int count = 0;
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        if(getAverageScore(_studentArray[i]) < minScore)
+        {
+            minScore = getAverageScore(_studentArray[i]);
+        }
+    }
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        if(getAverageScore(_studentArray[i]) == minScore)
+        {
+            mark = i;
+        }
+    }
+
+    Student **tempStudentsArr = new Student*[_totalStudents - 1];
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        if(i == mark)
+        {
+            delete _studentArray[i];
+        }
+        else
+        {
+            tempStudentsArr[count] = _studentArray[i];
+            count++;
+        }
+    }
+    _studentArray = tempStudentsArr;
+    _totalStudents--;
 }
 
 Student** Group::getStudentArray() const
@@ -197,17 +230,20 @@ void Group::setCourseNumber(int courseNumber)
 
 void Group::sort()
 {
+    char* word1;
+    char* word2;
     for(int i = 0 ; i < _totalStudents; i++)
     {
         for(int j = i + 1; j < _totalStudents; j++)
         {
-//            if(strcmp(  _studentArray[i]->getLastName()
-//                      , _studentArray[j]->getLastName()) > 0)
-//            {
-//                Student *tmpStudent = _studentArray[i];
-//                _studentArray[i] = _studentArray[j];
-//                _studentArray[j] = tmpStudent;
-//            }
+            word1 = const_cast<char*>(_studentArray[i]->getLastName().c_str());
+            word2 = const_cast<char*>(_studentArray[j]->getLastName().c_str());
+            if(strcmp( word1, word2) > 0)
+            {
+                Student *tmpStudent = _studentArray[i];
+                _studentArray[i] = _studentArray[j];
+                _studentArray[j] = tmpStudent;
+            }
         }
     }
 }
@@ -236,4 +272,15 @@ bool Group::isSessionPass(Student *student)
     }
 
     return result;
+}
+
+int Group::getAverageScore(Student *student)
+{
+    int total = 0;
+    for(int i = 0; i < 20; i++)
+    {
+        total += student->getCredits()[i];
+    }
+
+    return total / 20;
 }

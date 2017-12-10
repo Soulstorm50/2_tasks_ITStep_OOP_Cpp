@@ -45,6 +45,7 @@ private:
     void sort();
     void init();
     bool isSessionPass(Student *student);
+    int getAverageScore(Student *student);
 
     Student** _studentArray;
     int _totalStudents;

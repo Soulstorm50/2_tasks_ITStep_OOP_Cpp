@@ -13,15 +13,15 @@ int main()
     Student *student3 = new Student("Jackson", "Mikhael");
     for(int i=0; i<10; i++)
     {
-        student2->getExams()[i] = 12;
+        student2->getCredits()[i] = 12;
     }
     for(int i=0; i<10; i++)
     {
-        student1->getExams()[i] = 1;
+        student1->getCredits()[i] = 1;
     }
     for(int i=0; i<10; i++)
     {
-        student3->getExams()[i] = 10;
+        student3->getCredits()[i] = 10;
     }
 
     Group group1;
@@ -30,7 +30,7 @@ int main()
     group1.add(student2);
     group1.add(student3);
 
-    group1.dismissAllNotPassedStudents();
+    group1.dismissMostUnsuccesfulStudent();
 
 
     group1.show();
