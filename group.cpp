@@ -83,7 +83,6 @@ void Group::add(Student *student)
 
 void Group::merge(const Group& group)
 {
-    //слияния двух групп
     for(int i = 0; i < group.getTotalStudents(); i++)
     {
         add(group.getStudentArray()[i]);
@@ -107,7 +106,38 @@ void Group::moveStudent(const char* lastName
 
 void Group::dismissAllNotPassedStudents()
 {
-    //отчисления всех не сдавших сессию студентов
+    int statusStud[_totalStudents];
+    int newTotalStudents = _totalStudents;
+    int count = 0;
+
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        if(!(isSessionPass(_studentArray[i])))
+        {
+            statusStud[i] = 0;
+            newTotalStudents--;
+        }
+        else
+        {
+            statusStud[i] = 1;
+        }
+    }
+
+    Student **tempStudentsArr = new Student*[newTotalStudents];
+    for(int i = 0; i < _totalStudents; i++)
+    {
+        if(statusStud[i] == 1)
+        {
+            tempStudentsArr[count] = _studentArray[i];
+            count++;
+        }
+        else if(statusStud[i] == 0)
+        {
+            delete _studentArray[i];
+        }
+    }
+    _studentArray = tempStudentsArr;
+    _totalStudents = newTotalStudents;
 }
 
 void Group::dismissMostUnsuccesfulStudent()
@@ -190,4 +220,20 @@ void Group::init()
     {
         _studentArray[i] = new Student();
     }
+}
+
+bool Group::isSessionPass(Student *student)
+{
+    bool result = true;
+
+    for(int i = 0; i < 10; i++)
+    {
+        if(student->getExams()[i] <= 5)
+        {
+            result = false;
+            break;
+        }
+    }
+
+    return result;
 }

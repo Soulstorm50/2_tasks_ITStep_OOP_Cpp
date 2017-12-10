@@ -44,6 +44,7 @@ private:
 
     void sort();
     void init();
+    bool isSessionPass(Student *student);
 
     Student** _studentArray;
     int _totalStudents;
