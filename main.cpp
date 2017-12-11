@@ -17,7 +17,7 @@ int main()
 
     str.Concat(2.1134);
 
-    str.Print();
+    str.PrintLn();
 
 
 
