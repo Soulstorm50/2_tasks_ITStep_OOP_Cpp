@@ -17,7 +17,8 @@ public:
     void PrintLn();
     void GetLine();
     const char* GetCharArray() const;
-    int CompareTo(MyString str)const ;
+    int CompareTo(const MyString& str) const;
+    int CompareTo(const char* str) const;
     void Concat(MyString str);
     void Concat(char* str);
     void Concat(int value);

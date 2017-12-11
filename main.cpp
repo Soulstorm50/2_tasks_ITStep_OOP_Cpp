@@ -10,15 +10,16 @@ int main()
     cout << "Hello ITStep!" << endl;
 
 
-    char* word = "hell2";
+    char* word = "helo";
+    char* word2 = "hell";
     MyString str(word);
 
-    str.GetLine();
 
-    cout << str.sizeOf() << endl;
 
-    cout << str.GetCharAt(1) << endl;
     str.PrintLn();
+
+
+    cout << str.CompareTo(word2) << endl;
 
 
 
