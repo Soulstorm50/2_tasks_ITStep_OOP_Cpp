@@ -13,13 +13,12 @@ int main()
     char* word = "helo";
     char* word2 = "hell";
     MyString str(word);
+    MyString str2(word2);
 
+    str.Concat(str2);
 
+    str.Print();
 
-    str.PrintLn();
-
-
-    cout << str.CompareTo(word2) << endl;
 
 
 

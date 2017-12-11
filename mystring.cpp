@@ -155,9 +155,27 @@ int MyString::CompareTo(const char* str) const
     return result;
 }
 
-void MyString::Concat(MyString str)
+void MyString::Concat(const MyString& str)
 {
-    //TODO:присоединить к нашей строке переданную строку
+    int allCapacity = _capacity + str.sizeOf();
+    char* tempStr = new char[allCapacity];
+
+    for(int i = 0; i < allCapacity; i++)
+    {
+        if(i < _capacity)
+        {
+            tempStr[i] = _string[i];
+        }
+        else if(i >= _capacity)
+        {
+            tempStr[i] = str.GetCharAt(1 + i - _capacity);
+        }
+    }
+
+    delete[] _string;
+    _string = tempStr;
+    _capacity = allCapacity;
+    _string[allCapacity] = '\0';
 }
 
 void MyString::Concat(char *str)

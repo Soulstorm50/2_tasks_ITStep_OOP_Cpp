@@ -19,7 +19,7 @@ public:
     const char* GetCharArray() const;
     int CompareTo(const MyString& str) const;
     int CompareTo(const char* str) const;
-    void Concat(MyString str);
+    void Concat(const MyString& str);
     void Concat(char* str);
     void Concat(int value);
     void Concat(double value);
