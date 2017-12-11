@@ -1,44 +1,82 @@
 #include "mystring.h"
 
-MyString::MyString() : _string(new char[1])
+MyString::MyString() : _string(""), _capacity(0)
 {
-    //TODO:
-    _string[0] = '\0';
 }
 
-//TODO: применить в конструкторах инициализаторы / делегирование (вместо функции Initialize)
-MyString::MyString(unsigned int capacity)
+MyString::MyString(unsigned int capacity) : _capacity(capacity)
 {
-    //TODO:
+    for(unsigned int i = 0; i < capacity; i++)
+    {
+        _string[i] = ' ';
+    }
 }
 
-char MyString::GetCharAt(unsigned int index)
+MyString::MyString(const MyString& word) : _capacity(word.sizeOf())
 {
-    //TODO:добавить публичный метод char GetCharAt(unsigned int index),
-    //который вернёт символ строки по указанной позиции
+    _string = const_cast<char*>(word.GetCharArray());
+}
+
+MyString::MyString(const char* word)
+{
+    _string = const_cast<char*>(word);
+
+    _capacity = 0;
+    while (*word != '\0')
+    {
+        word++;
+        _capacity++;
+    }
+}
+
+char MyString::GetCharAt(unsigned int index) const
+{
+    return _string[index - 1];
 }
 
 void MyString::Print()
 {
-    //TODO:показ строки на экран
+    printf(_string);
 }
 
 void MyString::PrintLn()
 {
-    //TODO:показ строки на экран с переводом курсора на следующую строку
+    printf(_string);
+    printf("\n");
 }
 
 void MyString::GetLine()
 {
-    //TODO:ввод строки с клавиатуры
+    char buffer[160];
+
+    gets(buffer);
+
+    int index = 0;
+
+    _capacity = 0;
+
+    while (buffer[index] != '\0')
+    {
+        index++;
+        _capacity++;
+    }
+
+    delete[] _string;
+
+    _string = new char[_capacity];
+
+    for(unsigned int i = 0; i < _capacity; i++)
+    {
+        _string[i] = buffer[i];
+    }
 }
 
-const char *MyString::GetCharArray() const
+const char* MyString::GetCharArray() const
 {
-    //TODO:возврат константного указателя на массив символов строки
+    return _string;
 }
 
-int MyString::CompareTo(MyString str)
+int MyString::CompareTo(MyString str) const
 {
     //TODO:сравнение нашей строки с какой-то другой строкой
     //Добавить версию int CompareTo(char*)
@@ -62,4 +100,9 @@ void MyString::Concat(int value)
 void MyString::Concat(double value)
 {
 
+}
+
+int MyString::sizeOf() const
+{
+    return _capacity;
 }
