@@ -15,7 +15,7 @@ int main()
     MyString str(word);
     MyString str2(word2);
 
-    str.Concat(str2);
+    str.Concat(2.1134);
 
     str.Print();
 

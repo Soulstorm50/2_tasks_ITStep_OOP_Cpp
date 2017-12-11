@@ -1,6 +1,4 @@
 #include "mystring.h"
-#include <stdio.h>
-#include <string.h>
 
 MyString::MyString() : _string(""), _capacity(0)
 {
@@ -180,17 +178,47 @@ void MyString::Concat(const MyString& str)
 
 void MyString::Concat(char *str)
 {
+    int indexStrLength = 0;
+    while (str[indexStrLength] != '\0')
+    {
+        indexStrLength++;
+    }
 
+    int allCapacity = _capacity + indexStrLength;
+    char* tempStr = new char[allCapacity];
+
+    for(int i = 0; i < allCapacity; i++)
+    {
+        if(i < _capacity)
+        {
+            tempStr[i] = _string[i];
+        }
+        else if(i >= _capacity)
+        {
+            tempStr[i] = str[i - _capacity];
+        }
+    }
+
+    delete[] _string;
+    _string = tempStr;
+    _capacity = allCapacity;
+    _string[allCapacity] = '\0';
 }
 
 void MyString::Concat(int value)
 {
+    char txt[16];
+    sprintf(txt, "%d", value);
 
+    Concat(txt);
 }
 
 void MyString::Concat(double value)
 {
+    char txt[16];
+    sprintf(txt, "%g", value);
 
+    Concat(txt);
 }
 
 int MyString::sizeOf() const

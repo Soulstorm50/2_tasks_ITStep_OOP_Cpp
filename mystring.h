@@ -2,6 +2,8 @@
 #define MYSTRING_H
 
 #include <iostream>
+//#include <stdio.h>
+//#include <string.h>
 
 class MyString
 {
