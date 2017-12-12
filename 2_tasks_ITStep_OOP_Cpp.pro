@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     fraction.cpp \
     student.cpp \
     group.cpp \
-    mystring.cpp
+    mystring.cpp \
+    date.cpp
 
 HEADERS += \
     counter.h \
@@ -17,4 +18,5 @@ HEADERS += \
     fraction.h \
     student.h \
     group.h \
-    mystring.h
+    mystring.h \
+    date.h

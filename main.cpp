@@ -3,6 +3,10 @@
 #include "group.h"
 #include "mystring.h"
 
+#include <ctime>
+
+#include "date.h"
+
 using namespace std;
 
 int main()
@@ -18,6 +22,21 @@ int main()
     str.Concat(2.1134);
 
     str.PrintLn();
+
+
+
+    Date date;
+
+    Date date2(12, 12, 2016);
+
+    int diff = date - date2;
+    cout << diff << endl;
+
+
+
+
+
+
 
 
 
