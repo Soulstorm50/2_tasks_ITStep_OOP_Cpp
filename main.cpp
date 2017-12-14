@@ -27,10 +27,12 @@ int main()
 
     Date date;
 
-    Date date2(12, 12, 2016);
+    Date date2(31, 12, 2016);
 
-    int diff = date - date2;
-    cout << diff << endl;
+    bool res = date2 != date;
+
+
+    cout << res << endl;
 
 
 

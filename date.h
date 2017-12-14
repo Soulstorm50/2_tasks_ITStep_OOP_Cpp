@@ -11,10 +11,16 @@ public:
     Date(unsigned int day, unsigned int month, unsigned int year);
 
     char* DayOfWeek() const;
-    //TODO:метод изменения даты на заданное количество дней (перегруженный бинарный оператор «+»);
-    void PrintDate(); //TODO:метод вывода даты на экран
-    //TODO:перегруженные операции «++», «--», «>», «<», «==», «!=».
-    int operator-(const Date& date);
+    void PrintDate();
+
+    int operator -(const Date& date);
+    void operator +(unsigned int days);
+    void operator ++(int);
+    void operator --(int);
+    bool operator >(const Date& date);
+    bool operator <(const Date& date);
+    bool operator ==(const Date& date);
+    bool operator !=(const Date& date);
 
 
     unsigned int getDay() const;
