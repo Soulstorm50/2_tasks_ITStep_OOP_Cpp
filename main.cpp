@@ -4,7 +4,8 @@
 #include "mystring.h"
 
 
-#include "date.h"
+
+
 
 using namespace std;
 
@@ -23,15 +24,6 @@ int main()
     str.PrintLn();
 
 
-
-    Date date;
-
-    Date date2(31, 12, 2016);
-
-    bool res = date2 != date;
-
-
-    cout << res << endl;
 
 
 
