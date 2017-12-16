@@ -10,7 +10,8 @@ SOURCES += main.cpp \
     student.cpp \
     group.cpp \
     mystring.cpp \
-    date.cpp
+    date.cpp \
+    soulstime.cpp
 
 HEADERS += \
     counter.h \
@@ -19,4 +20,5 @@ HEADERS += \
     student.h \
     group.h \
     mystring.h \
-    date.h
+    date.h \
+    soulstime.h

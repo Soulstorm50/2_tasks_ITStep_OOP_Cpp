@@ -3,7 +3,6 @@
 #include "group.h"
 #include "mystring.h"
 
-#include <ctime>
 
 #include "date.h"
 
