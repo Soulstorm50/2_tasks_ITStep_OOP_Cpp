@@ -94,6 +94,92 @@ Student::Student(const Student* student)
     }
 }
 
+Student &Student::operator=(const Student& student)
+{
+    Student tempStd(student);
+    _firstName = tempStd.getFirstName();
+    _lastName = tempStd.getLastName();
+    _middleName = tempStd.getMiddleName();
+    _dateOfBirth = tempStd.getDateOfBirth();
+    _address = tempStd.getAddress();
+    _phoneNumber = tempStd.getPhoneNumber();
+
+    int sizeCredits = 20;
+    int sizeCourseExams = 10;
+    for(int i = 0; i < sizeCredits; i++)
+    {
+        _credits[i] = tempStd.getCredits()[i];
+    }
+
+    for(int i = 0; i < sizeCourseExams; i++)
+    {
+        _courseWorks[i] = tempStd.getCourseWorks()[i];
+        _exams[i] = tempStd.getExams()[i];
+    }
+
+    return *this;
+}
+
+void Student::operator +=(int credit)
+{
+    for(int i = 0; i < 20; i++)
+    {
+        if(_credits[i] == 0)
+        {
+            _credits[i] = credit;
+            break;
+        }
+    }
+}
+
+bool Student::operator >(const Student& student)
+{
+    bool result = false;
+
+    if(getAverageScore() > student.getAverageScore())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool Student::operator <(const Student &student)
+{
+    bool result = false;
+
+    if(getAverageScore() < student.getAverageScore())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool Student::operator ==(const Student &student)
+{
+    bool result = false;
+
+    if(getAverageScore() == student.getAverageScore())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool Student::operator !=(const Student &student)
+{
+    bool result = false;
+
+    if(getAverageScore() != student.getAverageScore())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
 Student::~Student()
 {
     delete[] _credits;
@@ -111,6 +197,18 @@ void Student::show()
               << "Date of birth:\t" << _dateOfBirth << std::endl
               << "Address:\t" << _address << std::endl
               << "Phone number:\t" << _phoneNumber << std::endl << std::endl;
+}
+
+double Student::getAverageScore() const
+{
+    int total = 0;
+
+    for(int i = 0; i < 20; i++)
+    {
+        total += _credits[i];
+    }
+
+    return (double)total / 20.0;
 }
 
 const std::string Student::getFirstName() const

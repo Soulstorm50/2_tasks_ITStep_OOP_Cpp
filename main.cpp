@@ -16,25 +16,14 @@ int main()
     cout << "Hello ITStep!" << endl;
 
 
-    char* word = "helo";
-    char* word2 = "hell";
-    MyString str(word);
-    MyString str2(word2);
+    Student student1;
 
-    str.Concat(2.1134);
+    student1 += 10;
 
-    str.PrintLn();
+    student1.show();
 
-
-    SoulsTime time(0, 0, 0);
-    SoulsTime time2(0, 0, 0);
-
-    cout << "time1: " << time.timeOfDay() << endl;
-
-    cout << "time2: " << time2.timeOfDay() << endl;
-
-    bool res = time != time2;
-    cout << res << endl;
+    cout << endl;
+    cout << student1.getAverageScore();
 
 
     return 0;

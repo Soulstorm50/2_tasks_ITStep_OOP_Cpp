@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 
-
 class Student
 {
 public:
@@ -16,37 +15,19 @@ public:
             );
     Student(const Student& student);
     Student(const Student* student);
-    Student& operator=(const Student& student)
-    {
 
-        Student tempStd(student);
-        _firstName = tempStd.getFirstName();
-        _lastName = tempStd.getLastName();
-        _middleName = tempStd.getMiddleName();
-        _dateOfBirth = tempStd.getDateOfBirth();
-        _address = tempStd.getAddress();
-        _phoneNumber = tempStd.getPhoneNumber();
+    Student& operator =(const Student& student);
 
-        int sizeCredits = 20;
-        int sizeCourseExams = 10;
-        for(int i = 0; i < sizeCredits; i++)
-        {
-            _credits[i] = tempStd.getCredits()[i];
-        }
-
-        for(int i = 0; i < sizeCourseExams; i++)
-        {
-            _courseWorks[i] = tempStd.getCourseWorks()[i];
-            _exams[i] = tempStd.getExams()[i];
-        }
-
-        return *this;
-    }
+    void operator +=(int credit);
+    bool operator >(const Student& student);
+    bool operator <(const Student& student);
+    bool operator ==(const Student& student);
+    bool operator !=(const Student& student);
 
     ~Student();
 
     void show();
-
+    double getAverageScore() const;
     const std::string getFirstName() const;
     const std::string getLastName() const;
     const std::string getMiddleName() const;
