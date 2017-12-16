@@ -26,20 +26,15 @@ int main()
     str.PrintLn();
 
 
-    SoulsTime time(23,20, 19);
+    SoulsTime time(0, 0, 0);
+    SoulsTime time2(0, 0, 0);
 
-    time.printTime();
+    cout << "time1: " << time.timeOfDay() << endl;
 
-    cout << endl;
+    cout << "time2: " << time2.timeOfDay() << endl;
 
-
-    time + 65;
-
-    cout << time.timeOfDay() << endl;
-
-
-
-
+    bool res = time != time2;
+    cout << res << endl;
 
 
     return 0;

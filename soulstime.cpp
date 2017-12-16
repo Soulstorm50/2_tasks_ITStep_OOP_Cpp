@@ -95,6 +95,71 @@ void SoulsTime::operator +(unsigned int sec)
     _seconds = _seconds%60;
 }
 
+void SoulsTime::operator ++(int)
+{
+    _seconds++;
+
+    if(_seconds >= 60)
+    {
+        _seconds = _seconds%60;
+        _minutes++;
+
+        if(_minutes >= 60)
+        {
+            _minutes = _minutes%60;
+            _hours++;
+            _hours = _hours%24;
+        }
+    }
+}
+
+void SoulsTime::operator --(int)
+{
+    _seconds--;
+
+    if(_seconds < 0)
+    {
+        _seconds += 60;
+        _minutes--;
+
+        if(_minutes < 0)
+        {
+
+            _minutes += 60;
+            _hours--;
+            _hours += 24;
+        }
+    }
+}
+
+bool SoulsTime::operator ==(const SoulsTime& time)
+{
+    bool result = false;
+
+    if(_hours == time.getHours()
+            && _minutes == time.getMinutes()
+            && _seconds == time.getSeconds() )
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool SoulsTime::operator !=(const SoulsTime &time)
+{
+    bool result = false;
+
+    if(_hours != time.getHours()
+            && _minutes != time.getMinutes()
+            && _seconds != time.getSeconds() )
+    {
+        result = true;
+    }
+
+    return result;
+}
+
 char* SoulsTime::timeOfDay() const
 {
     char* hours = new char[2];
