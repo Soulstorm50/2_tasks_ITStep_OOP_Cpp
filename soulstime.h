@@ -10,20 +10,29 @@ public:
     SoulsTime();
     SoulsTime(unsigned int hours, unsigned int min, unsigned int sec);
 
-    //константный метод char *TimeOfDay() const;
-    //конструктор по умолчанию Time() (текущее время);
-    //конструктор с параметрами Time(int sec, int min, int hour);
-    //необходимые сеттеры и геттеры для полей;
-    //метод изменения времени на заданное количество секунд (перегруженный бинарный оператор «+»);
-    //метод вывода времени на экран void PrintTime();
-    //перегруженные операции «++», «--», «>», «<», «==», «!=».
+    void operator -(unsigned int sec);
+    void operator +(unsigned int sec);
+    void operator ++(int);
+    void operator --(int);
+    void operator >(const SoulsTime& time);
+    void operator <(const SoulsTime& time);
+    bool operator ==(const SoulsTime& time);
+    bool operator !=(const SoulsTime& time);
 
+    char* timeOfDay() const;
+    void printTime();
+
+    int getHours() const;
+    int getMinutes() const;
+    int getSeconds() const;
+
+    void setTime(unsigned int hours, unsigned int min, unsigned int sec);
 
 private:
 
-    unsigned int _seconds;
-    unsigned int _minutes;
-    unsigned int _hours;
+    int _seconds;
+    int _minutes;
+    int _hours;
 
 };
 

@@ -3,6 +3,8 @@
 #include "group.h"
 #include "mystring.h"
 
+#include "soulstime.h"
+
 
 
 
@@ -24,43 +26,21 @@ int main()
     str.PrintLn();
 
 
+    SoulsTime time(23,20, 19);
+
+    time.printTime();
+
+    cout << endl;
+
+
+    time + 65;
+
+    cout << time.timeOfDay() << endl;
 
 
 
 
 
 
-
-
-
-
-
-
-//    Student *student1 = new Student("Petrov", "Petr");
-//    Student *student2 = new Student("Sidorov", "Sidr");
-//    Student *student3 = new Student("Jackson", "Mikhael");
-//    for(int i=0; i<10; i++)
-//    {
-//        student2->getCredits()[i] = 12;
-//    }
-//    for(int i=0; i<10; i++)
-//    {
-//        student1->getCredits()[i] = 1;
-//    }
-//    for(int i=0; i<10; i++)
-//    {
-//        student3->getCredits()[i] = 10;
-//    }
-
-//    Group group1;
-
-//    group1.add(student1);
-//    group1.add(student2);
-//    group1.add(student3);
-
-//    group1.dismissMostUnsuccesfulStudent();
-
-
-//    group1.show();
     return 0;
 }
