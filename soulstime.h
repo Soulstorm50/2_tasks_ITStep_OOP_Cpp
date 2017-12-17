@@ -4,6 +4,8 @@
 #include <ctime>
 #include <iostream>
 
+//5.5 Добавить в класс Date и Time перегрузки: перегруженные операции >>, << и ( )
+
 class SoulsTime
 {
 public:

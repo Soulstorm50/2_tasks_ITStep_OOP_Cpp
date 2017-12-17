@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+//5.6 В класс Student и Group добавить перегрузку >>, <<, ( ) и =.
+
 class Student
 {
 public:
