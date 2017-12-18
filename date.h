@@ -4,7 +4,6 @@
 #include <ctime>
 #include <iostream>
 
-
 //5.5 Добавить в класс Date и Time перегрузки: перегруженные операции >>, << и ( )
 
 class Date
@@ -24,6 +23,10 @@ public:
     bool operator <(const Date& date);
     bool operator ==(const Date& date);
     bool operator !=(const Date& date);
+
+    operator int();
+    operator double();
+    std::istream& operator >>(std::istream& is, Date& dt);
 
 
     unsigned int getDay() const;

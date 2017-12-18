@@ -4,11 +4,12 @@
 #include "mystring.h"
 
 #include "soulstime.h"
+#include "date.h"
 
 
 
 
-
+#include <ctime>
 using namespace std;
 
 int main()
@@ -16,14 +17,16 @@ int main()
     cout << "Hello ITStep!" << endl;
 
 
-    Student student1;
+    Date date(01, 6, 1971);
 
-    student1 += 10;
+    date >> 01,01,1970;
 
-    student1.show();
+    double a = (double)date;
 
-    cout << endl;
-    cout << student1.getAverageScore();
+    cout << a << endl;
+
+
+
 
 
     return 0;

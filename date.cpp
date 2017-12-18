@@ -146,7 +146,7 @@ bool Date::operator ==(const Date& date)
     return result;
 }
 
-bool Date::operator !=(const Date &date)
+bool Date::operator !=(const Date& date)
 {
     bool result = false;
 
@@ -156,6 +156,22 @@ bool Date::operator !=(const Date &date)
     }
 
     return result;
+}
+
+std::istream& Date::operator >>(std::istream& is, Date &dt)
+{
+    is >> dt.getDay() << dt.getMonth() << dt.getYear();
+    return is;
+}
+
+Date::operator double()
+{
+    return (double)getTotalDays();
+}
+
+Date::operator int()
+{
+    return getTotalDays();
 }
 
 unsigned int Date::getDay() const
