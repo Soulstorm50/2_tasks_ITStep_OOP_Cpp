@@ -18,12 +18,20 @@ int main()
 
 
     Date date(01, 6, 1971);
+    Date date2(12, 12, 2016);
 
-    date >> 01,01,1970;
 
-    double a = (double)date;
 
-    cout << a << endl;
+    cout << date;
+
+    cout << "Test\n";
+
+
+    cin >> date2;
+
+    cout << date2 << "\n";
+
+
 
 
 

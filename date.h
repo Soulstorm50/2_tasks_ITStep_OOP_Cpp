@@ -26,8 +26,23 @@ public:
 
     operator int();
     operator double();
-    std::istream& operator >>(std::istream& is, Date& dt);
 
+    friend std::istream& operator >>(std::istream& is, Date& date)
+    {
+        char input[11];
+        is >> input;
+        scanf(input, "%04d-%02d-%02d", date.getYear(), date.getMonth(), date.getDay());
+
+        is.clear();
+        return is;
+
+
+
+    }
+    friend std::ostream& operator <<(std::ostream& out, Date const& date)
+    {
+       return out << date.getDay() << "-" << date.getMonth() << "-" << date.getYear();
+    }
 
     unsigned int getDay() const;
     unsigned int getMonth() const;
