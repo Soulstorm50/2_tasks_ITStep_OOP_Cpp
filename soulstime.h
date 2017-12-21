@@ -4,8 +4,6 @@
 #include <ctime>
 #include <iostream>
 
-//5.5 Добавить в класс Date и Time перегрузки: перегруженные операции >>, << и ( )
-
 class SoulsTime
 {
 public:
@@ -20,6 +18,57 @@ public:
     void operator <(const SoulsTime& time);
     bool operator ==(const SoulsTime& time);
     bool operator !=(const SoulsTime& time);
+
+    operator int();
+    operator double();
+
+    friend std::istream& operator >>(std::istream& is, SoulsTime& time)
+    {
+        char* input = new char[9];
+
+        char* hours = new char[3];
+        char* min = new char[3];
+        char* sec = new char[3];
+
+        int hh;
+        int mm;
+        int ss;
+
+        is >> input;
+
+        hours[0] = input[0];
+        hours[1] = input[1];
+        hours[2] = '\0';
+
+        min[0] = input[3];
+        min[1] = input[4];
+        min[2] = '\0';
+
+        sec[0] = input[6];
+        sec[1] = input[7];
+        sec[4] = '\0';
+
+        hh = atoi(hours);
+        mm = atoi(min);
+        ss = atoi(sec);
+
+        time.setTime(hh, mm, ss);
+
+        is.clear();
+        delete[] input;
+        delete[] hours;
+        delete[] min;
+        delete[] sec;
+
+        return is;
+
+    }
+    friend std::ostream& operator <<(std::ostream& out, SoulsTime const& time)
+    {
+        return out << time.getHours() << ":"
+                   << time.getMinutes() << ":"
+                   << time.getSeconds();
+    }
 
     char* timeOfDay() const;
     void printTime();

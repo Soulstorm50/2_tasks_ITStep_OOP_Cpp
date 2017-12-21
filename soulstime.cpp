@@ -160,6 +160,18 @@ bool SoulsTime::operator !=(const SoulsTime &time)
     return result;
 }
 
+SoulsTime::operator double()
+{
+    int result = getSeconds() + (getMinutes() * 60) + (getHours() * 3600);
+
+    return result;
+}
+
+SoulsTime::operator int()
+{
+    return getSeconds() + (getMinutes() * 60) + (getHours() * 3600);
+}
+
 char* SoulsTime::timeOfDay() const
 {
     char* hours = new char[2];

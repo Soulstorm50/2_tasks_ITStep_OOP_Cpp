@@ -13,31 +13,20 @@
 using namespace std;
 
 int main()
-{
-    cout << "Hello ITStep!" << endl;
+{   
+
+    SoulsTime time1(16, 20, 30);
+
+    time1.printTime();
+
+    cout << endl;
 
 
-    Date date(01, 6, 1971);
-    Date date2(12, 12, 2016);
+    cin >> time1;
 
+    time1.printTime();
 
-
-    cout << date;
-
-    cout << "Test\n";
-
-
-    cin >> date2;
-
-    cout << date << "\n";
-
-
-    date2.PrintDate();
-
-
-
-
-
+    cout << endl;
 
 
 
