@@ -29,6 +29,109 @@ MyString::MyString(const char* word)
     }
 }
 
+MyString& MyString::operator =(const MyString& word)
+{
+    MyString tempMyString(word);
+
+    _string = const_cast<char*>(tempMyString.GetCharArray());
+
+    return *this;
+}
+
+bool MyString::operator ==(const MyString& word)
+{
+    bool result = true;
+
+    if(sizeOf() != word.sizeOf())
+    {
+        result = false;
+    }
+    else
+    {
+        for(int i = 1; i < sizeOf() + 1; i++)
+        {
+            if(GetCharAt(i) != word.GetCharAt(i))
+            {
+                result = false;
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
+bool MyString::operator >(const MyString& word)
+{
+    bool result = false;
+
+    if(sizeOf() > word.sizeOf())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool MyString::operator <(const MyString& word)
+{
+    bool result = false;
+
+    if(sizeOf() < word.sizeOf())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool MyString::operator <=(const MyString& word)
+{
+    bool result = false;
+
+    if(sizeOf() <= word.sizeOf())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool MyString::operator >=(const MyString& word)
+{
+    bool result = false;
+
+    if(sizeOf() >= word.sizeOf())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool MyString::operator !=(const MyString &word)
+{
+    bool result = false;
+
+    if(sizeOf() != word.sizeOf())
+    {
+        result = true;
+    }
+    else
+    {
+        for(int i = 1; i < sizeOf() + 1; i++)
+        {
+            if(GetCharAt(i) != word.GetCharAt(i))
+            {
+                result = true;
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
 MyString::~MyString()
 {
     delete[] _string;

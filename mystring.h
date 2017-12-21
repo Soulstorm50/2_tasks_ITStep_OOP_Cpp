@@ -5,14 +5,8 @@
 
 //5.8 В класс String добавить:
 
-//перегрузка операции =
-//перегрузка операции == (лексикографическое сравнение двух строк)
-//перегрузка операции >
-//перегрузка операции <
-//перегрузка операции >=
-//перегрузка операции <=
-//перегрузка операции !=
-//перегрузка () (повторная инициализация строки)
+
+
 //перегрузка [] (доступ к элементу строки по индексу, предусмотреть возможность обращения к несуществующему элементу.
 //перегрузка операции + (String + String)
 //перегрузка операции += (конкатенация String)
@@ -34,6 +28,20 @@ public:
     explicit MyString(unsigned int capacity);
     explicit MyString(const MyString& word);
     explicit MyString(const char* word);
+
+    MyString& operator =(const MyString& word);
+    bool operator ==(const MyString& word);
+    bool operator >(const MyString& word);
+    bool operator <(const MyString& word);
+    bool operator <=(const MyString& word);
+    bool operator >=(const MyString& word);
+    bool operator !=(const MyString& word);
+    //перегрузка () (повторная инициализация строки)
+
+
+
+
+
 
     ~MyString();
 

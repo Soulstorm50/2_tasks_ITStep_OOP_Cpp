@@ -14,8 +14,8 @@ public:
     void operator +(unsigned int sec);
     void operator ++(int);
     void operator --(int);
-    void operator >(const SoulsTime& time);
-    void operator <(const SoulsTime& time);
+    void operator >(const SoulsTime& time);  //TODO: fix, implement!
+    void operator <(const SoulsTime& time);  //TODO: fix, implement!
     bool operator ==(const SoulsTime& time);
     bool operator !=(const SoulsTime& time);
 

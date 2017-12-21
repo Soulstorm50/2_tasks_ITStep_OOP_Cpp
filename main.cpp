@@ -15,18 +15,19 @@ using namespace std;
 int main()
 {   
 
-    SoulsTime time1(16, 20, 30);
+    MyString str("hell");
+    MyString str2("Hello");
 
-    time1.printTime();
-
-    cout << endl;
+    bool res = str < str2;
 
 
-    cin >> time1;
+    cout << res << endl;
 
-    time1.printTime();
 
-    cout << endl;
+
+
+
+
 
 
 
