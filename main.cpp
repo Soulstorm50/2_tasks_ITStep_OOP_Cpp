@@ -29,7 +29,12 @@ int main()
 
     cin >> date2;
 
-    cout << date2 << "\n";
+    cout << date << "\n";
+
+
+    date2.PrintDate();
+
+
 
 
 

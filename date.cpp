@@ -57,7 +57,7 @@ char* Date::DayOfWeek() const
 
 void Date::PrintDate()
 {
-    printf("%u-%u-%u", _year, _month, _day);
+    printf("%u-%u-%u", _day, _month, _year);
 }
 
 int Date::operator-(const Date& date)
@@ -157,14 +157,6 @@ bool Date::operator !=(const Date& date)
 
     return result;
 }
-
-
-
-//std::istream& Date::operator >>(std::istream& is, Date &dt)
-//{
-//    is >> dt.getDay() << dt.getMonth() << dt.getYear();
-//    return is;
-//}
 
 Date::operator double()
 {

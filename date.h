@@ -4,8 +4,6 @@
 #include <ctime>
 #include <iostream>
 
-//5.5 Добавить в класс Date и Time перегрузки: перегруженные операции >>, << и ( )
-
 class Date
 {
 public:
@@ -29,14 +27,45 @@ public:
 
     friend std::istream& operator >>(std::istream& is, Date& date)
     {
-        char input[11];
+        char* input = new char[11];
+
+        char* year = new char[5];
+        char* month = new char[3];
+        char* day = new char[3];
+
+        int dd;
+        int mm;
+        int yyyy;
+
         is >> input;
-        scanf(input, "%04d-%02d-%02d", date.getYear(), date.getMonth(), date.getDay());
+
+        day[0] = input[0];
+        day[1] = input[1];
+        day[2] = '\0';
+
+        month[0] = input[3];
+        month[1] = input[4];
+        month[2] = '\0';
+
+        year[0] = input[6];
+        year[1] = input[7];
+        year[2] = input[8];
+        year[3] = input[9];
+        year[4] = '\0';
+
+        dd = atoi(day);
+        mm = atoi(month);
+        yyyy = atoi(year);
+
+        date.setDate(dd, mm, yyyy);
 
         is.clear();
+        delete[] input;
+        delete[] year;
+        delete[] month;
+        delete[] day;
+
         return is;
-
-
 
     }
     friend std::ostream& operator <<(std::ostream& out, Date const& date)
