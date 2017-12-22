@@ -20,10 +20,6 @@ int main()
     MyString str2("Hello");
     MyString str3(test);
 
-
-
-
-
     str += test;
 
     str.PrintLn();
