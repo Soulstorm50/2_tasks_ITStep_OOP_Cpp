@@ -15,14 +15,19 @@ using namespace std;
 int main()
 {   
 
-    char* test = (char*)"test";
-    MyString str("hell");
-    MyString str2("Hello");
-    MyString str3(test);
 
-    str += test;
+
+
+    MyString str("hell");
+
+    str.GetLine();
+
 
     str.PrintLn();
+
+    cout << str.sizeOf() << endl;
+
+
 
 
 

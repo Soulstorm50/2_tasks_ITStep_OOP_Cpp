@@ -6,10 +6,13 @@ MyString::MyString() : _string(""), _capacity(0)
 
 MyString::MyString(unsigned int capacity) : _capacity(capacity)
 {
-    for(unsigned int i = 0; i < capacity; i++)
+    _string = new char[capacity + 1];
+
+    for(unsigned int i = 0; i < capacity + 1; i++)
     {
         _string[i] = ' ';
     }
+    _string[capacity + 1] = '\0';
 }
 
 MyString::MyString(const MyString& word) : _capacity(word.sizeOf())
@@ -34,6 +37,7 @@ MyString& MyString::operator =(const MyString& word)
     MyString tempMyString(word);
 
     _string = const_cast<char*>(tempMyString.GetCharArray());
+    _capacity = tempMyString.sizeOf();
 
     return *this;
 }
@@ -109,7 +113,7 @@ bool MyString::operator >=(const MyString& word)
     return result;
 }
 
-bool MyString::operator !=(const MyString &word)
+bool MyString::operator !=(const MyString& word)
 {
     bool result = false;
 
@@ -137,7 +141,7 @@ const char& MyString::operator [](int index) const
     return _string[index];
 }
 
-MyString& MyString::operator +=(const MyString& word) // correct way!
+MyString& MyString::operator +=(const MyString& word)
 {
     int newCapacity = 1 + _capacity + word.sizeOf();
     char* newString = new char[newCapacity];
@@ -158,13 +162,13 @@ MyString& MyString::operator +=(const MyString& word) // correct way!
     delete[] _string;
 
     _string = newString;
-    _capacity = newCapacity;
-    _string[_capacity - 1] = '\0';
+    _capacity = newCapacity - 1;
+    _string[_capacity] = '\0';
 
     return *this;
 }
 
-MyString& MyString::operator +=(const char* word) // right way!
+MyString& MyString::operator +=(const char* word)
 {
     int indexStrLength = 0;
     while (word[indexStrLength] != '\0')
@@ -189,8 +193,8 @@ MyString& MyString::operator +=(const char* word) // right way!
 
     delete[] _string;
     _string = tempStr;
-    _capacity = allCapacity;
-    _string[allCapacity - 1] = '\0';
+    _capacity = allCapacity - 1;
+    _string[allCapacity] = '\0';
 
     return *this;
 }
@@ -246,7 +250,7 @@ void MyString::GetLine()
 
     delete[] _string;
 
-    _string = new char[_capacity];
+    _string = new char[_capacity + 1];
 
     for(int i = 0; i < _capacity; i++)
     {

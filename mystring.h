@@ -5,7 +5,6 @@
 
 //5.8 В класс String добавить:
 
-//перегрузка операции + (String + char*)
 //перегрузка операции + (char* + String)
 //перегрузка операции + (String + char)
 //перегрузка операции + (char + String)
@@ -19,23 +18,23 @@ class MyString
 {
 public:
     MyString();
-    explicit MyString(unsigned int capacity);
-    explicit MyString(const MyString& word);
-    explicit MyString(const char* word);
+    explicit MyString(unsigned int capacity); // correct way!
+    explicit MyString(const MyString& word); // correct way!
+    explicit MyString(const char* word); // correct way!
 
-    MyString& operator =(const MyString& word);
-    bool operator ==(const MyString& word);
-    bool operator >(const MyString& word);
-    bool operator <(const MyString& word);
-    bool operator <=(const MyString& word);
-    bool operator >=(const MyString& word);
-    bool operator !=(const MyString& word);
+    MyString& operator =(const MyString& word); // correct way!
+    bool operator ==(const MyString& word); // correct way!
+    bool operator >(const MyString& word); // correct way!
+    bool operator <(const MyString& word); // correct way!
+    bool operator <=(const MyString& word); // correct way!
+    bool operator >=(const MyString& word); // correct way!
+    bool operator !=(const MyString& word); // correct way!
     //перегрузка () (повторная инициализация строки)
-    const char& operator [](int index) const;
-    MyString& operator +=(const MyString& word);
-    MyString& operator +=(const char* word);
-    MyString& operator +(const MyString& word);
-    MyString& operator +(const char* word);
+    const char& operator [](int index) const; // correct way!
+    MyString& operator +=(const MyString& word); // correct way!
+    MyString& operator +=(const char* word); // correct way!
+    MyString& operator +(const MyString& word); // correct way!
+    MyString& operator +(const char* word); // correct way!
 
 
 
@@ -43,10 +42,10 @@ public:
 
     ~MyString();
 
-    char GetCharAt(unsigned int index) const;
-    void Print();
-    void PrintLn();
-    void GetLine();
+    char GetCharAt(unsigned int index) const; // correct way!
+    void Print(); // correct way!
+    void PrintLn(); // correct way!
+    void GetLine(); // correct way!
     const char* GetCharArray() const;
     int CompareTo(const MyString& str) const;
     int CompareTo(const char* str) const;
