@@ -5,12 +5,6 @@
 
 //5.8 В класс String добавить:
 
-
-
-//перегрузка [] (доступ к элементу строки по индексу, предусмотреть возможность обращения к несуществующему элементу.
-//перегрузка операции + (String + String)
-//перегрузка операции += (конкатенация String)
-//перегрузка операции += (конкатенация char*)
 //перегрузка операции + (String + char*)
 //перегрузка операции + (char* + String)
 //перегрузка операции + (String + char)
@@ -37,7 +31,11 @@ public:
     bool operator >=(const MyString& word);
     bool operator !=(const MyString& word);
     //перегрузка () (повторная инициализация строки)
-
+    const char& operator [](int index) const;
+    MyString& operator +=(const MyString& word);
+    MyString& operator +=(const char* word);
+    MyString& operator +(const MyString& word);
+    MyString& operator +(const char* word);
 
 
 

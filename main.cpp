@@ -15,13 +15,20 @@ using namespace std;
 int main()
 {   
 
+    char* test = (char*)"test";
     MyString str("hell");
     MyString str2("Hello");
+    MyString str3(test);
 
-    bool res = str < str2;
 
 
-    cout << res << endl;
+
+
+    str += test;
+
+    str.PrintLn();
+
+
 
 
 

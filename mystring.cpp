@@ -132,6 +132,81 @@ bool MyString::operator !=(const MyString &word)
     return result;
 }
 
+const char& MyString::operator [](int index) const
+{
+    return _string[index];
+}
+
+MyString& MyString::operator +=(const MyString& word) // correct way!
+{
+    int newCapacity = 1 + _capacity + word.sizeOf();
+    char* newString = new char[newCapacity];
+
+    for(int i = 0; i < newCapacity; i++)
+    {
+        if(i < _capacity)
+        {
+            newString[i] = _string[i];
+        }
+        else
+        {
+            newString[i] = word.GetCharAt(i - _capacity + 1);
+        }
+
+    }
+
+    delete[] _string;
+
+    _string = newString;
+    _capacity = newCapacity;
+    _string[_capacity - 1] = '\0';
+
+    return *this;
+}
+
+MyString& MyString::operator +=(const char* word) // right way!
+{
+    int indexStrLength = 0;
+    while (word[indexStrLength] != '\0')
+    {
+        indexStrLength++;
+    }
+
+    int allCapacity = 1 + _capacity + indexStrLength;
+    char* tempStr = new char[allCapacity];
+
+    for(int i = 0; i < allCapacity; i++)
+    {
+        if(i < _capacity)
+        {
+            tempStr[i] = _string[i];
+        }
+        else
+        {
+            tempStr[i] = word[i - _capacity];
+        }
+    }
+
+    delete[] _string;
+    _string = tempStr;
+    _capacity = allCapacity;
+    _string[allCapacity - 1] = '\0';
+
+    return *this;
+}
+
+MyString& MyString::operator +(const MyString& word)
+{
+    *this += word;
+    return *this;
+}
+
+MyString& MyString::operator +(const char* word)
+{
+    *this += word;
+    return *this;
+}
+
 MyString::~MyString()
 {
     delete[] _string;
