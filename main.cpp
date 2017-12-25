@@ -6,7 +6,7 @@
 #include "soulstime.h"
 #include "date.h"
 
-
+#include "string"
 
 
 #include <ctime>
@@ -18,15 +18,20 @@ int main()
 
 
 
-    MyString str("welcome");
-    MyString str2("welcomee");
+    MyString str("welcome0000");
+    MyString str2("welcome");
     char* cstr = (char*)str2;
 
 
 
     str.PrintLn();
 
-    cout << str.Equals(str2) << endl;
+
+
+
+
+
+    cout << str.IndexOf(str2) << endl;
 
 
 

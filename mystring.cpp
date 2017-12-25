@@ -552,16 +552,34 @@ bool MyString::Equals(const MyString& str) const
 
 int MyString::IndexOf(char character) const
 {
-    //TODO:проверка на вхождение символа в строку,
-    //в результате работы возвращает индекс первого найденного символа (от начала строки);
-    //если ничего не найдено, возвращает -1
+    int result = -1;
+
+    for(int i = 0; i < _capacity; i++)
+    {
+        if(_string[i] == character)
+        {
+            result = i;
+            break;
+        }
+    }
+
+    return result;
 }
 
 int MyString::LastIndexOf(char character) const
 {
-    //TODO: проверка на вхождение символа в строку,
-    //в результате работы возвращает индекс последнего найденного символа (поиск с конца строки);
-    //если ничего не найдено, возвращает -1
+    int result = -1;
+
+    for(int i = 0; i < _capacity; i++)
+    {
+        if(_string[_capacity - i - 1] == character)
+        {
+            result = _capacity - i - 1;
+            break;
+        }
+    }
+
+    return result;
 }
 
 int MyString::IndexOf(const MyString& str) const
@@ -569,6 +587,15 @@ int MyString::IndexOf(const MyString& str) const
     //TODO:проверка на вхождение подстроки в строку,
     //в результате работы возвращает индекс начала вхождения;
     //если ничего не найдено, возвращает -1
+    char *pcSubstrResult = strstr(this->_string, str.GetCharArray());
+    if(pcSubstrResult)
+    {
+        return (this->_capacity - strlen(str.GetCharArray()));
+    }
+    else
+    {
+        return -1;
+    }
 }
 
 int MyString::LastIndexOf(const MyString &str) const
