@@ -453,22 +453,101 @@ void MyString::Concat(double value)
 
 bool MyString::Contains(const MyString& str) const
 {
-    //TODO:проверить, содержится ли в нашей строке переданная подстрока (в любой позиции)
+    bool result = false;
+    char* sample = new char[str.sizeOf() + 1];
+    sample[str.sizeOf()] = '\0';
+    int smplCount = 0;
+    int count = 0;
+
+    for(int i = 0; i < _capacity; i++)
+    {
+        if(_string[i] == str[i - count])
+        {
+            sample[smplCount] = str[i - count];
+            smplCount++;
+        }
+        else
+        {
+            count++;
+            smplCount = 0;
+        }
+    }
+
+    if((str.CompareTo(sample) == 0))
+    {
+        result = true;
+    }
+
+    delete[] sample;
+
+    return result;
 }
 
 bool MyString::EndsWith(const MyString& str) const
 {
-    //TODO:проверить, заканчивается ли наша строка текстом, который передан в параметре
+    bool result = false;
+
+    char* sample = new char[str.sizeOf() + 1];
+    sample[str.sizeOf()] = '\0';
+
+    for(int i = 0; i < str.sizeOf(); i++)
+    {
+        sample[str.sizeOf() - i - 1] = _string[sizeOf() - i - 1];
+    }
+
+    if((str.CompareTo(sample) == 0))
+    {
+        result = true;
+    }
+
+    delete[] sample;
+
+    return result;
 }
 
 bool MyString::StartsWith(const MyString& str) const
 {
+    bool result = false;
 
+    char* sample = new char[str.sizeOf() + 1];
+    sample[str.sizeOf()] = '\0';
+
+    for(int i = 0; i < str.sizeOf(); i++)
+    {
+        sample[i] = _string[i];
+    }
+
+    if((str.CompareTo(sample) == 0))
+    {
+        result = true;
+    }
+
+    delete[] sample;
+
+    return result;
 }
 
 bool MyString::Equals(const MyString& str) const
 {
-    //TODO: проверить, соответствует ли лексикографически наша строка другой строке (аналогично CompareTo)
+    bool result = true;
+
+    if(_capacity != str.sizeOf())
+    {
+        result = false;
+    }
+    else
+    {
+        for(int i = 0; i < _capacity; i++)
+        {
+            if(_string[i] != str.GetCharAt(i + 1))
+            {
+                result = false;
+                break;
+            }
+        }
+    }
+
+    return result;
 }
 
 int MyString::IndexOf(char character) const

@@ -18,15 +18,15 @@ int main()
 
 
 
-    MyString str("sdfdf");
-    MyString str2("welcome");
-    char* cstr = (char*)str;
+    MyString str("welcome");
+    MyString str2("welcomee");
+    char* cstr = (char*)str2;
 
 
-    double i = (double)str;
+
     str.PrintLn();
 
-    cout << i << endl;
+    cout << str.Equals(str2) << endl;
 
 
 

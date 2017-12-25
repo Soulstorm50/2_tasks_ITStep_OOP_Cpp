@@ -86,11 +86,11 @@ public:
     void Concat(const char* str);
     void Concat(int value);
     void Concat(double value);
-
     bool Contains(const MyString& str) const;
-    bool EndsWith(const MyString& str) const;
+    bool EndsWith(const MyString& str) const;   
     bool StartsWith(const MyString& str) const;
     bool Equals(const MyString& str) const;
+
     int IndexOf(char character) const;
     int LastIndexOf(char character) const;
     int IndexOf(const MyString& str) const;
