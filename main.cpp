@@ -18,14 +18,18 @@ int main()
 
 
 
-    MyString str("hell");
+    MyString str("sdfdf");
+    MyString str2("welcome");
+    char* cstr = (char*)str;
 
-    str.GetLine();
 
-
+    double i = (double)str;
     str.PrintLn();
 
-    cout << str.sizeOf() << endl;
+    cout << i << endl;
+
+
+
 
 
 

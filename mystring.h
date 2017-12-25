@@ -3,49 +3,82 @@
 
 #include <iostream>
 
-//5.8 В класс String добавить:
-
-//перегрузка операции + (char* + String)
-//перегрузка операции + (String + char)
-//перегрузка операции + (char + String)
-//перегрузка операции << (ostream&, String) - показ на экран
-//перегрузка операции >> (istream&, String) - ввод с клавиатуры
-//перегрузка операции char* () - преобразование в char*
-//перегрузка операции int () - конвертация строки в целое число (если это возможно)
-//перегрузка операции double () - конвертация строки в вещественное число (если это возможно)
-
 class MyString
 {
+
 public:
+
     MyString();
-    explicit MyString(unsigned int capacity); // correct way!
-    explicit MyString(const MyString& word); // correct way!
-    explicit MyString(const char* word); // correct way!
+    explicit MyString(unsigned int capacity);
+    explicit MyString(const MyString& word);
+    explicit MyString(const char* word);
 
-    MyString& operator =(const MyString& word); // correct way!
-    bool operator ==(const MyString& word); // correct way!
-    bool operator >(const MyString& word); // correct way!
-    bool operator <(const MyString& word); // correct way!
-    bool operator <=(const MyString& word); // correct way!
-    bool operator >=(const MyString& word); // correct way!
-    bool operator !=(const MyString& word); // correct way!
+    MyString& operator =(const MyString& word);
+    bool operator ==(const MyString& word);
+    bool operator >(const MyString& word);
+    bool operator <(const MyString& word);
+    bool operator <=(const MyString& word);
+    bool operator >=(const MyString& word);
+    bool operator !=(const MyString& word);
     //перегрузка () (повторная инициализация строки)
-    const char& operator [](int index) const; // correct way!
-    MyString& operator +=(const MyString& word); // correct way!
-    MyString& operator +=(const char* word); // correct way!
-    MyString& operator +(const MyString& word); // correct way!
-    MyString& operator +(const char* word); // correct way!
+    operator char*();
+    operator int();
+    operator double();
+    const char& operator [](int index) const;
+    MyString& operator +=(const MyString& word);
+    MyString& operator +=(const char* word);
+    MyString& operator +(const MyString& word);
+    MyString& operator +(const char* word);
+    //перегрузка операции + (char* + String)
+    //перегрузка операции + (String + char)
+    //перегрузка операции + (char + String)
+    friend std::ostream& operator <<(std::ostream& out, MyString const& word)
+    {
+       return out << word.GetCharArray();
+    }
+    friend std::istream& operator >>(std::istream& is, MyString& word)
+    {
+        char* input = new char[255];
 
+        is >> input;
+
+        int size = 0;
+
+        while(input[size] != '\0')
+        {
+            size++;
+        }
+
+        delete[] word._string;
+
+        word._string = new char[size + 1];
+
+        word._capacity = size;
+
+        for(int i = 0; i < size; i++)
+        {
+            word._string[i] = input[i];
+        }
+
+        word._string[size] = '\0';
+
+        delete[] input;
+
+        is.clear();
+
+        return is;
+
+    }
 
 
 
 
     ~MyString();
 
-    char GetCharAt(unsigned int index) const; // correct way!
-    void Print(); // correct way!
-    void PrintLn(); // correct way!
-    void GetLine(); // correct way!
+    char GetCharAt(unsigned int index) const;
+    void Print();
+    void PrintLn();
+    void GetLine();
     const char* GetCharArray() const;
     int CompareTo(const MyString& str) const;
     int CompareTo(const char* str) const;
@@ -78,7 +111,7 @@ public:
     void Shuffle();
     void RandomFill();
 
-    int sizeOf() const;
+    int sizeOf() const;  // correct way!
 
 private:
 

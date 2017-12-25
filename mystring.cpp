@@ -136,6 +136,49 @@ bool MyString::operator !=(const MyString& word)
     return result;
 }
 
+MyString::operator double()
+{
+    double result = 0.0;
+
+    if(!(_capacity == 1) && !(_string[0] == '0'))
+    {
+        if(atof(_string) == 0)
+        {
+            result = 777;
+        }
+        else
+        {
+            result = atof(_string);
+        }
+    }
+
+    return result;
+}
+
+MyString::operator int()
+{
+    int result = 0;
+
+    if(!(_capacity == 1) && !(_string[0] == '0'))
+    {
+        if(atoi(_string) == 0)
+        {
+            result = 777;
+        }
+        else
+        {
+            result = atoi(_string);
+        }
+    }
+
+    return result;
+}
+
+MyString::operator char*()
+{
+    return _string;
+}
+
 const char& MyString::operator [](int index) const
 {
     return _string[index];
