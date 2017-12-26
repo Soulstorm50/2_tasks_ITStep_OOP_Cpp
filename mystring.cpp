@@ -136,6 +136,13 @@ bool MyString::operator !=(const MyString& word)
     return result;
 }
 
+MyString& MyString::operator ()(const MyString& word)
+{
+    delete[] _string;
+    _string = const_cast<char*>(word.GetCharArray());
+    _capacity = word.sizeOf();
+}
+
 MyString::operator double()
 {
     double result = 0.0;

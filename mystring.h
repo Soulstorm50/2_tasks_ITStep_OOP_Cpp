@@ -21,7 +21,7 @@ public:
     bool operator <=(const MyString& word);
     bool operator >=(const MyString& word);
     bool operator !=(const MyString& word);
-    //перегрузка () (повторная инициализация строки)
+    MyString& operator ()(const MyString& word);
     operator char*();
     operator int();
     operator double();

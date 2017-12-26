@@ -27,11 +27,13 @@ int main()
     str.PrintLn();
 
 
+    str(str2);
 
 
+    str.PrintLn();
 
 
-    cout << str.IndexOf(str2) << endl;
+    //cout << str.IndexOf(str2) << endl;
 
 
 
