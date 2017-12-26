@@ -2,7 +2,7 @@
 #define MYSTRING_H
 
 #include <iostream>
-#include <cstring>
+//#include <cstring>
 
 class MyString
 {
@@ -91,6 +91,7 @@ public:
     bool EndsWith(const MyString& str) const;   
     bool StartsWith(const MyString& str) const;
     bool Equals(const MyString& str) const;
+    bool Equals(const char* str) const;
     int IndexOf(char character) const;
     int LastIndexOf(char character) const;
 

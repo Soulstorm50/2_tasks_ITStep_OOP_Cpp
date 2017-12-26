@@ -557,6 +557,35 @@ bool MyString::Equals(const MyString& str) const
     return result;
 }
 
+bool MyString::Equals(const char *str) const
+{
+    bool result = true;
+
+    int indexStrLength = 0;
+    while (str[indexStrLength] != '\0')
+    {
+        indexStrLength++;
+    }
+
+    if(_capacity != indexStrLength)
+    {
+        result = false;
+    }
+    else
+    {
+        for(int i = 0; i < _capacity; i++)
+        {
+            if(_string[i] != str[i])
+            {
+                result = false;
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
 int MyString::IndexOf(char character) const
 {
     int result = -1;
@@ -594,15 +623,40 @@ int MyString::IndexOf(const MyString& str) const
     //TODO:проверка на вхождение подстроки в строку,
     //в результате работы возвращает индекс начала вхождения;
     //если ничего не найдено, возвращает -1
-    char *pcSubstrResult = strstr(this->_string, str.GetCharArray());
-    if(pcSubstrResult)
-    {
-        return (this->_capacity - strlen(str.GetCharArray()));
-    }
-    else
-    {
-        return -1;
-    }
+
+    int result = -1;
+
+//    if(this->Contains(str))
+//    {
+//        char* sample = new char[str.sizeOf() + 1];
+//        sample[str.sizeOf()] = '\0';
+
+//        int sampleCount = 0;
+//        int strCount = 0;
+
+//        for(int i = 0; i < str.sizeOf(); i++)
+//        {
+//            if((this->_string[i] == str.GetCharAt(strCount)) && !(str.Equals(sample)))
+//            {
+//                sample[sampleCount] = _string[i];
+//                strCount++;
+//                sampleCount++;
+//            }
+//            else if ((this->_string[i] != str.GetCharAt(strCount)) && !(str.Equals(sample)))
+//            {
+//                strCount = 0;
+//                sampleCount = 0;
+//            }
+//            else if (str.Equals(sample))
+//            {
+//                result = 100000000;
+//            }
+//        }
+//    }
+
+    return result;
+
+
 }
 
 int MyString::LastIndexOf(const MyString &str) const

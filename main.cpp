@@ -20,20 +20,17 @@ int main()
 
     MyString str("welcome0000");
     MyString str2("welcome");
-    char* cstr = (char*)str2;
+    char* cstr = "welcome";
 
 
 
     str.PrintLn();
 
-
-    str(str2);
-
-
-    str.PrintLn();
 
 
     //cout << str.IndexOf(str2) << endl;
+
+    cout << str2.Equals(cstr) << endl;
 
 
 
