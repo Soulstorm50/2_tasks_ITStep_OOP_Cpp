@@ -463,24 +463,27 @@ bool MyString::Contains(const MyString& str) const
     bool result = false;
     char* sample = new char[str.sizeOf() + 1];
     sample[str.sizeOf()] = '\0';
-    int smplCount = 0;
     int count = 0;
 
     for(int i = 0; i < _capacity; i++)
     {
-        if(_string[i] == str[i - count])
+        if(str.Equals(sample))
         {
-            sample[smplCount] = str[i - count];
-            smplCount++;
+            result = true;
+            break;
+        }
+        else if(_string[i] == str[count])
+        {
+            sample[count] = str[count];
+            count++;
         }
         else
         {
-            count++;
-            smplCount = 0;
+            count = 0;
         }
     }
 
-    if((str.CompareTo(sample) == 0))
+    if(str.Equals(sample))
     {
         result = true;
     }
@@ -620,42 +623,39 @@ int MyString::LastIndexOf(char character) const
 
 int MyString::IndexOf(const MyString& str) const
 {
-    //TODO:проверка на вхождение подстроки в строку,
-    //в результате работы возвращает индекс начала вхождения;
-    //если ничего не найдено, возвращает -1
-
     int result = -1;
 
-//    if(this->Contains(str))
-//    {
-//        char* sample = new char[str.sizeOf() + 1];
-//        sample[str.sizeOf()] = '\0';
+    if(this->Contains(str))
+    {
+        char* sample = new char[str.sizeOf() + 1];
+        sample[str.sizeOf()] = '\0';
+        int count = 0;
 
-//        int sampleCount = 0;
-//        int strCount = 0;
-
-//        for(int i = 0; i < str.sizeOf(); i++)
-//        {
-//            if((this->_string[i] == str.GetCharAt(strCount)) && !(str.Equals(sample)))
-//            {
-//                sample[sampleCount] = _string[i];
-//                strCount++;
-//                sampleCount++;
-//            }
-//            else if ((this->_string[i] != str.GetCharAt(strCount)) && !(str.Equals(sample)))
-//            {
-//                strCount = 0;
-//                sampleCount = 0;
-//            }
-//            else if (str.Equals(sample))
-//            {
-//                result = 100000000;
-//            }
-//        }
-//    }
+        for(int i = 0; i < this->sizeOf(); i++)
+        {
+            if(str.Equals(sample))
+            {
+                break;
+            }
+            else if(this->_string[i] == str.GetCharAt(count + 1))
+            {
+                sample[count] = _string[i];
+                count++;
+                if(result == -1)
+                {
+                    result = i;
+                }
+            }
+            else if(this->_string[i] != str.GetCharAt(count + 1))
+            {
+                count = 0;
+                result = -1;
+            }
+        }
+        delete[] sample;
+    }
 
     return result;
-
 
 }
 

@@ -94,8 +94,9 @@ public:
     bool Equals(const char* str) const;
     int IndexOf(char character) const;
     int LastIndexOf(char character) const;
-
     int IndexOf(const MyString& str) const;
+
+
     int LastIndexOf(const MyString& str) const;
     void Remove (int index);
     void Remove (int start, int count);

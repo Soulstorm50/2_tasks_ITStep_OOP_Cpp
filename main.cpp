@@ -18,7 +18,7 @@ int main()
 
 
 
-    MyString str("welcome0000");
+    MyString str("5welcome5");
     MyString str2("welcome");
     char* cstr = "welcome";
 
@@ -28,10 +28,7 @@ int main()
 
 
 
-    //cout << str.IndexOf(str2) << endl;
-
-    cout << str2.Equals(cstr) << endl;
-
+    cout << str.IndexOf(str2) << endl;
 
 
 
