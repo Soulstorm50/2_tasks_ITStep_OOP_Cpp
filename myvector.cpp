@@ -117,6 +117,17 @@ int MyVector::LastIndexOf(int value)
     return result;
 }
 
+void MyVector::Reverse()
+{
+    int* tempData = new int[_capacity];
+    for(int i = 0; i < _size ; i++)
+    {
+        tempData[i] = _data[_size - i - 1];
+    }
+    delete[] _data;
+    _data = tempData;
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)
