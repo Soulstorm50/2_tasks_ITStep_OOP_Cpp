@@ -85,6 +85,38 @@ void MyVector::PopBack()
     _size--;
 }
 
+int MyVector::IndexOf(int value)
+{
+    int result = -1;
+
+    for(int i = 0; i < _size; i++)
+    {
+        if(_data[i] == value)
+        {
+            result = i;
+            break;
+        }
+    }
+
+    return result;
+}
+
+int MyVector::LastIndexOf(int value)
+{
+    int result = -1;
+
+    for(int i = 0; i < _size ; i++)
+    {
+        if(_data[_size - i - 1] == value)
+        {
+            result = _size - i - 1;
+            break;
+        }
+    }
+
+    return result;
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)

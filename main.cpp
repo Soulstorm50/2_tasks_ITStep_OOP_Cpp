@@ -21,11 +21,11 @@ int main()
     {
         ar.PushBack(i);
     }
+    ar.PushFront(7);
     ar.Print();
 
-    ar.PopBack();
 
-    ar.Print();
+    cout << ar.LastIndexOf(78) << endl;
 
 
 
