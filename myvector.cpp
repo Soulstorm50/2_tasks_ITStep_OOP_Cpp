@@ -128,6 +128,21 @@ void MyVector::Reverse()
     _data = tempData;
 }
 
+void MyVector::TrimToSize()
+{
+    if(_capacity > _size)
+    {
+    int* tempData = new int[_size];
+    for(int i = 0; i < _size ; i++)
+    {
+        tempData[i] = _data[i];
+    }
+    delete[] _data;
+    _data = tempData;
+    _capacity = _size;
+    }
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)

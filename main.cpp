@@ -17,16 +17,18 @@ int main()
     // тесты работы с вектором:
     MyVector ar;
 
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 5; i++)
     {
         ar.PushBack(i);
     }
 
     ar.Print();
+    cout << "Cap: " << ar.getCapacity() << endl;
 
-    ar.Reverse();
+    ar.TrimToSize();
 
     ar.Print();
+    cout << "Cap: " << ar.getCapacity() << endl;
 
 
 
