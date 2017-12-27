@@ -25,8 +25,8 @@ MyVector::~MyVector()
 
 void MyVector::PushBack(int value)
 {
-    // EnsureCapacity(size + 1);
-    // проверка, хватит ли места для нового элемента - делайте сами :)
+    EnsureCapacity(_size + 1);
+
     _data[_size++] = value;
 }
 
@@ -75,7 +75,7 @@ void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)
     {
-        _capacity = (value * 3) / 2;
+        _capacity = ((_capacity * 3) / 2) + 1;
         int* tempData = new int[_capacity];
         for(int i = 0; i < _size; i++)
         {
@@ -85,6 +85,7 @@ void MyVector::EnsureCapacity(int value)
         delete[] _data;
         _data = tempData;
 
+        EnsureCapacity(value);
     }
 }
 
