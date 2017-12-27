@@ -71,16 +71,21 @@ void MyVector::Print()
     }
 }
 
-bool MyVector::EnsureCapacity(int value)
+void MyVector::EnsureCapacity(int value)
 {
-    bool result = true;
-
-    if(value >= _capacity)
+    if(value > _capacity)
     {
-        result = false;
-    }
+        _capacity = (value * 3) / 2;
+        int* tempData = new int[_capacity];
+        for(int i = 0; i < _size; i++)
+        {
+            tempData[i] = _data[i];
+        }
 
-    return result;
+        delete[] _data;
+        _data = tempData;
+
+    }
 }
 
 void MyVector::setCapacity(int capacity)

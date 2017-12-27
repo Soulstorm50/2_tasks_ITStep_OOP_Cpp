@@ -27,6 +27,8 @@ public:
 
 private:
 
+    void EnsureCapacity(int value);
+
     int _size;
     int _capacity;
     int* _data;
