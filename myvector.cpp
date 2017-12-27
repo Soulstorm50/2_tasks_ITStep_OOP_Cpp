@@ -71,6 +71,20 @@ void MyVector::Print()
     }
 }
 
+void MyVector::PopFront()
+{
+    for(int i = 0; i < _size; i++)
+    {
+        _data[i] = _data[i + 1];
+    }
+    _size--;
+}
+
+void MyVector::PopBack()
+{
+    _size--;
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)

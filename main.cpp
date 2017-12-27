@@ -17,6 +17,16 @@ int main()
     // тесты работы с вектором:
     MyVector ar;
 
+    for(int i = 0; i < 10; i++)
+    {
+        ar.PushBack(i);
+    }
+    ar.Print();
+
+    ar.PopBack();
+
+    ar.Print();
+
 
 
 
