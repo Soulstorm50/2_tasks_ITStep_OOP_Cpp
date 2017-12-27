@@ -5,42 +5,37 @@
 
 #include "soulstime.h"
 #include "date.h"
+#include "myvector.h"
 
 #include "string"
 
-
-#include <ctime>
 using namespace std;
 
 int main()
-{   
+{
+
+    // тесты работы с вектором:
+    MyVector ar;
+    ar.PushBack(12);
+    ar.PushBack(18);
+    ar.PushBack(16);
+    ar.Print();
+    ar.PushFront(14);
+    ar.Print();
+    ar.Clear();
+    ar.Print();
+
+    ar.PushBack(12);
+    ar.PushBack(18);
+    ar.PushBack(16);
+
+    cout << ar.getCapacity() << endl;
 
 
+    ar.setCapacity(100);
 
-
-    MyString str("5welcome5");
-    MyString str2("welcome");
-    char* cstr = "welcome";
-
-
-
-    str.PrintLn();
-
-
-
-    cout << str.IndexOf(str2) << endl;
-
-
-
-
-
-
-
-
-
-
-
-
+    ar.Print();
+    cout << ar.getCapacity() << endl;
 
 
 

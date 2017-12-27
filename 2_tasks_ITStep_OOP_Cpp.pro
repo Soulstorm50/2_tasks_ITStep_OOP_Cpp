@@ -11,7 +11,8 @@ SOURCES += main.cpp \
     group.cpp \
     mystring.cpp \
     date.cpp \
-    soulstime.cpp
+    soulstime.cpp \
+    myvector.cpp
 
 HEADERS += \
     counter.h \
@@ -21,4 +22,5 @@ HEADERS += \
     group.h \
     mystring.h \
     date.h \
-    soulstime.h
+    soulstime.h \
+    myvector.h
