@@ -18,8 +18,6 @@ int main()
     MyVector ar;
 
 
-    ar.setCapacity(1000);
-
 
 
 

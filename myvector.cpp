@@ -32,7 +32,7 @@ void MyVector::PushBack(int value)
 
 void MyVector::PushFront(int value)
 {
-    // EnsureCapacity(size + 1);
+    EnsureCapacity(_size + 1);
     for (int i = _size; i > 0; i--)
     {
         _data[i] = _data[i - 1];
