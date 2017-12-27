@@ -71,6 +71,18 @@ void MyVector::Print()
     }
 }
 
+bool MyVector::EnsureCapacity(int value)
+{
+    bool result = true;
+
+    if(value >= _capacity)
+    {
+        result = false;
+    }
+
+    return result;
+}
+
 void MyVector::setCapacity(int capacity)
 {
     int* tempData = new int[capacity];
