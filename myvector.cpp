@@ -159,6 +159,19 @@ void MyVector::RemoveAt(int index)
     }
 }
 
+void MyVector::Remove(int value)
+{
+    for(int i = 0; i < _size; i++)
+    {
+        if(_data[i] == value)
+        {
+            RemoveAt(i);
+            Remove(value);
+            break;
+        }
+    }
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)
