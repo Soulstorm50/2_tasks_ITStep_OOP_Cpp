@@ -143,6 +143,22 @@ void MyVector::TrimToSize()
     }
 }
 
+void MyVector::RemoveAt(int index)
+{
+    if(index < _size && index > -1)
+    {
+        for(int i = index; i < _size; i++)
+        {
+            _data[i] = _data[i + 1];
+        }
+        _size--;
+    }
+    else
+    {
+        std::cout << "Unreacheble index!" << std::endl;
+    }
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)

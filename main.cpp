@@ -23,12 +23,10 @@ int main()
     }
 
     ar.Print();
-    cout << "Cap: " << ar.getCapacity() << endl;
 
-    ar.TrimToSize();
+    ar.RemoveAt(6);
 
     ar.Print();
-    cout << "Cap: " << ar.getCapacity() << endl;
 
 
 
