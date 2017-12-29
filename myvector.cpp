@@ -50,7 +50,7 @@ void MyVector::Clear()
     _size = 0;
 }
 
-bool MyVector::IsEmpty()
+bool MyVector::IsEmpty() const
 {
     return _size == 0;
 }
@@ -85,7 +85,7 @@ void MyVector::PopBack()
     _size--;
 }
 
-int MyVector::IndexOf(int value)
+int MyVector::IndexOf(int value) const
 {
     int result = -1;
 
@@ -101,7 +101,7 @@ int MyVector::IndexOf(int value)
     return result;
 }
 
-int MyVector::LastIndexOf(int value)
+int MyVector::LastIndexOf(int value) const
 {
     int result = -1;
 
@@ -170,6 +170,38 @@ void MyVector::Remove(int value)
             break;
         }
     }
+}
+
+bool MyVector::Equals(const MyVector& vector) const
+{
+    bool result = false;
+
+    if(_size == vector.getSize())
+    {
+        result = true;
+
+        for(int i = 0; i < _size; i++)
+        {
+            if(_data[i] != vector.GetElementAt(i))
+            {
+                result = false;
+            }
+        }
+    }
+
+    return result;
+}
+
+int MyVector::GetElementAt(int index) const
+{
+    int result = 0;
+
+    if(index < _size && index > -1)
+    {
+        result = _data[index];
+    }
+
+    return result;
 }
 
 void MyVector::EnsureCapacity(int value)

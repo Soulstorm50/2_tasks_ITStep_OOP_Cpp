@@ -22,24 +22,25 @@ public:
     void PushBack(int value);
     void PushFront(int value);
     void Clear();
-    bool IsEmpty();
+    bool IsEmpty() const;
     void Print();
     void PopFront();
     void PopBack();
-    int IndexOf(int value);
-    int LastIndexOf(int value);
+    int IndexOf(int value) const;
+    int LastIndexOf(int value) const;
     void Reverse();
     void TrimToSize();
     void RemoveAt(int index);
     void Remove(int value);
+    bool Equals(const MyVector& vector) const;
+    int GetElementAt(int index) const;
+
 
 //    Insert (вставка одного элемента в массив по указанному индексу, с проверкой на выход за пределы массива)
 //    SortAsc (быстрая сортировка значений элементов массива по возрастанию)
 //    SortDesc (быстрая сортировка значений элементов массива по убыванию)
 //    Shuffle (случайное перемешивание элементов массива)
 //    RandomFill (заполнение массива случайными значениями)
-//    Equals (в качестве параметра передаётся указатель на другой вектор. Метод сравнивает массивы не только по количеству элементов, но и по их содержимому)
-//    GetElementAt (возврат копии элемента массива по указанному индексу, с проверкой на выход за пределы массива)
 //    Clone (метод создаёт точную копию вектора).
 //    конструктор копирования
 //    перегрузка операции =
