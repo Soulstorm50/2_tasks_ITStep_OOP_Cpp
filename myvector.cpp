@@ -194,7 +194,7 @@ bool MyVector::Equals(const MyVector& vector) const
 
 int MyVector::GetElementAt(int index) const
 {
-    int result = 0;
+    int result = -1;
 
     if(index < _size && index > -1)
     {
@@ -202,6 +202,14 @@ int MyVector::GetElementAt(int index) const
     }
 
     return result;
+}
+
+void MyVector::Insert(int value, int index)
+{
+    if(index < _size && index > -1)
+    {
+        _data[index] = value;
+    }
 }
 
 void MyVector::EnsureCapacity(int value)

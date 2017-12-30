@@ -16,23 +16,14 @@ int main()
 
     // тесты работы с вектором:
     MyVector ar;
-    MyVector ar2;
 
-    for(int i = 0; i < 10; i++)
-    {
-        ar.PushBack(i);
-    }
+    ar.PushBack(80);
 
-    for(int i = 0; i < 10; i++)
-    {
-        ar2.PushBack(i);
-    }
+    ar.Print();
 
+    ar.Insert(777, 0);
 
-    cout << ar.Equals(ar2) << endl;
-
-
-
+    ar.Print();
 
 
 
