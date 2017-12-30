@@ -34,12 +34,12 @@ public:
     void Remove(int value);
     bool Equals(const MyVector& vector) const;
     int GetElementAt(int index) const;
-    void Insert(int value, int index); //(вставка одного элемента в массив по указанному индексу, с проверкой на выход за пределы массива)
+    void Insert(int value, int index);
+    void SortAsc();
+    void SortDesc();
 
 
 
-//    SortAsc (быстрая сортировка значений элементов массива по возрастанию)
-//    SortDesc (быстрая сортировка значений элементов массива по убыванию)
 //    Shuffle (случайное перемешивание элементов массива)
 //    RandomFill (заполнение массива случайными значениями)
 //    Clone (метод создаёт точную копию вектора).
@@ -53,6 +53,7 @@ public:
 private:
 
     void EnsureCapacity(int value);
+    void quickSortAsc(int arr[], int left, int right);
 
     int _size;
     int _capacity;

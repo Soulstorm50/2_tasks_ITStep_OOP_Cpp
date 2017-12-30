@@ -17,15 +17,16 @@ int main()
     // тесты работы с вектором:
     MyVector ar;
 
-    ar.PushBack(80);
+    for(int i = 0; i < 11; i++)
+    {
+        ar.PushBack(i);
+    }
 
     ar.Print();
 
-    ar.Insert(777, 0);
+    ar.SortDesc();
 
     ar.Print();
-
-
 
 
 

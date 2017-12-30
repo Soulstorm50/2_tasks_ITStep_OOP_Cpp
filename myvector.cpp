@@ -212,6 +212,18 @@ void MyVector::Insert(int value, int index)
     }
 }
 
+void MyVector::SortAsc()
+{
+    quickSortAsc(_data, 0, _size - 1);
+}
+
+void MyVector::SortDesc()
+{
+    quickSortAsc(_data, 0, _size - 1);
+
+    Reverse();
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)
@@ -228,6 +240,57 @@ void MyVector::EnsureCapacity(int value)
 
         EnsureCapacity(value);
     }
+}
+
+void MyVector::quickSortAsc(int arr[], int left, int right)
+{
+    int i = left, j = right;
+
+    int tmp;
+
+    int pivot = arr[(left + right) / 2];
+
+
+
+    /* partition */
+
+    while (i <= j) {
+
+          while (arr[i] < pivot)
+
+                i++;
+
+          while (arr[j] > pivot)
+
+                j--;
+
+          if (i <= j) {
+
+                tmp = arr[i];
+
+                arr[i] = arr[j];
+
+                arr[j] = tmp;
+
+                i++;
+
+                j--;
+
+          }
+
+    };
+
+
+
+    /* recursion */
+
+    if (left < j)
+
+          quickSortAsc(arr, left, j);
+
+    if (i < right)
+
+          quickSortAsc(arr, i, right);
 }
 
 void MyVector::setCapacity(int capacity)
