@@ -24,7 +24,7 @@ int main()
 
     ar.Print();
 
-    ar.SortDesc();
+    ar.Shuffle();
 
     ar.Print();
 

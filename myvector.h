@@ -2,6 +2,7 @@
 #define MYVECTOR_H
 
 #include <iostream>
+#include <time.h>
 
 class MyVector
 {
@@ -37,10 +38,8 @@ public:
     void Insert(int value, int index);
     void SortAsc();
     void SortDesc();
+    void Shuffle();
 
-
-
-//    Shuffle (случайное перемешивание элементов массива)
 //    RandomFill (заполнение массива случайными значениями)
 //    Clone (метод создаёт точную копию вектора).
 //    конструктор копирования
@@ -54,6 +53,7 @@ private:
 
     void EnsureCapacity(int value);
     void quickSortAsc(int arr[], int left, int right);
+    void swap(int first, int second);
 
     int _size;
     int _capacity;

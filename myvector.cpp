@@ -224,6 +224,16 @@ void MyVector::SortDesc()
     Reverse();
 }
 
+void MyVector::Shuffle()
+{
+    srand (time(NULL));
+
+    for(int i = 0; i < _size; i++)
+    {
+        swap(i, rand() % _size);
+    }
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)
@@ -290,7 +300,14 @@ void MyVector::quickSortAsc(int arr[], int left, int right)
 
     if (i < right)
 
-          quickSortAsc(arr, i, right);
+        quickSortAsc(arr, i, right);
+}
+
+void MyVector::swap(int first, int second)
+{
+    int temp = _data[first];
+    _data[first] = _data[second];
+    _data[second] = temp;
 }
 
 void MyVector::setCapacity(int capacity)
