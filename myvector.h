@@ -18,7 +18,6 @@ public:
     MyVector& operator =(const MyVector& vector);
     const int& operator [](int index) const;
     bool operator ==(const MyVector& vector);
-    //    перегрузка >>
     friend std::ostream& operator <<(std::ostream& out, MyVector const& vector)
     {
         for(int i = 0; i < vector.getSize(); i++)
@@ -26,6 +25,18 @@ public:
             out << vector.GetElementAt(i) << " ";
         }
         return out;
+    }
+    friend std::istream& operator >>(std::istream& is, MyVector& vector)
+    {
+        char* input = new char[256];
+
+        is >> input;
+
+        vector.PushBack(atoi(input));
+        delete[] input;
+
+        return is;
+
     }
 
     int getSize() const;
