@@ -25,9 +25,7 @@ int main()
 
     cout << ar << endl;
 
-    cin >> ar;
 
-    ar.Print();
 
 
 
