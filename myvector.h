@@ -17,6 +17,8 @@ public:
 
     MyVector& operator =(const MyVector& vector);
     const int& operator [](int index) const;
+    bool operator ==(const MyVector& vector);
+    //    перегрузка >> и <<
 
     int getSize() const;
     int getCapacity() const;
@@ -45,12 +47,6 @@ public:
     void Shuffle();
     void RandomFill(int range = 0);
     void Clone(const MyVector& vector);
-
-
-//    перегрузка операции [ ]
-//    перегрузка операции ==
-//    перегрузка >> и <<
-
 
 private:
 

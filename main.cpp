@@ -24,7 +24,10 @@ int main()
 
     ar.Print();
 
-    cout << ar[2] << endl;
+    MyVector ar2(ar);
+    ar2.Shuffle();
+
+    cout << (ar == ar2) << endl;
 
 
 

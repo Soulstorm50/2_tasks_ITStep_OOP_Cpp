@@ -54,6 +54,29 @@ const int& MyVector::operator [](int index) const
     return _data[index];
 }
 
+bool MyVector::operator ==(const MyVector& vector)
+{
+    bool result = true;
+
+    if(_size != vector.getSize())
+    {
+        result = false;
+    }
+    else
+    {
+        for(int i = 0; i < _size; i++)
+        {
+            if(_data[i] != vector.GetElementAt(i))
+            {
+                result = false;
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
 void MyVector::PushBack(int value)
 {
     EnsureCapacity(_size + 1);
