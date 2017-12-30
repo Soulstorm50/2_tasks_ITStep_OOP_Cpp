@@ -18,7 +18,15 @@ public:
     MyVector& operator =(const MyVector& vector);
     const int& operator [](int index) const;
     bool operator ==(const MyVector& vector);
-    //    перегрузка >> и <<
+    //    перегрузка >>
+    friend std::ostream& operator <<(std::ostream& out, MyVector const& vector)
+    {
+        for(int i = 0; i < vector.getSize(); i++)
+        {
+            out << vector.GetElementAt(i) << " ";
+        }
+        return out;
+    }
 
     int getSize() const;
     int getCapacity() const;

@@ -22,12 +22,8 @@ int main()
         ar.PushBack(i);
     }
 
-    ar.Print();
 
-    MyVector ar2(ar);
-    ar2.Shuffle();
-
-    cout << (ar == ar2) << endl;
+    cout << ar << endl;
 
 
 
