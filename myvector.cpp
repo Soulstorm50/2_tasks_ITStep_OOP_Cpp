@@ -261,6 +261,18 @@ void MyVector::RandomFill(int range)
     }
 }
 
+void MyVector::Clone(const MyVector& vector)
+{
+    _capacity = vector.getCapacity();
+    _size = vector.getSize();
+    delete[] _data;
+    _data = new int[_capacity];
+    for(int i = 0; i < _size; i++)
+    {
+        _data[i] = vector.GetElementAt(i);
+    }
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)

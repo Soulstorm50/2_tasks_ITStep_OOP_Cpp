@@ -24,7 +24,9 @@ int main()
 
     ar.Print();
 
-    MyVector arCopy(ar);
+    MyVector arClone;
+
+    arClone.Clone(ar);
 
     ar.Print();
 

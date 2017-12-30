@@ -41,9 +41,8 @@ public:
     void SortDesc();
     void Shuffle();
     void RandomFill(int range = 0);
+    void Clone(const MyVector& vector); //(метод создаёт точную копию вектора).
 
-
-//    Clone (метод создаёт точную копию вектора).
 
 //    перегрузка операции =
 //    перегрузка операции [ ]
