@@ -10,7 +10,8 @@ class MyVector
 public:
 
     MyVector();
-    MyVector(int capacity);
+    explicit MyVector(int capacity);
+    explicit MyVector(const MyVector& vector);
 
     ~MyVector();
 
@@ -43,7 +44,7 @@ public:
 
 
 //    Clone (метод создаёт точную копию вектора).
-//    конструктор копирования
+
 //    перегрузка операции =
 //    перегрузка операции [ ]
 //    перегрузка операции ==

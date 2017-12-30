@@ -24,7 +24,7 @@ int main()
 
     ar.Print();
 
-    ar.RandomFill();
+    MyVector arCopy(ar);
 
     ar.Print();
 

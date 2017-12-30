@@ -18,6 +18,16 @@ MyVector::MyVector(int capacity) : _size(0)
     _data = new int[_capacity];
 }
 
+MyVector::MyVector(const MyVector& vector) : _size(vector.getSize())
+                                           , _capacity(vector.getCapacity())
+{
+    _data = new int[_capacity];
+    for(int i = 0; i < _size; i++)
+    {
+        _data[i] = vector.GetElementAt(i);
+    }
+}
+
 MyVector::~MyVector()
 {
     delete[] _data;
