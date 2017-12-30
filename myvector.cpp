@@ -49,6 +49,11 @@ MyVector& MyVector::operator =(const MyVector& vector)
     return *this;
 }
 
+const int& MyVector::operator [](int index) const
+{
+    return _data[index];
+}
+
 void MyVector::PushBack(int value)
 {
     EnsureCapacity(_size + 1);

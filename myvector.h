@@ -16,6 +16,7 @@ public:
     ~MyVector();
 
     MyVector& operator =(const MyVector& vector);
+    const int& operator [](int index) const;
 
     int getSize() const;
     int getCapacity() const;

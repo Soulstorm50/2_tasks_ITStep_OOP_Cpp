@@ -24,11 +24,7 @@ int main()
 
     ar.Print();
 
-    MyVector ar2;
-
-    ar2 = ar;
-
-    ar2.Print();
+    cout << ar[2] << endl;
 
 
 
