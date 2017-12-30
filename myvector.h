@@ -15,6 +15,8 @@ public:
 
     ~MyVector();
 
+    MyVector& operator =(const MyVector& vector);
+
     int getSize() const;
     int getCapacity() const;
 
@@ -41,10 +43,9 @@ public:
     void SortDesc();
     void Shuffle();
     void RandomFill(int range = 0);
-    void Clone(const MyVector& vector); //(метод создаёт точную копию вектора).
+    void Clone(const MyVector& vector);
 
 
-//    перегрузка операции =
 //    перегрузка операции [ ]
 //    перегрузка операции ==
 //    перегрузка >> и <<

@@ -33,6 +33,22 @@ MyVector::~MyVector()
     delete[] _data;
 }
 
+MyVector& MyVector::operator =(const MyVector& vector)
+{
+    MyVector temp(vector);
+
+    _capacity = temp.getCapacity();
+    _size = temp.getSize();
+    delete[] _data;
+    _data = new int[_capacity];
+    for(int i = 0; i < _size; i++)
+    {
+        _data[i] = temp.GetElementAt(i);
+    }
+
+    return *this;
+}
+
 void MyVector::PushBack(int value)
 {
     EnsureCapacity(_size + 1);

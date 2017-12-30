@@ -24,11 +24,11 @@ int main()
 
     ar.Print();
 
-    MyVector arClone;
+    MyVector ar2;
 
-    arClone.Clone(ar);
+    ar2 = ar;
 
-    ar.Print();
+    ar2.Print();
 
 
 
