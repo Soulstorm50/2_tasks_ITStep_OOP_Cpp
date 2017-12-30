@@ -234,6 +234,23 @@ void MyVector::Shuffle()
     }
 }
 
+void MyVector::RandomFill(int range)
+{
+    srand (time(NULL));
+
+    for(int i = 0; i < _size; i++)
+    {
+        if(range > 0)
+        {
+            _data[i] = rand() % range;
+        }
+        else
+        {
+            _data[i] = rand();
+        }
+    }
+}
+
 void MyVector::EnsureCapacity(int value)
 {
     if(value > _capacity)

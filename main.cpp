@@ -24,7 +24,7 @@ int main()
 
     ar.Print();
 
-    ar.Shuffle();
+    ar.RandomFill();
 
     ar.Print();
 

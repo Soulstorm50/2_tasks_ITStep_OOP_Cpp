@@ -39,8 +39,9 @@ public:
     void SortAsc();
     void SortDesc();
     void Shuffle();
+    void RandomFill(int range = 0);
 
-//    RandomFill (заполнение массива случайными значениями)
+
 //    Clone (метод создаёт точную копию вектора).
 //    конструктор копирования
 //    перегрузка операции =
