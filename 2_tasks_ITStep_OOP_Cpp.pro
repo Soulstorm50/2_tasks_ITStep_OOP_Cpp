@@ -12,7 +12,9 @@ SOURCES += main.cpp \
     mystring.cpp \
     date.cpp \
     soulstime.cpp \
-    myvector.cpp
+    myvector.cpp \
+    singlylinkedlist.cpp \
+    doublylinkedlist.cpp
 
 HEADERS += \
     counter.h \
@@ -23,4 +25,6 @@ HEADERS += \
     mystring.h \
     date.h \
     soulstime.h \
-    myvector.h
+    myvector.h \
+    singlylinkedlist.h \
+    doublylinkedlist.h
