@@ -22,9 +22,9 @@ public:
     Student(const Student& student);
     Student(const Student* student);
 
-    Student& operator =(const Student& student);
+    Student& operator =(const Student& student);  //Refactored
 
-    void operator +=(int credit);
+    void operator +=(int credit);  //Refactored
     bool operator >(const Student& student);
     bool operator <(const Student& student);
     bool operator ==(const Student& student);

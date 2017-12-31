@@ -118,9 +118,10 @@ void Student::operator +=(int credit)
 {
     for(int i = 0; i < 20; i++)
     {
-        if(_credits[i] == 0)
+        if(_credits->GetElementAt(i) == 0)
         {
-            _credits[i] = credit;
+            _credits->Insert(credit, i);
+            _credits->PopBack();
             break;
         }
     }
