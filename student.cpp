@@ -200,7 +200,7 @@ double Student::getAverageScore() const
 
     for(int i = 0; i < 20; i++)
     {
-        total += _credits[i];
+        total += _credits->GetElementAt(i);
     }
 
     return (double)total / 20.0;

@@ -33,7 +33,7 @@ public:
     ~Student();
 
     void show();
-    double getAverageScore() const;
+    double getAverageScore() const;  //Refactored
     const std::string getFirstName() const;
     const std::string getLastName() const;
     const std::string getMiddleName() const;
