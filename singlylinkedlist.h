@@ -40,11 +40,35 @@
 
 //Каждый из вышеперечисленных методов должен быть хорошо протестирован!
 //Коды всех тестов должны прилагаться в мейне.
+#include <iostream>
 
 class SinglyLinkedList
 {
 public:
-    SinglyLinkedList();
+
+    struct Node
+    {
+        int data = 0;
+        Node* next = nullptr;
+    };
+
+    void AddHead(int data);
+    void AddTail(int data);
+    void Insert(int data, int position);
+    void DelHead();
+    void DelTail();
+    void Del(int position);
+    void Clear();
+    void Print() const;
+    int GetCount() const;
+    int IndexOf(int data) const;
+
+private:
+
+    Node* head = nullptr;
+    Node* tail = nullptr;
+    int count = 0;
+
 };
 
 #endif // SINGLYLINKEDLIST_H
