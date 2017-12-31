@@ -100,17 +100,15 @@ Student &Student::operator=(const Student& student)
     _address = tempStd.getAddress();
     _phoneNumber = tempStd.getPhoneNumber();
 
-    int sizeCredits = 20;
-    int sizeCourseExams = 10;
-    for(int i = 0; i < sizeCredits; i++)
+    for(int i = 0; i < 20; i++)
     {
-        _credits[i] = tempStd.getCredits()[i];
+        _credits->PushBack(tempStd.getCredits()->GetElementAt(i));
     }
 
-    for(int i = 0; i < sizeCourseExams; i++)
+    for(int i = 0; i < 10; i++)
     {
-        _courseWorks[i] = tempStd.getCourseWorks()[i];
-        _exams[i] = tempStd.getExams()[i];
+        _courseWorks->PushBack(tempStd.getCourseWorks()->GetElementAt(i));
+        _exams->PushBack(tempStd.getExams()->GetElementAt(i));
     }
 
     return *this;
