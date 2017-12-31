@@ -8,33 +8,28 @@
 #include "myvector.h"
 
 #include "string"
+#include "singlylinkedlist.h"
 
 using namespace std;
 
 int main()
 {
 
-    // tests for refactored (task 6.2) class Student
-    Student st1;
-    Student st2("Willis", "Bruce");
-    Student* st3 = new Student("Chan", "Jackie", "17.10.1987");
-    st1.show();
-    st2.show();
-    st3->show();
+    // test for class SinglyLinkedList
 
-    Student st4(st2);
-    Student st5(st3);
-    st4.show();
-    st5.show();
+    SinglyLinkedList list;
 
-    st1 = st2;
-    st1.show();
+    list.AddTail(1);
+    list.AddTail(7);
+    list.AddTail(1);
+    list.AddTail(2);
+    list.AddTail(7);
+    list.AddTail(2);
 
-    cout << st1.getCredits()->GetElementAt(0) << endl;
-    st1 += 10;
-    cout << st1.getCredits()->GetElementAt(0) << endl;
+    list.Print();
 
-    cout << st1.getAverageScore() << endl;
+    cout << list.LastIndexOf(7) << endl;
+
 
 
 

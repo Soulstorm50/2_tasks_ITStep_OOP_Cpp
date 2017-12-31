@@ -175,3 +175,34 @@ bool SinglyLinkedList::IsEmpty() const
 
     return result;
 }
+
+int SinglyLinkedList::LastIndexOf(int data) const
+{
+    bool isDataFound = false;
+    int index;
+
+    if (count == 0)
+    {
+        // cout << "Empty list!\n";
+        return -1;
+    }
+    Node* temp = head;
+    int i = 0;
+    while (i < count)
+    {
+        if (data == temp->data)
+        {
+            index = i;
+            isDataFound = true;
+        }
+        i++;
+        temp = temp->next;
+    }
+
+    if(isDataFound)
+    {
+        return index;
+    }
+
+    return -1;
+}
