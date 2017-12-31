@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "myvector.h"
 
 //5.6 В класс Student и Group добавить перегрузку >>, <<, ( ) и =.
 
@@ -65,9 +66,12 @@ private:
     std::string _address;
     std::string _phoneNumber;
 
-    int *_credits;
-    int *_courseWorks;
-    int *_exams;
+//    int *_credits;
+//    int *_courseWorks;
+//    int *_exams;
+    MyVector* _credits;
+    MyVector* _courseWorks;
+    MyVector* _exams;
 };
 
 #endif // STUDENT_H
