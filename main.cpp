@@ -14,16 +14,30 @@ using namespace std;
 int main()
 {
 
-    // тесты работы с вектором:
-    MyVector ar;
+    // tests for refactored (task 6.2) class Student
+    Student st1;
+    Student st2("Willis", "Bruce");
+    Student* st3 = new Student("Chan", "Jackie", "17.10.1987");
+    st1.show();
+    st2.show();
+    st3->show();
 
-    for(int i = 0; i < 11; i++)
-    {
-        ar.PushBack(i);
-    }
+    Student st4(st2);
+    Student st5(st3);
+    st4.show();
+    st5.show();
+
+    st1 = st2;
+    st1.show();
+
+    cout << st1.getCredits()->GetElementAt(0) << endl;
+    st1 += 10;
+    cout << st1.getCredits()->GetElementAt(0) << endl;
+
+    cout << st1.getAverageScore() << endl;
 
 
-    cout << ar << endl;
+
 
 
 
