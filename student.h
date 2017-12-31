@@ -22,9 +22,9 @@ public:
     Student(const Student& student);
     Student(const Student* student);
 
-    Student& operator =(const Student& student);  //Refactored
+    Student& operator =(const Student& student);
 
-    void operator +=(int credit);  //Refactored
+    void operator +=(int credit);
     bool operator >(const Student& student);
     bool operator <(const Student& student);
     bool operator ==(const Student& student);
@@ -33,16 +33,16 @@ public:
     ~Student();
 
     void show();
-    double getAverageScore() const;  //Refactored
+    double getAverageScore() const;
     const std::string getFirstName() const;
     const std::string getLastName() const;
     const std::string getMiddleName() const;
     const std::string getDateOfBirth() const;
     const std::string getAddress() const;
     const std::string getPhoneNumber() const;
-    const MyVector* getCredits() const; //Refactored
-    const MyVector* getCourseWorks() const; //Refactored
-    const MyVector* getExams() const; //Refactored
+    const MyVector* getCredits() const;
+    const MyVector* getCourseWorks() const;
+    const MyVector* getExams() const;
 
     void setFirstName(const std::string& firstName);
     void setLastName(const std::string& lastName);
@@ -50,10 +50,6 @@ public:
     void setDateOfBirth(const std::string& dateOfBirth);
     void setAddress(const std::string& address);
     void setPhoneNumber(const std::string& phoneNumber);
-    void setCredits(int* credits);
-    void setCourseWorks(int* courseWorks);
-    void setExams(int* exams);
-
 
 private:
 
@@ -66,9 +62,6 @@ private:
     std::string _address;
     std::string _phoneNumber;
 
-//    int *_credits;
-//    int *_courseWorks;
-//    int *_exams;
     MyVector* _credits;
     MyVector* _courseWorks;
     MyVector* _exams;

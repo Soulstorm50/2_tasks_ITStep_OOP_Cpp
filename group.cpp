@@ -264,7 +264,7 @@ bool Group::isSessionPass(Student *student)
 
     for(int i = 0; i < 10; i++)
     {
-        if(student->getExams()[i] <= 5)
+        if(student->getExams()->GetElementAt(i) <= 5)
         {
             result = false;
             break;
@@ -279,7 +279,7 @@ int Group::getAverageScore(Student *student)
     int total = 0;
     for(int i = 0; i < 20; i++)
     {
-        total += student->getCredits()[i];
+        total += student->getCredits()->GetElementAt(i);
     }
 
     return total / 20;

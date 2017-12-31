@@ -271,29 +271,14 @@ const MyVector* Student::getCredits() const
     return _credits;
 }
 
-void Student::setCredits(int *credits)
-{
-    _credits = credits;
-}
-
 const MyVector* Student::getCourseWorks() const
 {
     return _courseWorks;
 }
 
-void Student::setCourseWorks(int *courseWorks)
-{
-    _courseWorks = courseWorks;
-}
-
 const MyVector* Student::getExams() const
 {
     return _exams;
-}
-
-void Student::setExams(int *exams)
-{
-    _exams = exams;
 }
 
 void Student::init()
