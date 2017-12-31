@@ -163,3 +163,15 @@ int SinglyLinkedList::IndexOf(int data) const
 
     return -1;
 }
+
+bool SinglyLinkedList::IsEmpty() const
+{
+    bool result = false;
+
+    if(count == 0)
+    {
+        result = true;
+    }
+
+    return result;
+}
