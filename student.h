@@ -40,9 +40,9 @@ public:
     const std::string getDateOfBirth() const;
     const std::string getAddress() const;
     const std::string getPhoneNumber() const;
-    int *getCredits() const;
-    int *getCourseWorks() const;
-    int *getExams() const;
+    const MyVector* getCredits() const; //Refactored
+    const MyVector* getCourseWorks() const; //Refactored
+    const MyVector* getExams() const; //Refactored
 
     void setFirstName(const std::string& firstName);
     void setLastName(const std::string& lastName);

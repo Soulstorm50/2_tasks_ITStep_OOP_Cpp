@@ -57,13 +57,13 @@ Student::Student(const Student& student)
 {
     for(int i = 0; i < 20; i++)
     {
-        _credits->PushBack(student.getCredits()[i]); //!!!
+        _credits->PushBack(student.getCredits()->GetElementAt(i));
     }
 
     for(int i = 0; i < 10; i++)
     {
-        _courseWorks->PushBack(student.getCourseWorks()[i]); //!!!
-        _exams->PushBack(student.getExams()[i]); //!!!
+        _courseWorks->PushBack(student.getCourseWorks()->GetElementAt(i));
+        _exams->PushBack(student.getExams()->GetElementAt(i));
     }
 }
 
@@ -269,7 +269,7 @@ void Student::setPhoneNumber(const std::string& phoneNumber)
     _phoneNumber = phoneNumber;
 }
 
-int *Student::getCredits() const
+const MyVector* Student::getCredits() const
 {
     return _credits;
 }
@@ -279,7 +279,7 @@ void Student::setCredits(int *credits)
     _credits = credits;
 }
 
-int *Student::getCourseWorks() const
+const MyVector* Student::getCourseWorks() const
 {
     return _courseWorks;
 }
@@ -289,7 +289,7 @@ void Student::setCourseWorks(int *courseWorks)
     _courseWorks = courseWorks;
 }
 
-int *Student::getExams() const
+const MyVector* Student::getExams() const
 {
     return _exams;
 }
