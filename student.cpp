@@ -52,8 +52,8 @@ Student::Student(const Student& student)
                    , _address(student.getAddress())
                    , _phoneNumber(student.getPhoneNumber())
                    , _credits(new MyVector(20))
-                   , _courseWorks(new MyVector(20))
-                   , _exams(new MyVector(20))
+                   , _courseWorks(new MyVector(10))
+                   , _exams(new MyVector(10))
 {
     for(int i = 0; i < 20; i++)
     {
@@ -74,21 +74,19 @@ Student::Student(const Student* student)
                    , _dateOfBirth(student->getDateOfBirth())
                    , _address(student->getAddress())
                    , _phoneNumber(student->getPhoneNumber())
-                   , _credits(new int[20])
-                   , _courseWorks(new int[10])
-                   , _exams(new int[10])
+                   , _credits(new MyVector(20))
+                   , _courseWorks(new MyVector(10))
+                   , _exams(new MyVector(10))
 {
-    int sizeCredits = 20;
-    int sizeCourseExams = 10;
-    for(int i = 0; i < sizeCredits; i++)
+    for(int i = 0; i < 20; i++)
     {
-        _credits[i] = student->getCredits()[i];
+        _credits->PushBack(student->getCredits()->GetElementAt(i));
     }
 
-    for(int i = 0; i < sizeCourseExams; i++)
+    for(int i = 0; i < 10; i++)
     {
-        _courseWorks[i] = student->getCourseWorks()[i];
-        _exams[i] = student->getExams()[i];
+        _courseWorks->PushBack(student->getCourseWorks()->GetElementAt(i));
+        _exams->PushBack(student->getExams()->GetElementAt(i));
     }
 }
 

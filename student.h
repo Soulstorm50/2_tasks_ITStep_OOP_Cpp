@@ -14,11 +14,11 @@ class Student
 {
 public:
     Student();
-    Student(const std::string& lastName, const std::string& firstName);
-    Student(  const std::string& lastName
-            , const std::string& firstName
-            , const std::string& dateOfBirth
-            );
+    explicit Student(const std::string& lastName, const std::string& firstName);
+    explicit Student(  const std::string& lastName
+                     , const std::string& firstName
+                     , const std::string& dateOfBirth
+                    );
     Student(const Student& student);
     Student(const Student* student);
 
