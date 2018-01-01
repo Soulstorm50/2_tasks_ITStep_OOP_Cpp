@@ -19,16 +19,16 @@ int main()
 
     SinglyLinkedList list;
 
-    list.AddTail(1);
-    list.AddTail(7);
-    list.AddTail(1);
-    list.AddTail(2);
-    list.AddTail(7);
-    list.AddTail(2);
+    for(int i = 0; i < 10; i++)
+    {
+        list.AddTail(i);
+    }
 
     list.Print();
 
-    cout << list.LastIndexOf(7) << endl;
+    list.Reverse();
+
+    list.Print();
 
 
 

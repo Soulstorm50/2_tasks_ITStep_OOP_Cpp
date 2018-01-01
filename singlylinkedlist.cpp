@@ -206,3 +206,18 @@ int SinglyLinkedList::LastIndexOf(int data) const
 
     return -1;
 }
+
+void SinglyLinkedList::Reverse()
+{
+    Node* currNode = head;
+    Node* prevNode = nullptr;
+    Node* nextNode = nullptr;
+    while(currNode != nullptr)
+    {
+      nextNode = currNode->next;
+      currNode->next = prevNode;
+      prevNode = currNode;
+      currNode = nextNode;
+    }
+    head = prevNode;
+}

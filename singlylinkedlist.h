@@ -59,10 +59,8 @@ public:
     int GetCount() const;
     int IndexOf(int data) const;
     bool IsEmpty() const;
-    int LastIndexOf(int data) const; //(это не шутка  поиск последнего вхождения в список
-    //указанного в параметре значения. В результате работы вернуть индекс найденного
-    //элемента, а eсли ничего не найдено, вернуть минус 1)
-    void Reverse(); //(изменение порядка следования элементов в списке на противоположный)
+    int LastIndexOf(int data) const;
+    void Reverse();
 
 private:
 
