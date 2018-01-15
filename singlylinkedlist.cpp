@@ -2,6 +2,15 @@
 
 
 
+const int& SinglyLinkedList::operator [](int index) const
+{
+    int i = 0;
+    while(i++ < count)
+    {
+
+    }
+}
+
 void SinglyLinkedList::AddHead(int data)
 {
     Node* newElem = new Node();
@@ -220,4 +229,24 @@ void SinglyLinkedList::Reverse()
       currNode = nextNode;
     }
     head = prevNode;
+}
+
+void SinglyLinkedList::MergeWith(const SinglyLinkedList& list)
+{
+    int size = list.GetCount();
+    for(int i = 0; i < size; i++)
+    {
+        Node* newElem = new Node();
+        newElem->data = 0;
+        if (tail == nullptr)
+        {
+            head = newElem;
+        }
+        else
+        {
+            tail->next = newElem;
+        }
+        tail = newElem;
+        count++;
+    }
 }
