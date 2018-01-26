@@ -314,6 +314,21 @@ bool SinglyLinkedList::Equals(const SinglyLinkedList* list) const
     return result;
 }
 
+SinglyLinkedList *SinglyLinkedList::Clone() const
+{
+    SinglyLinkedList* list = new SinglyLinkedList();
+
+    Node* tmpNode = head;
+
+    for(int i = 0; i < count; i++)
+    {
+        list->AddTail(tmpNode->data);
+        tmpNode = tmpNode->next;
+    }
+
+    return list;
+}
+
 void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
 {
     int i = left, j = right;

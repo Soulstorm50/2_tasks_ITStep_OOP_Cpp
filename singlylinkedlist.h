@@ -14,8 +14,6 @@
 
 //Методы (помимо уже существующих в примере):
 
-//- Clone (метод создаёт точную копию односвязного списка и возвращает указатель
-//на эту копию c типом SinglyLinkedList)
 //- Contains (булевский метод, проверяет, а есть ли вообще в списке переданное
 //в качестве параметра значение)
 //- ToArray (метод создаёт точную копию односвязного списка и возвращает указатель
@@ -63,6 +61,7 @@ public:
     void SetAt(int index, int value);
     void Shuffle();
     bool Equals(const SinglyLinkedList* list) const;
+    SinglyLinkedList* Clone() const;
 
 private:
 

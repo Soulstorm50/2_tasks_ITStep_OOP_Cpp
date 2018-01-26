@@ -26,17 +26,9 @@ int main()
 
     list.Print();
 
-    SinglyLinkedList* list2 = new SinglyLinkedList();
+    SinglyLinkedList* listClone = list.Clone();
 
-    for(int i = 0; i < 10; i++)
-    {
-        list2->AddTail(i);
-    }
-
-    list2->SetAt(5, 777);
-    list2->Print();
-
-    cout << list.Equals(list2) << endl;
+    listClone->Print();
 
 
     return 0;
