@@ -26,9 +26,17 @@ int main()
 
     list.Print();
 
-    list.Shuffle();
+    SinglyLinkedList* list2 = new SinglyLinkedList();
 
-    list.Print();
+    for(int i = 0; i < 10; i++)
+    {
+        list2->AddTail(i);
+    }
+
+    list2->SetAt(5, 777);
+    list2->Print();
+
+    cout << list.Equals(list2) << endl;
 
 
     return 0;

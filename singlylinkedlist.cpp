@@ -285,6 +285,35 @@ void SinglyLinkedList::Shuffle()
     }
 }
 
+bool SinglyLinkedList::Equals(const SinglyLinkedList* list) const
+{
+    bool result = true;
+
+    Node* tmpNode = head;
+
+    int i = 0;
+
+    if(this->count == list->count)
+    {
+        while(i < count)
+        {
+            if(!(tmpNode->data == list->operator[](i)))
+            {
+                result = false;
+                break;
+            }
+            tmpNode = tmpNode->next;
+            i++;
+        }
+    }
+    else if(this->count != list->count)
+    {
+        result = false;
+    }
+
+    return result;
+}
+
 void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
 {
     int i = left, j = right;
