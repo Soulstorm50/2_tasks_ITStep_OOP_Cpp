@@ -248,7 +248,7 @@ void SinglyLinkedList::MergeWith(const SinglyLinkedList& list)
 
 void SinglyLinkedList::SortAsc()
 {
-
+    quickSortAsc(*this, 0, count - 1);
 }
 
 void SinglyLinkedList::SetAt(int index, int value)
@@ -271,50 +271,47 @@ void SinglyLinkedList::SetAt(int index, int value)
 
 void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
 {
-//    int i = left, j = right;
+    int i = left, j = right;
 
-//    int tmp;
+    int tmp;
 
-//    int pivot = list[(left + right) / 2];
+    int pivot = list[(left + right) / 2];
 
+    /* partition */
 
-//    /* partition */
+    while (i <= j) {
 
-//    while (i <= j) {
+          while (list[i] < pivot)
 
-//          while (list[i] < pivot)
+                i++;
 
-//                i++;
+          while (list[j] > pivot)
 
-//          while (list[j] > pivot)
+                j--;
 
-//                j--;
+          if (i <= j) {
 
-//          if (i <= j) {
+                tmp = list[i];
 
-//                tmp = list[i];
+                list.SetAt(i, list[j]);
 
-//                //list[i] = list[j];
-//                list.
-//                arr[j] = tmp;
+                list.SetAt(j, tmp);
 
-//                i++;
+                i++;
 
-//                j--;
+                j--;
 
-//          }
+          }
 
-//    };
+    };
 
+    /* recursion */
 
+    if (left < j)
 
-//    /* recursion */
+          quickSortAsc(list, left, j);
 
-//    if (left < j)
+    if (i < right)
 
-//          quickSortAsc(arr, left, j);
-
-//    if (i < right)
-
-//        quickSortAsc(arr, i, right);
+        quickSortAsc(list, i, right);
 }

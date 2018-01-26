@@ -61,7 +61,7 @@ public:
     int LastIndexOf(int data) const;
     void Reverse();
     void MergeWith(const SinglyLinkedList& list);
-    void SortAsc(); //(сортировка значений элементов списка по возрастанию)
+    void SortAsc();
     void SetAt(int index, int value);
 
 private:
