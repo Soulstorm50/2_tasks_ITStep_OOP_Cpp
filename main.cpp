@@ -21,12 +21,12 @@ int main()
 
     for(int i = 0; i < 10; i++)
     {
-        list.AddTail(10 - i);
+        list.AddTail(i);
     }
 
     list.Print();
 
-    list.SortAsc();
+    list.SortDesc();
 
     list.Print();
 

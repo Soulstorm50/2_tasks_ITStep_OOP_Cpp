@@ -251,6 +251,12 @@ void SinglyLinkedList::SortAsc()
     quickSortAsc(*this, 0, count - 1);
 }
 
+void SinglyLinkedList::SortDesc()
+{
+    quickSortAsc(*this, 0, count - 1);
+    Reverse();
+}
+
 void SinglyLinkedList::SetAt(int index, int value)
 {
     Node* tmpNode = head;
