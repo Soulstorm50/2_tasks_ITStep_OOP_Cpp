@@ -275,6 +275,16 @@ void SinglyLinkedList::SetAt(int index, int value)
     }
 }
 
+void SinglyLinkedList::Shuffle()
+{
+    srand (time(NULL));
+
+    for(int i = 0; i < count; i++)
+    {
+        swap(*this, i, rand() % count);
+    }
+}
+
 void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
 {
     int i = left, j = right;
@@ -320,4 +330,11 @@ void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
     if (i < right)
 
         quickSortAsc(list, i, right);
+}
+
+void SinglyLinkedList::swap(SinglyLinkedList& list, int first, int second)
+{
+    int temp = list[first];
+    list.SetAt(first, list[second]);
+    list.SetAt(second, temp);
 }

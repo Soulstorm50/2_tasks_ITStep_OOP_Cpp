@@ -26,7 +26,7 @@ int main()
 
     list.Print();
 
-    list.SortDesc();
+    list.Shuffle();
 
     list.Print();
 

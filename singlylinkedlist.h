@@ -33,6 +33,7 @@
 //Каждый из вышеперечисленных методов должен быть хорошо протестирован!
 //Коды всех тестов должны прилагаться в мейне.
 #include <iostream>
+#include <time.h>
 
 class SinglyLinkedList
 {
@@ -61,8 +62,9 @@ public:
     void Reverse();
     void MergeWith(const SinglyLinkedList& list);
     void SortAsc();
-    void SortDesc(); //(сортировка значений элементов списка по убыванию)
+    void SortDesc();
     void SetAt(int index, int value);
+    void Shuffle();
 
 private:
 
@@ -71,6 +73,7 @@ private:
     int count = 0;
 
     void quickSortAsc(SinglyLinkedList& list, int left, int right);
+    void swap(SinglyLinkedList& list, int first, int second);
 
 };
 
