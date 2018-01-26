@@ -26,16 +26,9 @@ int main()
 
     list.Print();
 
-    SinglyLinkedList list2;
+    list.SetAt(5, 777);
 
-    list2.AddTail(123);
-
-    list2.Print();
-
-    list2.MergeWith(list);
-
-    list2.Print();
-
+    list.Print();
 
 
     return 0;

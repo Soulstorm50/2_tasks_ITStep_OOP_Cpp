@@ -14,7 +14,6 @@
 
 //Методы (помимо уже существующих в примере):
 
-//- SortAsc (сортировка значений элементов списка по возрастанию)
 //- SortDesc (сортировка значений элементов списка по убыванию)
 //- Shuffle (случайное перемешивание элементов списка)
 //- Equals (в качестве параметра передаётся указатель на другой односвязный список.
@@ -23,7 +22,6 @@
 //на эту копию c типом SinglyLinkedList)
 //- Contains (булевский метод, проверяет, а есть ли вообще в списке переданное
 //в качестве параметра значение)
-//- SetAt (метод устанавливает новое значение для элемента по указанному индексу)
 //- ToArray (метод создаёт точную копию односвязного списка и возвращает указатель
 //на эту копию, но не с типом SinglyLinkedList, а с типом int*)
 
@@ -63,12 +61,16 @@ public:
     int LastIndexOf(int data) const;
     void Reverse();
     void MergeWith(const SinglyLinkedList& list);
+    void SortAsc(); //(сортировка значений элементов списка по возрастанию)
+    void SetAt(int index, int value);
 
 private:
 
     Node* head = nullptr;
     Node* tail = nullptr;
     int count = 0;
+
+    void quickSortAsc(SinglyLinkedList& list, int left, int right);
 
 };
 

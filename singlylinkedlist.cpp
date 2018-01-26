@@ -245,3 +245,76 @@ void SinglyLinkedList::MergeWith(const SinglyLinkedList& list)
         this->AddTail(list[i]);
     }
 }
+
+void SinglyLinkedList::SortAsc()
+{
+
+}
+
+void SinglyLinkedList::SetAt(int index, int value)
+{
+    Node* tmpNode = head;
+
+    int i = 0;
+
+    while(i < count)
+    {
+        if(i == index)
+        {
+            tmpNode->data = value;
+            break;
+        }
+        tmpNode = tmpNode->next;
+        i++;
+    }
+}
+
+void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
+{
+//    int i = left, j = right;
+
+//    int tmp;
+
+//    int pivot = list[(left + right) / 2];
+
+
+//    /* partition */
+
+//    while (i <= j) {
+
+//          while (list[i] < pivot)
+
+//                i++;
+
+//          while (list[j] > pivot)
+
+//                j--;
+
+//          if (i <= j) {
+
+//                tmp = list[i];
+
+//                //list[i] = list[j];
+//                list.
+//                arr[j] = tmp;
+
+//                i++;
+
+//                j--;
+
+//          }
+
+//    };
+
+
+
+//    /* recursion */
+
+//    if (left < j)
+
+//          quickSortAsc(arr, left, j);
+
+//    if (i < right)
+
+//        quickSortAsc(arr, i, right);
+}
