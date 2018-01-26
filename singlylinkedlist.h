@@ -47,7 +47,6 @@ public:
         Node* next = nullptr;
     };
 
-    //- перегрузка [ ] – обращение к элементу по порядковому номеру
     const int& operator [](int index) const;
 
     void AddHead(int data);

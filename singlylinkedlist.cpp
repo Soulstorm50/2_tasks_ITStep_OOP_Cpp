@@ -4,10 +4,16 @@
 
 const int& SinglyLinkedList::operator [](int index) const
 {
+    Node* tempElem = head;
     int i = 0;
-    while(i++ < count)
+    while(i < count)
     {
-
+        if(i == index)
+        {
+            return tempElem->data;
+        }
+        tempElem = tempElem->next;
+        i++;
     }
 }
 
@@ -233,20 +239,9 @@ void SinglyLinkedList::Reverse()
 
 void SinglyLinkedList::MergeWith(const SinglyLinkedList& list)
 {
-    int size = list.GetCount();
-    for(int i = 0; i < size; i++)
-    {
-        Node* newElem = new Node();
-        newElem->data = 0;
-        if (tail == nullptr)
-        {
-            head = newElem;
-        }
-        else
-        {
-            tail->next = newElem;
-        }
-        tail = newElem;
-        count++;
-    }
+//    int size = list.GetCount();
+//    for(int i = 0; i < size; i++)
+//    {
+//        this->AddTail(list.IndexOf(i));
+//    }
 }

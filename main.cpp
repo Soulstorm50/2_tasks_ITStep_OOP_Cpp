@@ -26,16 +26,7 @@ int main()
 
     list.Print();
 
-    list.Reverse();
-
-    list.Print();
-
-
-
-
-
-
-
+    cout << list[0] << " " << list[1] << endl;
 
 
 
