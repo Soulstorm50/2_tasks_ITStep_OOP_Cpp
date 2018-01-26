@@ -26,11 +26,15 @@ int main()
 
     list.Print();
 
-    cout << list[0] << " " << list[1] << endl;
+    SinglyLinkedList list2;
 
+    list2.AddTail(123);
 
+    list2.Print();
 
+    list2.MergeWith(list);
 
+    list2.Print();
 
 
 

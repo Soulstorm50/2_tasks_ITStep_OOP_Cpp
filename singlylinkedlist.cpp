@@ -239,9 +239,9 @@ void SinglyLinkedList::Reverse()
 
 void SinglyLinkedList::MergeWith(const SinglyLinkedList& list)
 {
-//    int size = list.GetCount();
-//    for(int i = 0; i < size; i++)
-//    {
-//        this->AddTail(list.IndexOf(i));
-//    }
+    int size = list.GetCount();
+    for(int i = 0; i < size; i++)
+    {
+        this->AddTail(list[i]);
+    }
 }

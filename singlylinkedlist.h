@@ -62,8 +62,7 @@ public:
     bool IsEmpty() const;
     int LastIndexOf(int data) const;
     void Reverse();
-    void MergeWith(const SinglyLinkedList& list); //(метод присоединяет в конец текущего списка все элементы другого
-    //списка, ссылка на который передаётся как параметр)
+    void MergeWith(const SinglyLinkedList& list);
 
 private:
 
