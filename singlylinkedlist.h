@@ -36,6 +36,12 @@ public:
     };
 
     const int& operator [](int index) const;
+    bool operator <(const SinglyLinkedList& list);
+    bool operator >(const SinglyLinkedList& list);
+    bool operator <=(const SinglyLinkedList& list);
+    bool operator >=(const SinglyLinkedList& list);
+    bool operator ==(const SinglyLinkedList& list);
+    bool operator !=(const SinglyLinkedList& list);
 
     void AddHead(int data);
     void AddTail(int data);

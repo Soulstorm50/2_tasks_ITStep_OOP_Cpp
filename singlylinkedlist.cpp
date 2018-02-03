@@ -17,6 +17,78 @@ const int& SinglyLinkedList::operator [](int index) const
     }
 }
 
+bool SinglyLinkedList::operator <(const SinglyLinkedList& list)
+{
+    bool result = false;
+
+    if(count < list.GetCount())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool SinglyLinkedList::operator >(const SinglyLinkedList& list)
+{
+    bool result = false;
+
+    if(count > list.GetCount())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool SinglyLinkedList::operator <=(const SinglyLinkedList& list)
+{
+    bool result = false;
+
+    if(count <= list.GetCount())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool SinglyLinkedList::operator >=(const SinglyLinkedList& list)
+{
+    bool result = false;
+
+    if(count >= list.GetCount())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool SinglyLinkedList::operator ==(const SinglyLinkedList& list)
+{
+    bool result = false;
+
+    if(count == list.GetCount())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
+bool SinglyLinkedList::operator !=(const SinglyLinkedList& list)
+{
+    bool result = false;
+
+    if(count != list.GetCount())
+    {
+        result = true;
+    }
+
+    return result;
+}
+
 void SinglyLinkedList::AddHead(int data)
 {
     Node* newElem = new Node();
