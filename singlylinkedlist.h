@@ -1,23 +1,6 @@
 #ifndef SINGLYLINKEDLIST_H
 #define SINGLYLINKEDLIST_H
 
-//7.1 Реализовать класс SinglyLinkedList, представляющий собой однонаправленный
-//список для удобной работы с целыми числами типа int.
-
-//В классе должно быть три поля:
-//- указатель на начало списка (Node* head)
-//- указатель на конец списка (Node* tail)
-//- количество элементов списка (int count)
-
-//Конструкторы:
-//Не нужны.
-
-//Методы (помимо уже существующих в примере):
-
-//- перегрузка операции явного преобразования в int*
-
-//Каждый из вышеперечисленных методов должен быть хорошо протестирован!
-//Коды всех тестов должны прилагаться в мейне.
 #include <iostream>
 #include <time.h>
 
@@ -46,6 +29,7 @@ public:
     SinglyLinkedList& operator =(const SinglyLinkedList& list);
     SinglyLinkedList& operator +(const SinglyLinkedList& list);
     SinglyLinkedList& operator +=(const SinglyLinkedList& list);
+    operator int*();
 
     void AddHead(int data);
     void AddTail(int data);

@@ -180,6 +180,21 @@ SinglyLinkedList& SinglyLinkedList::operator +=(const SinglyLinkedList& list)
     return *this;
 }
 
+SinglyLinkedList::operator int*()
+{
+    int* array = new int[count];
+
+    Node* temp = head;
+
+    for(int i = 0; i < count; i++)
+    {
+        array[i] = temp->data;
+        temp = temp->next;
+    }
+
+    return array;
+}
+
 void SinglyLinkedList::AddHead(int data)
 {
     Node* newElem = new Node();

@@ -26,19 +26,12 @@ int main()
 
     list.Print();
 
-    SinglyLinkedList list2;
+    int* test = (int*)list;
 
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < 10; i++)
     {
-        list2.AddTail(i);
+        cout << test[i] << endl;
     }
-
-    list2.Print();
-
-    list2 += list;
-
-    list2.Print();
-
 
     return 0;
 }
