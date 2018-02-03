@@ -14,8 +14,6 @@
 
 //Методы (помимо уже существующих в примере):
 
-//- перегрузка <, >, <=, >=, ==, !=
-//- перегрузка =, конструктор копирования, деструктор
 
 //- перегрузка + и += (конкатенация списков)
 //- перегрузка операции явного преобразования в int*
@@ -35,6 +33,9 @@ public:
         Node* next = nullptr;
     };
 
+    SinglyLinkedList();
+    explicit SinglyLinkedList(const SinglyLinkedList& list);
+
     const int& operator [](int index) const;
     bool operator <(const SinglyLinkedList& list);
     bool operator >(const SinglyLinkedList& list);
@@ -42,6 +43,8 @@ public:
     bool operator >=(const SinglyLinkedList& list);
     bool operator ==(const SinglyLinkedList& list);
     bool operator !=(const SinglyLinkedList& list);
+    SinglyLinkedList& operator =(const SinglyLinkedList& list);
+    //- перегрузка =, конструктор копирования, деструктор
 
     void AddHead(int data);
     void AddTail(int data);
@@ -68,9 +71,9 @@ public:
 
 private:
 
-    Node* head = nullptr;
-    Node* tail = nullptr;
-    int count = 0;
+    Node* head;
+    Node* tail;
+    int count;
 
     void quickSortAsc(SinglyLinkedList& list, int left, int right);
     void swap(SinglyLinkedList& list, int first, int second);

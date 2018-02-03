@@ -26,29 +26,9 @@ int main()
 
     list.Print();
 
-    SinglyLinkedList list2;
-
-    for(int i = 0; i < 5; i++)
-    {
-        list2.AddTail(i);
-    }
+    SinglyLinkedList list2(list);
 
     list2.Print();
-
-    bool one = list < list2;
-    bool two = list > list2;
-    bool three = list <= list2;
-    bool four = list >= list2;
-    bool five = list == list2;
-    bool six = list != list2;
-
-    cout << one << endl <<
-            two << endl <<
-            three << endl <<
-            four << endl <<
-            five << endl <<
-            six << endl;
-
 
     return 0;
 }

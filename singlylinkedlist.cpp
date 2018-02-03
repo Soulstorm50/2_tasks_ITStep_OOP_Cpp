@@ -2,6 +2,34 @@
 
 
 
+SinglyLinkedList::SinglyLinkedList(): head(nullptr)
+                                    , tail(nullptr)
+                                    , count(0)
+{
+
+}
+
+SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList& list): head(nullptr)
+                                                                , tail(nullptr)
+                                                                , count(0)
+{
+    for(int i = 0; i < list.GetCount(); i++)
+    {
+        Node* newElem = new Node();
+        newElem->data = list[i];
+        if (tail == nullptr)
+        {
+            head = newElem;
+        }
+        else
+        {
+            tail->next = newElem;
+        }
+        tail = newElem;
+        count++;
+    }
+}
+
 const int& SinglyLinkedList::operator [](int index) const
 {
     Node* tempElem = head;
@@ -87,6 +115,16 @@ bool SinglyLinkedList::operator !=(const SinglyLinkedList& list)
     }
 
     return result;
+}
+
+SinglyLinkedList& SinglyLinkedList::operator =(const SinglyLinkedList& list)
+{
+//    SinglyLinkedList tempList(list);
+
+//    _string = const_cast<char*>(tempMyString.GetCharArray());
+//    _capacity = tempMyString.sizeOf();
+
+    return *this;
 }
 
 void SinglyLinkedList::AddHead(int data)
