@@ -329,6 +329,25 @@ SinglyLinkedList *SinglyLinkedList::Clone() const
     return list;
 }
 
+bool SinglyLinkedList::Contains(int value) const
+{
+    bool result = false;
+
+    Node* temp = head;
+
+    for(int i = 0; i < count; i++)
+    {
+        if(temp->data == value)
+        {
+            result = true;
+            break;
+        }
+        temp = temp->next;
+    }
+
+    return result;
+}
+
 void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
 {
     int i = left, j = right;

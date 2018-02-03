@@ -26,9 +26,7 @@ int main()
 
     list.Print();
 
-    SinglyLinkedList* listClone = list.Clone();
-
-    listClone->Print();
+    cout << list.Contains(101) << endl;
 
 
     return 0;

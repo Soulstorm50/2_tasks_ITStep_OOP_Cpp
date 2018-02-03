@@ -62,6 +62,7 @@ public:
     void Shuffle();
     bool Equals(const SinglyLinkedList* list) const;
     SinglyLinkedList* Clone() const;
+    bool Contains(int value) const;
 
 private:
 
