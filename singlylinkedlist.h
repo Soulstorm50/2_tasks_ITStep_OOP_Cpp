@@ -14,8 +14,6 @@
 
 //Методы (помимо уже существующих в примере):
 
-
-//- перегрузка + и += (конкатенация списков)
 //- перегрузка операции явного преобразования в int*
 
 //Каждый из вышеперечисленных методов должен быть хорошо протестирован!
@@ -46,6 +44,8 @@ public:
     bool operator ==(const SinglyLinkedList& list);
     bool operator !=(const SinglyLinkedList& list);
     SinglyLinkedList& operator =(const SinglyLinkedList& list);
+    SinglyLinkedList& operator +(const SinglyLinkedList& list);
+    //- перегрузка + и += (конкатенация списков)
 
     void AddHead(int data);
     void AddTail(int data);

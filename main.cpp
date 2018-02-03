@@ -35,7 +35,7 @@ int main()
 
     list2.Print();
 
-    list2 = list;
+    list2 + list;
 
     list2.Print();
 
