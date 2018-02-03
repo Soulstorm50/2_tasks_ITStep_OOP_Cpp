@@ -348,6 +348,21 @@ bool SinglyLinkedList::Contains(int value) const
     return result;
 }
 
+int* SinglyLinkedList::ToArray()
+{
+    int* array = new int[count];
+
+    Node* temp = head;
+
+    for(int i = 0; i < count; i++)
+    {
+        array[i] = temp->data;
+        temp = temp->next;
+    }
+
+    return array;
+}
+
 void SinglyLinkedList::quickSortAsc(SinglyLinkedList& list, int left, int right)
 {
     int i = left, j = right;

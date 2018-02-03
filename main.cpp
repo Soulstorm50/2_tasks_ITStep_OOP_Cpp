@@ -26,8 +26,12 @@ int main()
 
     list.Print();
 
-    cout << list.Contains(101) << endl;
+    int* tempArr = list.ToArray();
 
+    for(int i=0; i<10; i++)
+    {
+    cout << tempArr[i] << endl;
+    }
 
     return 0;
 }
