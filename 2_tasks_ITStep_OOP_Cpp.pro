@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     soulstime.cpp \
     myvector.cpp \
     singlylinkedlist.cpp \
-    doublylinkedlist.cpp
+    doublylinkedlist.cpp \
+    mystack.cpp
 
 HEADERS += \
     counter.h \
@@ -27,4 +28,5 @@ HEADERS += \
     soulstime.h \
     myvector.h \
     singlylinkedlist.h \
-    doublylinkedlist.h
+    doublylinkedlist.h \
+    mystack.h
