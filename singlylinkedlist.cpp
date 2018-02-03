@@ -30,6 +30,17 @@ SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList& list): head(nullptr)
     }
 }
 
+SinglyLinkedList::~SinglyLinkedList()
+{
+    Node* elem = head;
+    for(int i = 0; i < count; i++)
+    {
+        Node* elemNext = elem->next;
+        delete[] elem;
+        elem = elemNext;
+    }
+}
+
 const int& SinglyLinkedList::operator [](int index) const
 {
     Node* tempElem = head;
@@ -119,10 +130,34 @@ bool SinglyLinkedList::operator !=(const SinglyLinkedList& list)
 
 SinglyLinkedList& SinglyLinkedList::operator =(const SinglyLinkedList& list)
 {
-//    SinglyLinkedList tempList(list);
+    SinglyLinkedList tempList(list);
 
-//    _string = const_cast<char*>(tempMyString.GetCharArray());
-//    _capacity = tempMyString.sizeOf();
+    Node* elem = head;
+    for(int i = 0; i < count; i++)
+    {
+        Node* elemNext = elem->next;
+        delete[] elem;
+        elem = elemNext;
+    }
+    head = nullptr;
+    tail = nullptr;
+    count = 0;
+
+    for(int i = 0; i < tempList.GetCount(); i++)
+    {
+        Node* newElem = new Node();
+        newElem->data = tempList[i];
+        if (tail == nullptr)
+        {
+            head = newElem;
+        }
+        else
+        {
+            tail->next = newElem;
+        }
+        tail = newElem;
+        count++;
+    }
 
     return *this;
 }

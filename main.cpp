@@ -26,9 +26,19 @@ int main()
 
     list.Print();
 
-    SinglyLinkedList list2(list);
+    SinglyLinkedList list2;
+
+    for(int i = 0; i < 5; i++)
+    {
+        list2.AddTail(i);
+    }
 
     list2.Print();
+
+    list2 = list;
+
+    list2.Print();
+
 
     return 0;
 }

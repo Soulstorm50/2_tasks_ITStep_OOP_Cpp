@@ -36,6 +36,8 @@ public:
     SinglyLinkedList();
     explicit SinglyLinkedList(const SinglyLinkedList& list);
 
+    ~SinglyLinkedList();
+
     const int& operator [](int index) const;
     bool operator <(const SinglyLinkedList& list);
     bool operator >(const SinglyLinkedList& list);
@@ -44,7 +46,6 @@ public:
     bool operator ==(const SinglyLinkedList& list);
     bool operator !=(const SinglyLinkedList& list);
     SinglyLinkedList& operator =(const SinglyLinkedList& list);
-    //- перегрузка =, конструктор копирования, деструктор
 
     void AddHead(int data);
     void AddTail(int data);
