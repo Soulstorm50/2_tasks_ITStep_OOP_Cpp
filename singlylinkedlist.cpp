@@ -171,6 +171,15 @@ SinglyLinkedList& SinglyLinkedList::operator +(const SinglyLinkedList& list)
     return *this;
 }
 
+SinglyLinkedList& SinglyLinkedList::operator +=(const SinglyLinkedList& list)
+{
+    for(int i = 0; i < list.GetCount(); i++)
+    {
+        this->AddTail(list[i]);
+    }
+    return *this;
+}
+
 void SinglyLinkedList::AddHead(int data)
 {
     Node* newElem = new Node();

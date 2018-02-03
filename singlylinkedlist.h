@@ -45,7 +45,7 @@ public:
     bool operator !=(const SinglyLinkedList& list);
     SinglyLinkedList& operator =(const SinglyLinkedList& list);
     SinglyLinkedList& operator +(const SinglyLinkedList& list);
-    //- перегрузка + и += (конкатенация списков)
+    SinglyLinkedList& operator +=(const SinglyLinkedList& list);
 
     void AddHead(int data);
     void AddTail(int data);
