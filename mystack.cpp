@@ -60,3 +60,17 @@ bool MyStack::Contains(int value)
 {
     return _data.Contains(value);
 }
+
+void MyStack::PushLessValue(int value)
+{
+    if (!IsFull())
+    {
+        if(_data[_top - 1] > value)
+        {
+            _data.AddTail(value);
+            _top++;
+        }
+    }
+
+    else throw "Stack overflow!";
+}

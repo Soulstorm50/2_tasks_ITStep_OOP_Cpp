@@ -19,8 +19,10 @@ int main()
     // test for class MyStack
     MyStack stack;
 
-    cout << stack.Contains(1) << endl;
-    stack.Push(1);
-    cout << stack.Contains(1) << endl;
+    stack.Push(10);
+
+    stack.PushLessValue(20);
+    stack.PushLessValue(5);
+    cout << stack.Peek() << endl;
     return 0;
 }
