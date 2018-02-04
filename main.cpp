@@ -19,29 +19,14 @@ int main()
     // test for class MyStack
     MyStack stack;
 
-    cout << stack.GetCount() << endl;
-    cout << stack.IsEmpty() << endl;
-    cout << stack.IsFull() << endl;
     stack.Push(1);
+    cout << stack.Peek() << endl;
     stack.Push(2);
+    cout << stack.Peek() << endl;
     stack.Push(3);
+    cout << stack.Peek() << endl;
     stack.Push(4);
-    stack.Push(5);
-    stack.Push(6);
-    stack.Push(7);
-    stack.Push(8);
-    stack.Push(9);
-    cout << stack.GetCount() << endl;
-    cout << stack.IsEmpty() << endl;
-    cout << stack.IsFull() << endl;
-    cout << stack.Pop() << endl;
-    stack.Push(10);
-    stack.Push(11);
-    cout << stack.GetCount() << endl;
-    cout << stack.IsEmpty() << endl;
-    cout << stack.IsFull() << endl;
-
-    stack.Push(11);
+    cout << stack.Peek() << endl;
 
     return 0;
 }

@@ -45,3 +45,13 @@ int MyStack::Pop()
 
     else throw "Stack is empty!";
 }
+
+int MyStack::Peek()
+{
+    if (!IsEmpty())
+    {
+        return _data[_top - 1];
+    }
+
+    else throw "Stack is empty!";
+}
