@@ -9,29 +9,39 @@
 
 #include "string"
 #include "singlylinkedlist.h"
+#include "mystack.h"
 
 using namespace std;
 
 int main()
 {
 
-    // test for class SinglyLinkedList
+    // test for class MyStack
+    MyStack stack;
 
-    SinglyLinkedList list;
+    cout << stack.GetCount() << endl;
+    cout << stack.IsEmpty() << endl;
+    cout << stack.IsFull() << endl;
+    stack.Push(1);
+    stack.Push(2);
+    stack.Push(3);
+    stack.Push(4);
+    stack.Push(5);
+    stack.Push(6);
+    stack.Push(7);
+    stack.Push(8);
+    stack.Push(9);
+    cout << stack.GetCount() << endl;
+    cout << stack.IsEmpty() << endl;
+    cout << stack.IsFull() << endl;
+    cout << stack.Pop() << endl;
+    stack.Push(10);
+    stack.Push(11);
+    cout << stack.GetCount() << endl;
+    cout << stack.IsEmpty() << endl;
+    cout << stack.IsFull() << endl;
 
-    for(int i = 0; i < 10; i++)
-    {
-        list.AddTail(i);
-    }
-
-    list.Print();
-
-    int* test = (int*)list;
-
-    for(int i = 0; i < 10; i++)
-    {
-        cout << test[i] << endl;
-    }
+    stack.Push(11);
 
     return 0;
 }
