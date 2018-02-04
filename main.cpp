@@ -19,10 +19,11 @@ int main()
     // test for class MyStack
     MyStack stack;
 
-    stack.Push(10);
-
-    stack.PushLessValue(20);
-    stack.PushLessValue(5);
+    stack.PushUnique(10);
+    cout << stack.Peek() << endl;
+    stack.PushUnique(20);
+    cout << stack.Peek() << endl;
+    stack.PushUnique(10);
     cout << stack.Peek() << endl;
     return 0;
 }

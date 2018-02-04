@@ -74,3 +74,17 @@ void MyStack::PushLessValue(int value)
 
     else throw "Stack overflow!";
 }
+
+void MyStack::PushUnique(int value)
+{
+    if (!IsFull())
+    {
+        if(!_data.Contains(value))
+        {
+            _data.AddTail(value);
+            _top++;
+        }
+    }
+
+    else throw "Stack overflow!";
+}
