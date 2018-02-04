@@ -55,3 +55,8 @@ int MyStack::Peek()
 
     else throw "Stack is empty!";
 }
+
+bool MyStack::Contains(int value)
+{
+    return _data.Contains(value);
+}
