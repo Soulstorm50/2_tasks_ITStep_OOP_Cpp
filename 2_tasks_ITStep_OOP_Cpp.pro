@@ -15,7 +15,8 @@ SOURCES += main.cpp \
     myvector.cpp \
     singlylinkedlist.cpp \
     doublylinkedlist.cpp \
-    mystack.cpp
+    mystack.cpp \
+    mypriorityinarrayqueue.cpp
 
 HEADERS += \
     counter.h \
@@ -29,4 +30,5 @@ HEADERS += \
     myvector.h \
     singlylinkedlist.h \
     doublylinkedlist.h \
-    mystack.h
+    mystack.h \
+    mypriorityinarrayqueue.h
