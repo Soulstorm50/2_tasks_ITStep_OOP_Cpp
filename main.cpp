@@ -11,6 +11,8 @@
 #include "singlylinkedlist.h"
 #include "mystack.h"
 
+#include "mypriorityinarrayqueue.h"
+
 using namespace std;
 
 void checkForCorrection(const MyString& expression)
@@ -65,6 +67,20 @@ int main()
 {
 
     // test for class MyPriorityInArrayQueue
+
+
+    MyPriorityInArrayQueue q(25);
+
+    for (int i = 0; i < 10; i++)
+        q.Enqueue(i);
+
+    q.Show();
+
+    q.Enqueue(3);
+    q.Enqueue(99);
+
+    q.Show();
+
 
 
     return 0;
