@@ -3,8 +3,7 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    counter.cpp \
+SOURCES += counter.cpp \
     point.cpp \
     fraction.cpp \
     student.cpp \
@@ -18,7 +17,16 @@ SOURCES += main.cpp \
     mystack.cpp \
     mypriorityinarrayqueue.cpp \
     myprioritylinkedlistqueue.cpp \
-    mydeque.cpp
+    mydeque.cpp \
+    main.cpp \
+    CounterStrikeSimulator/weapon.cpp \
+    CounterStrikeSimulator/knife.cpp \
+    CounterStrikeSimulator/pistol.cpp \
+    CounterStrikeSimulator/shootgun.cpp \
+    CounterStrikeSimulator/machinegun.cpp \
+    CounterStrikeSimulator/sniperriffle.cpp \
+    CounterStrikeSimulator/granade.cpp \
+    CounterStrikeSimulator/smokegranade.cpp
 
 HEADERS += \
     counter.h \
@@ -35,4 +43,12 @@ HEADERS += \
     mystack.h \
     mypriorityinarrayqueue.h \
     myprioritylinkedlistqueue.h \
-    mydeque.h
+    mydeque.h \
+    CounterStrikeSimulator/weapon.h \
+    CounterStrikeSimulator/knife.h \
+    CounterStrikeSimulator/pistol.h \
+    CounterStrikeSimulator/shootgun.h \
+    CounterStrikeSimulator/machinegun.h \
+    CounterStrikeSimulator/sniperriffle.h \
+    CounterStrikeSimulator/granade.h \
+    CounterStrikeSimulator/smokegranade.h
