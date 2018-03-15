@@ -1,6 +1,6 @@
 #include "pistol.h"
 
-Pistol::Pistol()
+Pistol::Pistol(): _name("Pistol")
 {
 
 }
@@ -18,4 +18,9 @@ void Pistol::action1()
 void Pistol::action2()
 {
     std::cout << " Reload " << std::endl;
+}
+
+const char* Pistol::getName() const
+{
+    return _name;
 }

@@ -1,6 +1,6 @@
 #include "sniperriffle.h"
 
-SniperRiffle::SniperRiffle()
+SniperRiffle::SniperRiffle(): _name("Sniperriffle")
 {
 
 }
@@ -18,4 +18,9 @@ void SniperRiffle::action1()
 void SniperRiffle::action2()
 {
     std::cout << " Take aim! " << std::endl;
+}
+
+const char* SniperRiffle::getName() const
+{
+    return _name;
 }

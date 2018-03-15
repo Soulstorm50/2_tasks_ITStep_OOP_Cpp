@@ -26,7 +26,8 @@ SOURCES += counter.cpp \
     CounterStrikeSimulator/machinegun.cpp \
     CounterStrikeSimulator/sniperriffle.cpp \
     CounterStrikeSimulator/granade.cpp \
-    CounterStrikeSimulator/smokegranade.cpp
+    CounterStrikeSimulator/smokegranade.cpp \
+    CounterStrikeSimulator/counterstrike.cpp
 
 HEADERS += \
     counter.h \
@@ -51,4 +52,5 @@ HEADERS += \
     CounterStrikeSimulator/machinegun.h \
     CounterStrikeSimulator/sniperriffle.h \
     CounterStrikeSimulator/granade.h \
-    CounterStrikeSimulator/smokegranade.h
+    CounterStrikeSimulator/smokegranade.h \
+    CounterStrikeSimulator/counterstrike.h

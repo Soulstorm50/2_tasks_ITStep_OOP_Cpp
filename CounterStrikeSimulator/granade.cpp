@@ -1,6 +1,6 @@
 #include "granade.h"
 
-Granade::Granade()
+Granade::Granade(): _name("Granade")
 {
 
 }
@@ -18,4 +18,9 @@ void Granade::action1()
 void Granade::action2()
 {
     std::cout << " Hand change. Now granade in other hand! " << std::endl;
+}
+
+const char* Granade::getName() const
+{
+    return _name;
 }

@@ -1,6 +1,6 @@
 #include "machinegun.h"
 
-Machinegun::Machinegun()
+Machinegun::Machinegun(): _name("Machinegun")
 {
 
 }
@@ -18,4 +18,9 @@ void Machinegun::action1()
 void Machinegun::action2()
 {
     std::cout << " Single machinegun shot " << std::endl;
+}
+
+const char* Machinegun::getName() const
+{
+    return _name;
 }

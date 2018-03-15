@@ -20,6 +20,7 @@ public:
 
     virtual void action1() = 0;
     virtual void action2() = 0;
+    virtual const char* getName() const = 0;
 };
 
 #endif // WEAPON_H
