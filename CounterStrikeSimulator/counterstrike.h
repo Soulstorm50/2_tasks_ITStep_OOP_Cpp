@@ -25,6 +25,7 @@ private:
     void action1();
     void action2();
     void printChangedWeapon();
+    void clearScreen();
 
     Weapon* _currentWeapon;
 

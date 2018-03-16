@@ -68,7 +68,7 @@ void checkForCorrection(const MyString& expression)
 int main()
 {
 
-    // test for class MyPriorityInArrayQueue
+    // test for class CounterStrike
 
     CounterStrike cs;
     cs.run();
