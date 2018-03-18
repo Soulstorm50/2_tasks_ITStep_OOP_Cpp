@@ -27,53 +27,64 @@ void CounterStrike::run()
         {
 
         case 13: //Enter
+            draw();
+            printCurrentWaepon();
             this->action1();
             break;
 
         case 32: //space
+            draw();
+            printCurrentWaepon();
             this->action2();
             break;
 
         case 48:
             delete _currentWeapon;
-            _currentWeapon = new Knife();
-            printChangedWeapon();
+            _currentWeapon = new Knife(); 
+            draw();
+            printCurrentWaepon();
             break;
 
         case 49:
             delete _currentWeapon;
             _currentWeapon = new Pistol();
-            printChangedWeapon();
+            draw();
+            printCurrentWaepon();
             break;
 
         case 50:
             delete _currentWeapon;
             _currentWeapon = new Shootgun();
-            printChangedWeapon();
+            draw();
+            printCurrentWaepon();
             break;
 
         case 51:
             delete _currentWeapon;
             _currentWeapon = new Machinegun();
-            printChangedWeapon();
+            draw();
+            printCurrentWaepon();
             break;
 
         case 52:
             delete _currentWeapon;
             _currentWeapon = new SniperRiffle();
-            printChangedWeapon();
+            draw();
+            printCurrentWaepon();
             break;
 
         case 53:
             delete _currentWeapon;
             _currentWeapon = new Granade();
-            printChangedWeapon();
+            draw();
+            printCurrentWaepon();
             break;
 
         case 54:
             delete _currentWeapon;
             _currentWeapon = new SmokeGranade();
-            printChangedWeapon();
+            draw();
+            printCurrentWaepon();
             break;
 
         case 27:
@@ -89,54 +100,30 @@ void CounterStrike::run()
 
 void CounterStrike::action1()
 {
-    std::cout << "#############################################################" << std::endl
-              << "#                                                           #" << std::endl
-              << "#              Current weapon                               #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "              ";
-    _currentWeapon->action1();
-    std::cout << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#############################################################" << std::endl;
     clearScreen();
+    std::cout << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << "#" << "\t\t";
+    _currentWeapon->action1();
 }
 
 void CounterStrike::action2()
 {
-    std::cout << "#############################################################" << std::endl
-              << "#                                                           #" << std::endl
-              << "#              Current weapon                               #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "              ";
+    clearScreen();
+    std::cout << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << "#" << "\t\t";
     _currentWeapon->action2();
-    std::cout << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#############################################################" << std::endl;
-    clearScreen();
-
-}
-
-void CounterStrike::printChangedWeapon()
-{
-    std::cout << "#############################################################" << std::endl
-              << "#                                                           #" << std::endl
-              << "#              Weapon has been changed to:                  #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "              " << _currentWeapon->getName()                   << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#                                                           #" << std::endl
-              << "#############################################################" << std::endl;
-
-    clearScreen();
 }
 
 void CounterStrike::clearScreen()
@@ -147,4 +134,32 @@ void CounterStrike::clearScreen()
     Position.X = 0;
     Position.Y = 0;
     SetConsoleCursorPosition(hOut, Position);
+}
+
+void CounterStrike::draw()
+{
+    clearScreen();
+    std::cout << "#################################################################" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#\t\tCurrent weapon: " << "\t\t\t\t#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#" << "\t\t\t\t\t\t\t\t" << "#" << std::endl
+              << "#################################################################" << std::endl;
+}
+
+void CounterStrike::printCurrentWaepon()
+{
+    clearScreen();
+    std::cout << std::endl
+              << std::endl
+              << std::endl
+              << std::endl
+              << "#\t\t\t" << _currentWeapon->getName();
 }
