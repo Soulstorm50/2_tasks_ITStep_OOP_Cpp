@@ -37,8 +37,8 @@ public:
     virtual void setAmount(int amount) = 0;
 
     virtual const std::string& getVendorName() const = 0;
-    virtual const std::string& getModel(const std::string& model) const = 0;
-    virtual const std::string& getName(const std::string& name) const = 0;
+    virtual const std::string& getModel() const = 0;
+    virtual const std::string& getName() const = 0;
     virtual int getCapacity() const = 0;
     virtual int getAmount() const = 0;
 

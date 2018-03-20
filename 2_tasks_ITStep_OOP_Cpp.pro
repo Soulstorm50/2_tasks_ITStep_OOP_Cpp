@@ -28,7 +28,10 @@ SOURCES += counter.cpp \
     CounterStrikeSimulator/granade.cpp \
     CounterStrikeSimulator/smokegranade.cpp \
     CounterStrikeSimulator/counterstrike.cpp \
-    DataDeviceEditor/idevice.cpp
+    DataDeviceEditor/idevice.cpp \
+    DataDeviceEditor/cusbdrive.cpp \
+    DataDeviceEditor/cportablehdddrive.cpp \
+    DataDeviceEditor/cdvddrive.cpp
 
 HEADERS += \
     counter.h \
@@ -55,4 +58,7 @@ HEADERS += \
     CounterStrikeSimulator/granade.h \
     CounterStrikeSimulator/smokegranade.h \
     CounterStrikeSimulator/counterstrike.h \
-    DataDeviceEditor/idevice.h
+    DataDeviceEditor/idevice.h \
+    DataDeviceEditor/cusbdrive.h \
+    DataDeviceEditor/cportablehdddrive.h \
+    DataDeviceEditor/cdvddrive.h
