@@ -2,7 +2,12 @@
 
 CDVDDrive::CDVDDrive()
 {
-
+    _vendorName = "NO NAME VENDOR DVD Drive";
+    _model = "Default model";
+    _name = "NO NAME";
+    _capacity = 0;
+    _amount = 0;
+    _writeSpeed = 0;
 }
 
 CDVDDrive::~CDVDDrive()
@@ -67,9 +72,9 @@ void CDVDDrive::printDeviceProperties()
               << "\tType:\t\t" << getName() << "\n"
               << "\tVendor:\t\t" << getVendorName() << "\n"
               << "\tModel\t\t" << getModel() << "\n"
-              << "\tCapacity:\t\t" << getCapacity() << "\n"
+              << "\tCapacity:\t\t" << getCapacity() << "Gb\n"
               << "\tAmount\t\t" << getAmount() << "\n"
-              << "\tWrite speed:\t\t" << getWriteSpeed() << "\n\n"
+              << "\tWrite speed:\t\t" << getWriteSpeed() << "Mb/s\n\n"
               << "==================================================================\n";
 }
 
@@ -81,4 +86,14 @@ int CDVDDrive::getWriteSpeed() const
 void CDVDDrive::setWriteSpeed(int writeSpeed)
 {
     _writeSpeed = writeSpeed;
+}
+
+void CDVDDrive::setDefault()
+{
+    _vendorName = "NO NAME VENDOR DVD Drive";
+    _model = "Default model";
+    _name = "NO NAME";
+    _capacity = 0;
+    _amount = 0;
+    _writeSpeed = 0;
 }

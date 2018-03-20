@@ -46,6 +46,7 @@ public:
     virtual void printDeviceProperties() = 0;
     virtual void load();
     virtual void save();
+    virtual void setDefault() = 0;
 
 };
 

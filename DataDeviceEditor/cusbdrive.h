@@ -24,6 +24,7 @@ public:
 
     int getUSBSpeed() const;
     void setUSBSpeed(int USBSpeed);
+    virtual void setDefault() override;
 
 private:
 

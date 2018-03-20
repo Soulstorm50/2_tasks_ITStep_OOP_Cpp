@@ -2,7 +2,12 @@
 
 CUSBDrive::CUSBDrive()
 {
-
+    _vendorName = "NO NAME VENDOR USB Drive";
+    _model = "Default model";
+    _name = "NO NAME";
+    _capacity = 0;
+    _amount = 0;
+    _USBSpeed = 0;
 }
 
 CUSBDrive::~CUSBDrive()
@@ -67,9 +72,9 @@ void CUSBDrive::printDeviceProperties()
               << "\tType:\t\t" << getName() << "\n"
               << "\tVendor:\t\t" << getVendorName() << "\n"
               << "\tModel\t\t" << getModel() << "\n"
-              << "\tCapacity:\t\t" << getCapacity() << "\n"
+              << "\tCapacity:\t\t" << getCapacity() << " Gb\n"
               << "\tAmount\t\t" << getAmount() << "\n"
-              << "\tUSB speed:\t\t" << getUSBSpeed() << "\n\n"
+              << "\tUSB speed:\t\t" << getUSBSpeed() << "Mb/s\n\n"
               << "==================================================================\n";
 }
 
@@ -81,4 +86,14 @@ int CUSBDrive::getUSBSpeed() const
 void CUSBDrive::setUSBSpeed(int USBSpeed)
 {
     _USBSpeed = USBSpeed;
+}
+
+void CUSBDrive::setDefault()
+{
+    _vendorName = "NO NAME VENDOR USB Drive";
+    _model = "Default model";
+    _name = "NO NAME";
+    _capacity = 0;
+    _amount = 0;
+    _USBSpeed = 0;
 }

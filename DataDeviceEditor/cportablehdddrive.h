@@ -24,6 +24,7 @@ public:
 
     int getRotationSpeed() const;
     void setRotationSpeed(int rotationSpeed);
+    virtual void setDefault() override;
 
 private:
 

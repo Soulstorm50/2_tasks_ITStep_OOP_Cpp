@@ -2,7 +2,12 @@
 
 CPortableHDDDrive::CPortableHDDDrive()
 {
-
+    _vendorName = "NO NAME VENDOR HDD Drive";
+    _model = "Default model";
+    _name = "NO NAME";
+    _capacity = 0;
+    _amount = 0;
+    _rotationSpeed = 0;
 }
 
 CPortableHDDDrive::~CPortableHDDDrive()
@@ -67,9 +72,9 @@ void CPortableHDDDrive::printDeviceProperties()
               << "\tType:\t\t" << getName() << "\n"
               << "\tVendor:\t\t" << getVendorName() << "\n"
               << "\tModel\t\t" << getModel() << "\n"
-              << "\tCapacity:\t\t" << getCapacity() << "\n"
+              << "\tCapacity:\t\t" << getCapacity() << "Gb\n"
               << "\tAmount\t\t" << getAmount() << "\n"
-              << "\tRotation speed:\t\t" << getRotationSpeed() << "\n\n"
+              << "\tRotation speed:\t\t" << getRotationSpeed() << "Rps\n\n"
               << "==================================================================\n";
 }
 
@@ -81,4 +86,14 @@ int CPortableHDDDrive::getRotationSpeed() const
 void CPortableHDDDrive::setRotationSpeed(int rotationSpeed)
 {
     _rotationSpeed = rotationSpeed;
+}
+
+void CPortableHDDDrive::setDefault()
+{
+    _vendorName = "NO NAME VENDOR HDD Drive";
+    _model = "Default model";
+    _name = "NO NAME";
+    _capacity = 0;
+    _amount = 0;
+    _rotationSpeed = 0;
 }

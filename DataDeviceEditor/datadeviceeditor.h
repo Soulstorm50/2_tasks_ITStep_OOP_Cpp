@@ -5,6 +5,7 @@
 #include "DataDeviceEditor/cdvddrive.h"
 #include "DataDeviceEditor/cportablehdddrive.h"
 #include "DataDeviceEditor/cusbdrive.h"
+#include <typeinfo>
 
 class DataDeviceEditor
 {

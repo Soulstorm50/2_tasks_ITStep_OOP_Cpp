@@ -24,6 +24,7 @@ public:
 
     int getWriteSpeed() const;
     void setWriteSpeed(int writeSpeed);
+    virtual void setDefault() override;
 
 private:
 
