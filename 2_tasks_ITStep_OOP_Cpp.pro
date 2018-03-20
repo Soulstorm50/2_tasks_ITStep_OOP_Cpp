@@ -31,7 +31,8 @@ SOURCES += counter.cpp \
     DataDeviceEditor/idevice.cpp \
     DataDeviceEditor/cusbdrive.cpp \
     DataDeviceEditor/cportablehdddrive.cpp \
-    DataDeviceEditor/cdvddrive.cpp
+    DataDeviceEditor/cdvddrive.cpp \
+    DataDeviceEditor/datadeviceeditor.cpp
 
 HEADERS += \
     counter.h \
@@ -61,4 +62,5 @@ HEADERS += \
     DataDeviceEditor/idevice.h \
     DataDeviceEditor/cusbdrive.h \
     DataDeviceEditor/cportablehdddrive.h \
-    DataDeviceEditor/cdvddrive.h
+    DataDeviceEditor/cdvddrive.h \
+    DataDeviceEditor/datadeviceeditor.h
