@@ -48,3 +48,17 @@ void DataDeviceEditor::removeDevice(int number)
         }
     }
 }
+
+void DataDeviceEditor::printDevices()
+{
+    std::cout << "\n=================== List of devices begining =====================\n\n";
+
+    for(int i = 0; i < _size; i++)
+    {
+        _dataDevices[i]->printDeviceProperties();
+    }
+
+    std::cout << "\n=================== List of devices end ==========================\n";
+}
+
+

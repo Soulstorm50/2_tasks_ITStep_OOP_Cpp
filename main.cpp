@@ -15,6 +15,8 @@
 
 #include "CounterStrikeSimulator/counterstrike.h"
 
+#include "DataDeviceEditor/datadeviceeditor.h"
+
 using namespace std;
 
 void checkForCorrection(const MyString& expression)
@@ -68,10 +70,11 @@ void checkForCorrection(const MyString& expression)
 int main()
 {
 
-    // test for class CounterStrike
+    // test for class DataDeviceEditor
 
-    CounterStrike cs;
-    cs.run();
+    DataDeviceEditor dde;
+    dde.printDevices();
+
 
 
 
