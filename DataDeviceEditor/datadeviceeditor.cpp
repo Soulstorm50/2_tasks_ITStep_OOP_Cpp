@@ -74,7 +74,7 @@ void DataDeviceEditor::modifyDeviceVendorName(int number, std::string vendorName
     }
     else
     {
-        _dataDevices[number]->setVendorName(vendorName);
+        _dataDevices[number - 1]->setVendorName(vendorName);
     }
 }
 
@@ -86,7 +86,7 @@ void DataDeviceEditor::modifyDeviceModel(int number, std::string model)
     }
     else
     {
-        _dataDevices[number]->setModel(model);
+        _dataDevices[number - 1]->setModel(model);
     }
 }
 
@@ -98,7 +98,19 @@ void DataDeviceEditor::modifyDeviceName(int number, std::string name)
     }
     else
     {
-        _dataDevices[number]->setName(name);
+        _dataDevices[number - 1]->setName(name);
+    }
+}
+
+void DataDeviceEditor::modifyDeviceCapacity(int number, int capacity)
+{
+    if(number < 1 || number > _size)
+    {
+        std::cout << "\n\nError! wrong device number!\n\n";
+    }
+    else
+    {
+        _dataDevices[number - 1]->setCapacity(capacity);
     }
 }
 

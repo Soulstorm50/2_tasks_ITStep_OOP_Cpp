@@ -72,9 +72,9 @@ void CPortableHDDDrive::printDeviceProperties()
               << "\tType:\t\t" << getName() << "\n"
               << "\tVendor:\t\t" << getVendorName() << "\n"
               << "\tModel\t\t" << getModel() << "\n"
-              << "\tCapacity:\t\t" << getCapacity() << "Gb\n"
+              << "\tCapacity:\t\t" << getCapacity() << " Gb\n"
               << "\tAmount\t\t" << getAmount() << "\n"
-              << "\tRotation speed:\t\t" << getRotationSpeed() << "Rps\n\n"
+              << "\tRotation speed:\t\t" << getRotationSpeed() << " Rps\n\n"
               << "==================================================================\n";
 }
 

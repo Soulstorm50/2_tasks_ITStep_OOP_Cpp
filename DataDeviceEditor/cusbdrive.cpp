@@ -74,7 +74,7 @@ void CUSBDrive::printDeviceProperties()
               << "\tModel\t\t" << getModel() << "\n"
               << "\tCapacity:\t\t" << getCapacity() << " Gb\n"
               << "\tAmount\t\t" << getAmount() << "\n"
-              << "\tUSB speed:\t\t" << getUSBSpeed() << "Mb/s\n\n"
+              << "\tUSB speed:\t\t" << getUSBSpeed() << " Mb/s\n\n"
               << "==================================================================\n";
 }
 
