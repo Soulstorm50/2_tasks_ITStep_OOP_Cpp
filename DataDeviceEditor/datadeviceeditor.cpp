@@ -114,4 +114,16 @@ void DataDeviceEditor::modifyDeviceCapacity(int number, int capacity)
     }
 }
 
+void DataDeviceEditor::modifyDeviceAmount(int number, int amount)
+{
+    if(number < 1 || number > _size)
+    {
+        std::cout << "\n\nError! wrong device number!\n\n";
+    }
+    else
+    {
+        _dataDevices[number - 1]->setAmount(amount);
+    }
+}
+
 

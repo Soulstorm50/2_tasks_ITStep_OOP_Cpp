@@ -84,6 +84,7 @@ int main()
     dde.modifyDeviceModel(1, "Digital");
     dde.modifyDeviceName(1, "DVD Drive 16x");
     dde.modifyDeviceCapacity(1, 4700);
+    dde.modifyDeviceAmount(1, 10);
     dde.printDevices();
 
     dde.removeDevice(100);
