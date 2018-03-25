@@ -82,6 +82,7 @@ int main()
     dde.addDevice(dvd);
     dde.modifyDeviceVendorName(1, "LG");
     dde.modifyDeviceModel(1, "Digital");
+    dde.modifyDeviceName(1, "DVD Drive 16x");
     dde.printDevices();
 
     dde.removeDevice(100);

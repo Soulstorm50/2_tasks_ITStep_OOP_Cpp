@@ -25,7 +25,7 @@ void CPortableHDDDrive::setModel(const std::string model)
     _model = model;
 }
 
-void CPortableHDDDrive::setName(const std::string& name)
+void CPortableHDDDrive::setName(const std::string name)
 {
     _name = name;
 }

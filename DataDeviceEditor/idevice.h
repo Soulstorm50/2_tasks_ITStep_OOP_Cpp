@@ -33,7 +33,7 @@ public:
 
     virtual void setVendorName(const std::string vendorName) = 0;
     virtual void setModel(const std::string model) = 0;
-    virtual void setName(const std::string& name) = 0;
+    virtual void setName(const std::string name) = 0;
     virtual void setCapacity(int capacity) = 0;
     virtual void setAmount(int amount) = 0;
 

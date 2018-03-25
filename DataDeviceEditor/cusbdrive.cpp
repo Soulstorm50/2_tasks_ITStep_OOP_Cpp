@@ -25,7 +25,7 @@ void CUSBDrive::setModel(const std::string model)
     _model = model;
 }
 
-void CUSBDrive::setName(const std::string& name)
+void CUSBDrive::setName(const std::string name)
 {
     _name = name;
 }

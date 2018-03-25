@@ -19,7 +19,7 @@ public:
     void printDevices();
     void modifyDeviceVendorName(int number, std::string vendorName);
     void modifyDeviceModel(int number, std::string model);
-    void modifyDeviceName(int number, std::string& name);
+    void modifyDeviceName(int number, std::string name);
     void modifyDeviceCapacity(int number, int capacity);
     void modifyDeviceAmount(int number, int amount);
 

@@ -25,7 +25,7 @@ void CDVDDrive::setModel(const std::string model)
     _model = model;
 }
 
-void CDVDDrive::setName(const std::string& name)
+void CDVDDrive::setName(const std::string name)
 {
     _name = name;
 }

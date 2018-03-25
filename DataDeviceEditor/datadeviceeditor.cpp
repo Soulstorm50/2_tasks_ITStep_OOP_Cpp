@@ -90,4 +90,16 @@ void DataDeviceEditor::modifyDeviceModel(int number, std::string model)
     }
 }
 
+void DataDeviceEditor::modifyDeviceName(int number, std::string name)
+{
+    if(number < 1 || number > _size)
+    {
+        std::cout << "\n\nError! wrong device number!\n\n";
+    }
+    else
+    {
+        _dataDevices[number]->setName(name);
+    }
+}
+
 
