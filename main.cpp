@@ -16,6 +16,8 @@
 #include "CounterStrikeSimulator/counterstrike.h"
 
 #include "DataDeviceEditor/datadeviceeditor.h"
+#include "DataDeviceEditor/idevice.h"
+#include "DataDeviceEditor/cdvddrive.h"
 
 using namespace std;
 
@@ -71,8 +73,17 @@ int main()
 {
 
     // test for class DataDeviceEditor
+    IDevice* dvd = new CDVDDrive();
+    dvd->printDeviceProperties();
 
     DataDeviceEditor dde;
+    dde.printDevices();
+
+    dde.addDevice(dvd);
+    dde.printDevices();
+
+    dde.removeDevice(100);
+    dde.removeDevice(1);
     dde.printDevices();
 
 

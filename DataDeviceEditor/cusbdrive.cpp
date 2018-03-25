@@ -6,7 +6,7 @@ CUSBDrive::CUSBDrive()
     _model = "Default model";
     _name = "NO NAME";
     _capacity = 0;
-    _amount = 0;
+    _amount = 1;
     _USBSpeed = 0;
 }
 

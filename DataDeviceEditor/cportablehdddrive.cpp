@@ -6,7 +6,7 @@ CPortableHDDDrive::CPortableHDDDrive()
     _model = "Default model";
     _name = "NO NAME";
     _capacity = 0;
-    _amount = 0;
+    _amount = 1;
     _rotationSpeed = 0;
 }
 

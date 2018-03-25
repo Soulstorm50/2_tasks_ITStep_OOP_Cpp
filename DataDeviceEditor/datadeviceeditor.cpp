@@ -6,6 +6,11 @@ DataDeviceEditor::DataDeviceEditor(): _size(3)
     _dataDevices[0] = new CDVDDrive();
     _dataDevices[1] = new CUSBDrive();
     _dataDevices[2] = new CPortableHDDDrive();
+
+    for(int i = 0; i < _size; i++)
+    {
+        _dataDevices[i]->setAmount(0);
+    }
 }
 
 DataDeviceEditor::~DataDeviceEditor()
@@ -59,6 +64,18 @@ void DataDeviceEditor::printDevices()
     }
 
     std::cout << "\n=================== List of devices end ==========================\n";
+}
+
+void DataDeviceEditor::modifyDeviceVendorName(int number, std::string& vendorName)
+{
+    if(number < 1 || number > _size)
+    {
+        std::cout << "\n\nError! wrong device number!\n\n";
+    }
+    else
+    {
+        _dataDevices[number]->setVendorName(vendorName);
+    }
 }
 
 
