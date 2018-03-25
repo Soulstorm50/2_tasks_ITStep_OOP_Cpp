@@ -15,12 +15,12 @@ CPortableHDDDrive::~CPortableHDDDrive()
 
 }
 
-void CPortableHDDDrive::setVendorName(const std::string& vendorName)
+void CPortableHDDDrive::setVendorName(const std::string vendorName)
 {
     _vendorName = vendorName;
 }
 
-void CPortableHDDDrive::setModel(const std::string& model)
+void CPortableHDDDrive::setModel(const std::string model)
 {
     _model = model;
 }

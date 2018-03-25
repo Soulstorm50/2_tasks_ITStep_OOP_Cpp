@@ -7,7 +7,6 @@
 #include "date.h"
 #include "myvector.h"
 
-#include "string"
 #include "singlylinkedlist.h"
 #include "mystack.h"
 
@@ -15,6 +14,7 @@
 
 #include "CounterStrikeSimulator/counterstrike.h"
 
+#include <string>
 #include "DataDeviceEditor/datadeviceeditor.h"
 #include "DataDeviceEditor/idevice.h"
 #include "DataDeviceEditor/cdvddrive.h"
@@ -80,6 +80,8 @@ int main()
     dde.printDevices();
 
     dde.addDevice(dvd);
+    dde.modifyDeviceVendorName(1, "LG");
+    dde.modifyDeviceModel(1, "Digital");
     dde.printDevices();
 
     dde.removeDevice(100);

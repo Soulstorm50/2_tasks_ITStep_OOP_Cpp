@@ -15,12 +15,12 @@ CDVDDrive::~CDVDDrive()
 
 }
 
-void CDVDDrive::setVendorName(const std::string& vendorName)
+void CDVDDrive::setVendorName(const std::string vendorName)
 {
     _vendorName = vendorName;
 }
 
-void CDVDDrive::setModel(const std::string& model)
+void CDVDDrive::setModel(const std::string model)
 {
     _model = model;
 }

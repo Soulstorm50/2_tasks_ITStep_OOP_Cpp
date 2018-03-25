@@ -66,7 +66,7 @@ void DataDeviceEditor::printDevices()
     std::cout << "\n=================== List of devices end ==========================\n";
 }
 
-void DataDeviceEditor::modifyDeviceVendorName(int number, std::string& vendorName)
+void DataDeviceEditor::modifyDeviceVendorName(int number, std::string vendorName)
 {
     if(number < 1 || number > _size)
     {
@@ -75,6 +75,18 @@ void DataDeviceEditor::modifyDeviceVendorName(int number, std::string& vendorNam
     else
     {
         _dataDevices[number]->setVendorName(vendorName);
+    }
+}
+
+void DataDeviceEditor::modifyDeviceModel(int number, std::string model)
+{
+    if(number < 1 || number > _size)
+    {
+        std::cout << "\n\nError! wrong device number!\n\n";
+    }
+    else
+    {
+        _dataDevices[number]->setModel(model);
     }
 }
 

@@ -15,12 +15,12 @@ CUSBDrive::~CUSBDrive()
 
 }
 
-void CUSBDrive::setVendorName(const std::string& vendorName)
+void CUSBDrive::setVendorName(const std::string vendorName)
 {
     _vendorName = vendorName;
 }
 
-void CUSBDrive::setModel(const std::string& model)
+void CUSBDrive::setModel(const std::string model)
 {
     _model = model;
 }

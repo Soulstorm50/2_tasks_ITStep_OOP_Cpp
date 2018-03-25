@@ -6,6 +6,7 @@
 #include "DataDeviceEditor/cportablehdddrive.h"
 #include "DataDeviceEditor/cusbdrive.h"
 #include <typeinfo>
+#include <string>
 
 class DataDeviceEditor
 {
@@ -16,8 +17,8 @@ public:
     void addDevice(IDevice* device);
     void removeDevice(int number);
     void printDevices();
-    void modifyDeviceVendorName(int number, std::string& vendorName);
-    void modifyDeviceModel(int number, std::string& model);
+    void modifyDeviceVendorName(int number, std::string vendorName);
+    void modifyDeviceModel(int number, std::string model);
     void modifyDeviceName(int number, std::string& name);
     void modifyDeviceCapacity(int number, int capacity);
     void modifyDeviceAmount(int number, int amount);

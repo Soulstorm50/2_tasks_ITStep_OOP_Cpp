@@ -10,8 +10,8 @@ public:
     virtual ~CPortableHDDDrive() override;
 
 
-    virtual void setVendorName(const std::string& vendorName) override;
-    virtual void setModel(const std::string& model) override;
+    virtual void setVendorName(const std::string vendorName) override;
+    virtual void setModel(const std::string model) override;
     virtual void setName(const std::string& name) override;
     virtual void setCapacity(int capacity) override;
     virtual void setAmount(int amount) override;
