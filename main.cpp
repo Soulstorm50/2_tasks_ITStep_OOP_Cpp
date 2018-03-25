@@ -18,7 +18,9 @@
 #include "DataDeviceEditor/datadeviceeditor.h"
 #include "DataDeviceEditor/idevice.h"
 #include "DataDeviceEditor/cdvddrive.h"
-
+#include "DataDeviceEditor/cportablehdddrive.h"
+#include "DataDeviceEditor/cusbdrive.h"
+#include <typeinfo>
 using namespace std;
 
 void checkForCorrection(const MyString& expression)
@@ -73,13 +75,17 @@ int main()
 {
 
     // test for class DataDeviceEditor
-    IDevice* dvd = new CDVDDrive();
-    dvd->printDeviceProperties();
+    CDVDDrive dvd;
+    CUSBDrive usb;
+    dvd.printDeviceProperties();
+    dvd.load();
+    dvd.save();
 
     DataDeviceEditor dde;
     dde.printDevices();
 
     dde.addDevice(dvd);
+    dde.addDevice(usb);
     dde.modifyDeviceVendorName(1, "LG");
     dde.modifyDeviceModel(1, "Digital");
     dde.modifyDeviceName(1, "DVD Drive 16x");
@@ -91,8 +97,8 @@ int main()
     dde.removeDevice(1);
     dde.printDevices();
 
-
-
+    std::cout << dde.findByTypeId(usb) << std::endl;
+    std::cout << dde.findByTypeId(dvd) << std::endl;
 
 
     return 0;

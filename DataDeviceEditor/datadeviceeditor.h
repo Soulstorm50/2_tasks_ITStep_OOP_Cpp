@@ -14,7 +14,7 @@ public:
     DataDeviceEditor();
     ~DataDeviceEditor();
 
-    void addDevice(IDevice* device);
+    void addDevice(IDevice& device);
     void removeDevice(int number);
     void printDevices();
     void modifyDeviceVendorName(int number, std::string vendorName);
@@ -23,7 +23,7 @@ public:
     void modifyDeviceCapacity(int number, int capacity);
     void modifyDeviceAmount(int number, int amount);
 
-    int findByTypeId(IDevice* device) const;
+    int findByTypeId(IDevice& device) const;
     int findByTypeId(IDevice* device, const std::string name) const;
 
 

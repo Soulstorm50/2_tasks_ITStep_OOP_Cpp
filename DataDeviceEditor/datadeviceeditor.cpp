@@ -18,19 +18,29 @@ DataDeviceEditor::~DataDeviceEditor()
     delete[] _dataDevices;
 }
 
-void DataDeviceEditor::addDevice(IDevice* device)
+void DataDeviceEditor::addDevice(IDevice &device)
 {
     int tempAmount = 0;
-    for(int i = 0; i < _size; i++)
+    if(typeid(device).name() == typeid(CDVDDrive).name())
     {
-        if(typeid(device) == typeid(_dataDevices[i]))
-        {
-            tempAmount = _dataDevices[i]->getAmount() + device->getAmount();
-            delete _dataDevices[i];
-            _dataDevices[i] = device;
-            _dataDevices[i]->setAmount(tempAmount);
-            break;
-        }
+        tempAmount = _dataDevices[0]->getAmount() + device.getAmount();
+        delete _dataDevices[0];
+        _dataDevices[0] = &device;
+        _dataDevices[0]->setAmount(tempAmount);
+    }
+    else if(typeid(device).name() == typeid(CUSBDrive).name())
+    {
+        tempAmount = _dataDevices[1]->getAmount() + device.getAmount();
+        delete _dataDevices[1];
+        _dataDevices[1] = &device;
+        _dataDevices[1]->setAmount(tempAmount);
+    }
+    else if(typeid(device).name() == typeid(CPortableHDDDrive).name())
+    {
+        tempAmount = _dataDevices[2]->getAmount() + device.getAmount();
+        delete _dataDevices[2];
+        _dataDevices[2] = &device;
+        _dataDevices[2]->setAmount(tempAmount);
     }
 }
 
@@ -124,6 +134,24 @@ void DataDeviceEditor::modifyDeviceAmount(int number, int amount)
     {
         _dataDevices[number - 1]->setAmount(amount);
     }
+}
+
+int DataDeviceEditor::findByTypeId(IDevice& device) const
+{
+    int result = -1;
+    if(typeid(device).name() == typeid(CDVDDrive).name())
+    {
+        result = 1;
+    }
+    else if(typeid(device).name() == typeid(CUSBDrive).name())
+    {
+        result = 2;
+    }
+    else if(typeid(device).name() == typeid(CPortableHDDDrive).name())
+    {
+        result = 3;
+    }
+    return result;
 }
 
 
