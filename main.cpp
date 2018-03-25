@@ -100,6 +100,8 @@ int main()
     std::cout << dde.findByTypeId(usb) << std::endl;
     std::cout << dde.findByTypeId(dvd) << std::endl;
 
+    std::cout << dde.findByTypeId(dvd, "DVD Drive 52x") << std::endl;
+    std::cout << dde.findByTypeId(dvd, "DVD Drive 16x") << std::endl;
 
     return 0;
 }

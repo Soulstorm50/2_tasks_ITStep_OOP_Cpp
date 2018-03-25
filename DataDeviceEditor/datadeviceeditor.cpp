@@ -154,4 +154,31 @@ int DataDeviceEditor::findByTypeId(IDevice& device) const
     return result;
 }
 
+int DataDeviceEditor::findByTypeId(IDevice& device, const std::string name) const
+{
+    int result = -1;
+    if(typeid(device).name() == typeid(CDVDDrive).name())
+    {
+        if(_dataDevices[0]->getName() == name)
+        {
+            result = 1;
+        }
+    }
+    else if(typeid(device).name() == typeid(CUSBDrive).name())
+    {
+        if(_dataDevices[1]->getName() == name)
+        {
+            result = 2;
+        }
+    }
+    else if(typeid(device).name() == typeid(CPortableHDDDrive).name())
+    {
+        if(_dataDevices[2]->getName() == name)
+        {
+            result = 3;
+        }
+    }
+    return result;
+}
+
 

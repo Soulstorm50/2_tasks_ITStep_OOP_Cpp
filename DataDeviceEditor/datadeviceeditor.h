@@ -24,7 +24,7 @@ public:
     void modifyDeviceAmount(int number, int amount);
 
     int findByTypeId(IDevice& device) const;
-    int findByTypeId(IDevice* device, const std::string name) const;
+    int findByTypeId(IDevice& device, const std::string name) const;
 
 
 private:
