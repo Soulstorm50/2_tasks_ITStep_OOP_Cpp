@@ -1,29 +1,11 @@
-#include <iostream>
-#include "student.h"
-#include "group.h"
-#include "mystring.h"
 
-#include "soulstime.h"
-#include "date.h"
-#include "myvector.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
-#include "singlylinkedlist.h"
-#include "mystack.h"
+#include "Tests/test_configs/classmystringgtest.h"
+using namespace testing;
 
-#include "mypriorityinarrayqueue.h"
-
-#include "CounterStrikeSimulator/counterstrike.h"
-
-#include <string>
-#include "DataDeviceEditor/datadeviceeditor.h"
-#include "DataDeviceEditor/idevice.h"
-#include "DataDeviceEditor/cdvddrive.h"
-#include "DataDeviceEditor/cportablehdddrive.h"
-#include "DataDeviceEditor/cusbdrive.h"
-#include <typeinfo>
-using namespace std;
-
-void checkForCorrection(const MyString& expression)
+/*void checkForCorrection(const MyString& expression)
 {
     //Task 8.1
     MyStack stack;
@@ -69,39 +51,13 @@ void checkForCorrection(const MyString& expression)
     {
         std::cout << "Incorrect expression!" << std::endl;
     }
-}
+}*/
 
-int main()
+int main(int argc, char *argv[])
 {
 
-    // test for class DataDeviceEditor
-    CDVDDrive dvd;
-    CUSBDrive usb;
-    dvd.printDeviceProperties();
-    dvd.load();
-    dvd.save();
-
-    DataDeviceEditor dde;
-    dde.printDevices();
-
-    dde.addDevice(dvd);
-    dde.addDevice(usb);
-    dde.modifyDeviceVendorName(1, "LG");
-    dde.modifyDeviceModel(1, "Digital");
-    dde.modifyDeviceName(1, "DVD Drive 16x");
-    dde.modifyDeviceCapacity(1, 4700);
-    dde.modifyDeviceAmount(1, 10);
-    dde.printDevices();
-
-    dde.removeDevice(100);
-    dde.removeDevice(1);
-    dde.printDevices();
-
-    std::cout << dde.findByTypeId(usb) << std::endl;
-    std::cout << dde.findByTypeId(dvd) << std::endl;
-
-    std::cout << dde.findByTypeId(dvd, "DVD Drive 52x") << std::endl;
-    std::cout << dde.findByTypeId(dvd, "DVD Drive 16x") << std::endl;
+    ::testing::InitGoogleTest(&argc, argv);
+    int runTest = RUN_ALL_TESTS();
 
     return 0;
 }
